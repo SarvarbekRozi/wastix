@@ -15,10 +15,10 @@
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Xodimlar</h1>
+                    <h1>Rahbariyat</h1>
                     <ul class="bread-crumb clearfix">
                         <li><a href="/">Bosh sahifa</a></li>
-                        <li>Xodimlar</li>
+                        <li>Rahbariyat</li>
                     </ul>
                 </div>
             </div>
@@ -33,10 +33,10 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                         <div class="team-block-one mb_75 wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="/about/xodimlar"><img src="https://images.unsplash.com/photo-1659280730277-05331a5f55fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cmVjeWNsaW5nJTIwZmFjdG9yeXx8fHx8fDE2OTUzNjAwNzM&ixlib=rb-4.0.3&q=80&w=1080" alt=""></a></figure>
+                                <figure class="image-box"><a href="/about/leadership"><img src="/assets/images/team/team-1.jpg" alt="Bosh direktor"></a></figure>
                                 <div class="lower-content">
-                                    <h3><a href="/about/xodimlar">Guy Hawkins</a></h3>
-                                    <span class="designation">Usta-mexanik</span>
+                                    <h3><a href="/about/leadership">Abdullayev Jasur Karimovich</a></h3>
+                                    <span class="designation">Bosh direktor</span>
                                     <div class="share-box">
                                         <div class="share-icon"><i class="fas fa-share-alt"></i></div>
                                         <ul class="social-links clearfix">
@@ -52,10 +52,10 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                         <div class="team-block-one mb_75 wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="/about/xodimlar"><img src="https://images.unsplash.com/photo-1736978377826-6d9e8669ec98?ixid=MnwxfDB8MXxyYW5kb218MHx8cmVjeWNsaW5nJTIwZmFjdG9yeXx8fHx8fDE2OTUzNjAxODc&ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt=""></a></figure>
+                                <figure class="image-box"><a href="/about/leadership"><img src="/assets/images/team/team-2.jpg" alt="Direktor o'rinbosari"></a></figure>
                                 <div class="lower-content">
-                                    <h3><a href="/about/xodimlar">Kristin Watson</a></h3>
-                                    <span class="designation">Dispetcher</span>
+                                    <h3><a href="/about/leadership">Karimova Nilufar Rustamovna</a></h3>
+                                    <span class="designation">Direktor o'rinbosari</span>
                                     <div class="share-box">
                                         <div class="share-icon"><i class="fas fa-share-alt"></i></div>
                                         <ul class="social-links clearfix">
@@ -71,10 +71,10 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                         <div class="team-block-one mb_75 wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="/about/xodimlar"><img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?ixid=MnwxfDB8MXxyYW5kb218MHx8d2FzdGUlMjBtYW5hZ2VtZW50fHx8fHx8MTY5NTM2MDA0MA&ixlib=rb-4.0.3&auto=format&fit=crop&w=1160&q=80" alt=""></a></figure>
+                                <figure class="image-box"><a href="/about/leadership"><img src="/assets/images/team/team-3.jpg" alt="Moliya direktori"></a></figure>
                                 <div class="lower-content">
-                                    <h3><a href="/about/xodimlar">Floyd Miles</a></h3>
-                                    <span class="designation">Laboratoriya xodimi</span>
+                                    <h3><a href="/about/leadership">Toshmatov Bahrom Erkinovich</a></h3>
+                                    <span class="designation">Moliya direktori</span>
                                     <div class="share-box">
                                         <div class="share-icon"><i class="fas fa-share-alt"></i></div>
                                         <ul class="social-links clearfix">
@@ -90,10 +90,10 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                         <div class="team-block-one mb_75 wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="/about/xodimlar"><img src="/assets/images/team/team-8.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="/about/leadership"><img src="/assets/images/team/team-4.jpg" alt="Texnik direktor"></a></figure>
                                 <div class="lower-content">
-                                    <h3><a href="/about/xodimlar">Esther Howard</a></h3>
-                                    <span class="designation">Usta-mexanik</span>
+                                    <h3><a href="/about/leadership">Rahimov Sherzod Anvarovich</a></h3>
+                                    <span class="designation">Texnik direktor</span>
                                     <div class="share-box">
                                         <div class="share-icon"><i class="fas fa-share-alt"></i></div>
                                         <ul class="social-links clearfix">
@@ -109,10 +109,10 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                         <div class="team-block-one mb_75 wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="/about/xodimlar"><img src="/assets/images/team/team-9.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="/about/leadership"><img src="/assets/images/team/team-5.jpg" alt="Ishlab chiqarish boshlig'i"></a></figure>
                                 <div class="lower-content">
-                                    <h3><a href="/about/xodimlar">Jacob Jones</a></h3>
-                                    <span class="designation">Dispetcher</span>
+                                    <h3><a href="/about/leadership">Qodirov Alisher Tulkinovich</a></h3>
+                                    <span class="designation">Ishlab chiqarish boshlig'i</span>
                                     <div class="share-box">
                                         <div class="share-icon"><i class="fas fa-share-alt"></i></div>
                                         <ul class="social-links clearfix">
@@ -128,10 +128,10 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                         <div class="team-block-one mb_75 wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="/about/xodimlar"><img src="/assets/images/team/team-10.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="/about/leadership"><img src="/assets/images/team/team-6.jpg" alt="Kadrlar bo'limi boshlig'i"></a></figure>
                                 <div class="lower-content">
-                                    <h3><a href="/about/xodimlar">Ralph Edwards</a></h3>
-                                    <span class="designation">Laboratoriya xodimi</span>
+                                    <h3><a href="/about/leadership">Saidova Dilnoza Mirzayevna</a></h3>
+                                    <span class="designation">Kadrlar bo'limi boshlig'i</span>
                                     <div class="share-box">
                                         <div class="share-icon"><i class="fas fa-share-alt"></i></div>
                                         <ul class="social-links clearfix">
@@ -171,9 +171,10 @@
 
 <script setup>
 useHead({
-  title: 'Wastix - HTML 5 Template Preview',
+  title: 'Wastix - Rahbariyat',
 })
 </script>
+
 
 
 

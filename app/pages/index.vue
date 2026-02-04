@@ -13,21 +13,21 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                                 <div class="content-box p_relative d_block z_5">
-                                    <span class="title-text p_relative d_block">Waste Pickup</span>
-                                    <h2 class="p_relative d_block">Your waste pickup solutions</h2>
-                                    <p class="p_relative d_block">Lorem ipsum dolor sit amet, consectetur adipiscing elit Turpis ridiculus tellus.</p>
+                                    <span class="title-text p_relative d_block">Chiqindilarni yig'ish</span>
+                                    <h2 class="p_relative d_block">Chiqindilarni boshqarish yechimlari</h2>
+                                    <p class="p_relative d_block">Biz sizning uyingiz va biznesingiz uchun professional chiqindilarni yig'ish va qayta ishlash xizmatlarini taqdim etamiz.</p>
                                     <div class="btn-box">
-                                        <a href="index.html" class="theme-btn btn-one"><span>Read More</span></a>
+                                        <a href="/about" class="theme-btn btn-one"><span>Batafsil</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                                 <div class="image-box p_relative">
                                     <div class="image-shape-1" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                                    <figure class="image clearfix"><img src="/assets/images/banner/banner-img-1.png" alt=""></figure>
+                                    <figure class="image clearfix"><img src="/assets/images/banner/banner-img-1.png" alt="Chiqindilarni yig'ish"></figure>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="slide-item p_relative">
@@ -40,75 +40,21 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                                 <div class="content-box p_relative d_block z_5">
-                                    <span class="title-text p_relative d_block">Waste Pickup</span>
-                                    <h2 class="p_relative d_block">Your waste pickup solutions</h2>
-                                    <p class="p_relative d_block">Lorem ipsum dolor sit amet, consectetur adipiscing elit Turpis ridiculus tellus.</p>
+                                    <span class="title-text p_relative d_block">Qayta ishlash</span>
+                                    <h2 class="p_relative d_block">Ekologik toza kelajak uchun</h2>
+                                    <p class="p_relative d_block">Chiqindilarni qayta ishlash orqali tabiatni asraymiz va kelajak avlodlar uchun toza muhit yaratamiz.</p>
                                     <div class="btn-box">
-                                        <a href="index.html" class="theme-btn btn-one"><span>Read More</span></a>
+                                        <a href="/service" class="theme-btn btn-one"><span>Xizmatlar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                                 <div class="image-box p_relative">
                                     <div class="image-shape-2" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                                    <figure class="image clearfix"><img src="/assets/images/banner/banner-img-2.png" alt=""></figure>
+                                    <figure class="image clearfix"><img src="/assets/images/banner/banner-img-2.png" alt="Qayta ishlash"></figure>
                                 </div>
                             </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="slide-item p_relative">
-                    <div class="shape">
-                        <div class="shape-1" style="background-image: url(/assets/images/shape/shape-3.png);"></div>
-                        <div class="shape-2 float-bob-y" style="background-image: url(/assets/images/shape/shape-4.png);"></div>
-                        <div class="shape-3 rotate-me" style="background-image: url(/assets/images/shape/shape-5.png);"></div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box p_relative d_block z_5">
-                                    <span class="title-text p_relative d_block">Waste Pickup</span>
-                                    <h2 class="p_relative d_block">Your waste pickup solutions</h2>
-                                    <p class="p_relative d_block">Lorem ipsum dolor sit amet, consectetur adipiscing elit Turpis ridiculus tellus.</p>
-                                    <div class="btn-box">
-                                        <a href="index.html" class="theme-btn btn-one"><span>Read More</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <div class="image-box p_relative">
-                                    <div class="image-shape-1" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                                    <figure class="image clearfix"><img src="/assets/images/banner/banner-img-1.png" alt=""></figure>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="slide-item p_relative">
-                    <div class="shape">
-                        <div class="shape-1" style="background-image: url(/assets/images/shape/shape-3.png);"></div>
-                        <div class="shape-2 float-bob-y" style="background-image: url(/assets/images/shape/shape-4.png);"></div>
-                        <div class="shape-3 rotate-me" style="background-image: url(/assets/images/shape/shape-5.png);"></div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box p_relative d_block z_5">
-                                    <span class="title-text p_relative d_block">Waste Pickup</span>
-                                    <h2 class="p_relative d_block">Your waste pickup solutions</h2>
-                                    <p class="p_relative d_block">Lorem ipsum dolor sit amet, consectetur adipiscing elit Turpis ridiculus tellus.</p>
-                                    <div class="btn-box">
-                                        <a href="index.html" class="theme-btn btn-one"><span>Read More</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <div class="image-box p_relative">
-                                    <div class="image-shape-2" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                                    <figure class="image clearfix"><img src="/assets/images/banner/banner-img-2.png" alt=""></figure>
-                                </div>
-                            </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,8 +72,8 @@
                                 <div class="inner-box">
                                     <div class="shape" style="background-image: url(/assets/images/shape/shape-6.png);"></div>
                                     <div class="icon-box"><i class="icon-8"></i></div>
-                                    <h3><a href="index.html">Dumpster Sizes</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                                    <h3><a href="">Konteyner o'lchamlari</a></h3>
+                                    <p>Har xil hajmdagi <br>konteynerlar mavjud.</p>
                                 </div>
                             </div>
                         </div>
@@ -136,8 +82,8 @@
                                 <div class="inner-box">
                                     <div class="shape" style="background-image: url(/assets/images/shape/shape-6.png);"></div>
                                     <div class="icon-box"><i class="icon-9"></i></div>
-                                    <h3><a href="index.html">Waste Collection</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                                    <h3><a href="">Chiqindi yig'ish</a></h3>
+                                    <p>Muntazam chiqindi yig'ish <br>xizmati.</p>
                                 </div>
                             </div>
                         </div>
@@ -146,8 +92,8 @@
                                 <div class="inner-box">
                                     <div class="shape" style="background-image: url(/assets/images/shape/shape-6.png);"></div>
                                     <div class="icon-box"><i class="icon-10"></i></div>
-                                    <h3><a href="index.html">Pickup Schedule</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                                    <h3><a href="">Yig'ish jadvali</a></h3>
+                                    <p>Qulay vaqtda chiqindi olib <br>ketish.</p>
                                 </div>
                             </div>
                         </div>
@@ -167,17 +113,17 @@
                         <div class="content_block_one">
                             <div class="content-box mr_40">
                                 <div class="sec-title mb_25">
-                                    <span class="sub-title">About Us</span>
-                                    <h2>Experience in waste disposal management services</h2>
+                                    <span class="sub-title">Biz haqimizda</span>
+                                    <h2>Chiqindilarni boshqarish sohasida tajriba</h2>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet consectetur. Nam quis bibendum lacinia eu id in. Quisque porttitor tortor blandit nunc sed ac id. Mattis in nunc libero viverra. Consectetur leo nibh ac at amet.</p>
+                                <p>Biz 10 yildan ortiq tajribaga ega bo'lgan chiqindilarni yig'ish va qayta ishlash kompaniyasimiz. Zamonaviy texnologiyalar va malakali mutaxassislar yordamida shahar va tumanlarni toza saqlashga hissa qo'shamiz.</p>
                                 <ul class="list-style-one mb_35 clearfix">
-                                    <li>Giant Fishes Farming</li>
-                                    <li>Water & Plants Filtration Systems</li>
-                                    <li>Seafood Import Export</li>
+                                    <li>Maishiy chiqindilarni yig'ish</li>
+                                    <li>Sanoat chiqindilarini qayta ishlash</li>
+                                    <li>Ekologik xavfsiz utilizatsiya</li>
                                 </ul>
                                 <div class="btn-box">
-                                    <a href="contact.html" class="theme-btn btn-one shadow"><span>Contact Us</span></a>
+                                    <a href="/contact" class="theme-btn btn-one shadow"><span>Bog'lanish</span></a>
                                 </div>
                             </div>
                         </div>
@@ -186,9 +132,9 @@
                         <div class="image_block_one">
                             <div class="image-box pl_130 ml_30">
                                 <div class="image-shape"><img src="/assets/images/shape/shape-3.png" alt=""></div>
-                                <figure class="image image-1"><img src="/assets/images/resource/about-1.jpg" alt=""></figure>
-                                <figure class="image image-2"><img src="/assets/images/resource/about-2.jpg" alt=""></figure>
-                                <figure class="image image-3"><img src="/assets/images/resource/about-3.jpg" alt=""></figure>
+                                <figure class="image image-1"><img src="/assets/images/resource/about-1.jpg" alt="Chiqindilarni yig'ish"></figure>
+                                <figure class="image image-2"><img src="/assets/images/resource/about-2.jpg" alt="Qayta ishlash"></figure>
+                                <figure class="image image-3"><img src="/assets/images/resource/about-3.jpg" alt="Toza muhit"></figure>
                             </div>
                         </div>
                     </div>
@@ -203,23 +149,23 @@
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-7.png);"></div>
             <div class="auto-container">
                 <div class="sec-title mb_50">
-                    <span class="sub-title">Service Industry</span>
-                    <h2>A wide range of waste <br />disposal services</h2>
+                    <span class="sub-title">Xizmatlar</span>
+                    <h2>Chiqindilarni boshqarish <br />xizmatlari</h2>
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-4 col-md-6 col-sm-12 service-block">
                         <div class="service-block-one mb_35 wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="service-details.html"><img src="/assets/images/service/service-1.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="/service-details"><img src="/assets/images/service/service-1.jpg" alt="Chiqindi yig'ish"></a></figure>
                                 <div class="lower-content">
                                     <div class="icon-box">
                                         <div class="icon-bg" style="background-image: url(/assets/images/icons/icon-bg-1.png);"></div>
                                         <div class="icon"><i class="icon-12"></i></div>
                                     </div>
-                                    <h3><a href="service-details.html">Garbage Pickup</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectur Dolor nunc tincidun tempor dignisime faucibus molestie.</p>
+                                    <h3><a href="/service-details">Chiqindi yig'ish</a></h3>
+                                    <p>Uy-joy va korxonalardan muntazam ravishda chiqindilarni yig'ib olib ketish xizmati.</p>
                                     <div class="link">
-                                        <a href="service-details.html"><i class="icon-7"></i></a>
+                                        <a href="/service-details"><i class="icon-7"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -228,16 +174,16 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 service-block">
                         <div class="service-block-one mb_35 wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="service-details-2.html"><img src="/assets/images/service/service-2.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="/service-details-2"><img src="/assets/images/service/service-2.jpg" alt="Konteyner ijarasi"></a></figure>
                                 <div class="lower-content">
                                     <div class="icon-box">
                                         <div class="icon-bg" style="background-image: url(/assets/images/icons/icon-bg-1.png);"></div>
                                         <div class="icon"><i class="icon-13"></i></div>
                                     </div>
-                                    <h3><a href="service-details-2.html">Dumpster Rental</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectur Dolor nunc tincidun tempor dignisime faucibus molestie.</p>
+                                    <h3><a href="/service-details-2">Konteyner ijarasi</a></h3>
+                                    <p>Qurilish va katta hajmdagi chiqindilar uchun turli o'lchamdagi konteynerlar ijarasi.</p>
                                     <div class="link">
-                                        <a href="service-details-2.html"><i class="icon-7"></i></a>
+                                        <a href="/service-details-2"><i class="icon-7"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -246,16 +192,16 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 service-block">
                         <div class="service-block-one mb_35 wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="service-details-3.html"><img src="/assets/images/service/service-3.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="/service-details-3"><img src="/assets/images/service/service-3.jpg" alt="Qayta ishlash"></a></figure>
                                 <div class="lower-content">
                                     <div class="icon-box">
                                         <div class="icon-bg" style="background-image: url(/assets/images/icons/icon-bg-1.png);"></div>
                                         <div class="icon"><i class="icon-14"></i></div>
                                     </div>
-                                    <h3><a href="service-details-3.html">Waste Collection</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectur Dolor nunc tincidun tempor dignisime faucibus molestie.</p>
+                                    <h3><a href="/service-details-3">Qayta ishlash</a></h3>
+                                    <p>Chiqindilarni saralash va qayta ishlash orqali tabiatni muhofaza qilish.</p>
                                     <div class="link">
-                                        <a href="service-details-3.html"><i class="icon-7"></i></a>
+                                        <a href="/service-details-3"><i class="icon-7"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -277,7 +223,7 @@
                             <div class="count-outer count-box">
                                 <span class="count-text" data-speed="1500" data-stop="20">0</span><span>k</span>
                             </div>
-                            <h4>Satisfied & Happy Clients</h4>
+                            <h4>Mamnun mijozlar</h4>
                         </div>
                     </div>
                     <div class="funfact-block-one">
@@ -286,7 +232,7 @@
                             <div class="count-outer count-box">
                                 <span class="count-text" data-speed="1500" data-stop="80">0</span><span>+</span>
                             </div>
-                            <h4>Total Industries Served</h4>
+                            <h4>Xizmat ko'rsatilgan hududlar</h4>
                         </div>
                     </div>
                     <div class="funfact-block-one">
@@ -295,7 +241,7 @@
                             <div class="count-outer count-box">
                                 <span class="count-text" data-speed="1500" data-stop="20">0</span><span>5k</span>
                             </div>
-                            <h4>Waste Picked & Dispose</h4>
+                            <h4>Yig'ilgan chiqindilar (tonna)</h4>
                         </div>
                     </div>
                 </div>
@@ -311,11 +257,11 @@
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image_block_two">
                             <div class="image-box">
-                                <figure class="image"><img src="/assets/images/resource/chooseus-1.png" alt=""></figure>
+                                <figure class="image"><img src="/assets/images/resource/chooseus-1.png" alt="Nima uchun biz"></figure>
                                 <div class="support-box">
                                     <div class="icon-box"><i class="icon-18"></i></div>
-                                    <h5>For Emergency</h5>
-                                    <h3><a href="tel:180040070400">1-800-400-70400</a></h3>
+                                    <h5>Tez yordam</h5>
+                                    <h3><a href="tel:+998712000000">+998 71 200 00 00</a></h3>
                                 </div>
                                 <div class="image-shape">
                                     <div class="shape-1" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
@@ -328,26 +274,26 @@
                         <div class="content_block_two">
                             <div class="content-box pt_40 pb_150 ml_30">
                                 <div class="sec-title mb_30">
-                                    <span class="sub-title">Why Choose Us</span>
-                                    <h2>Why choose our waste disposal services</h2>
+                                    <span class="sub-title">Nima uchun biz</span>
+                                    <h2>Nima uchun bizning xizmatlarimizni tanlash kerak</h2>
                                 </div>
                                 <div class="text-box mb_35">
-                                    <p>Lorem ipsum dolor sit amet consectetur. Nam quis bibendum lacinia eu id in. Quisque porttitor tortor blandit nunc sed ac id. Mattis in nunc libero viverra. Consectetur leo nibh ac at amet.</p>
+                                    <p>Biz mijozlarimizga eng sifatli xizmatlarni taqdim etishga intilamiz. Zamonaviy texnika, tajribali mutaxassislar va qulay narxlar - bizning ustunliklarimiz.</p>
                                 </div>
                                 <div class="inner-box mb_35">
                                     <div class="single-item">
                                         <div class="icon-box"><i class="icon-19"></i></div>
-                                        <h3>Residential waste pickup</h3>
-                                        <p>Amet minim mollit no duis deserut lamo sit enim aliqua dolor do amet sint velit</p>
+                                        <h3>Uy-joy chiqindilari</h3>
+                                        <p>Turar-joy binolaridan muntazam ravishda chiqindilarni yig'ib olib ketish xizmati</p>
                                     </div>
                                     <div class="single-item">
                                         <div class="icon-box"><i class="icon-20"></i></div>
-                                        <h3>Roll-off dumpsters</h3>
-                                        <p>Amet minim mollit no duis deserut lamo sit enim aliqua dolor do amet sint velit</p>
+                                        <h3>Katta konteynerlar</h3>
+                                        <p>Qurilish va sanoat chiqindilari uchun turli hajmdagi konteynerlar ijarasi</p>
                                     </div>
                                 </div>
                                 <div class="btn-box">
-                                    <a href="contact.html" class="theme-btn btn-one shadow"><span>Contact Us</span></a>
+                                    <a href="/contact" class="theme-btn btn-one shadow"><span>Bog'lanish</span></a>
                                 </div>
                             </div>
                         </div>
@@ -364,10 +310,10 @@
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-11.png);"></div>
             <div class="auto-container">
                 <div class="inner-box">
-                    <h2>Become our customer & get <br />special service</h2>
+                    <h2>Bizning mijozimiz bo'ling va <br />maxsus xizmatlardan foydalaning</h2>
                     <div class="btn-box">
-                        <a href="contact.html" class="theme-btn btn-one"><span>Contact Us</span></a>
-                        <a href="index.html" class="theme-btn btn-two"><span>Get a Quotes</span></a>
+                        <a href="/contact" class="theme-btn btn-one"><span>Bog'lanish</span></a>
+                        <a href="/contact" class="theme-btn btn-two"><span>Narx olish</span></a>
                     </div>
                 </div>
             </div>
@@ -386,8 +332,8 @@
                     <div class="row clearfix">
                         <div class="col-lg-6 col-md-12 col-sm-12 title-column">
                             <div class="sec-title light pr_90">
-                                <span class="sub-title">Recycle Materials</span>
-                                <h2>We collect, recycle & disposal all materials</h2>
+                                <span class="sub-title">Qayta ishlanadigan materiallar</span>
+                                <h2>Biz barcha turdagi materiallarni yig'amiz va qayta ishlaymiz</h2>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 list-column">
@@ -395,19 +341,19 @@
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <ul class="list-style-one clearfix">
-                                            <li>Steel</li>
-                                            <li>Plastic</li>
-                                            <li>Lights & Bulbs</li>
-                                            <li>Books & Papers</li>
-                                            <li>Bottles</li>
+                                            <li>Temir va po'lat</li>
+                                            <li>Plastmassa</li>
+                                            <li>Lampalar va chiroqlar</li>
+                                            <li>Kitob va qog'oz</li>
+                                            <li>Shisha idishlar</li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <ul class="list-style-one clearfix">
-                                            <li>Food & Grocery</li>
-                                            <li>Common Waste</li>
-                                            <li>Newspaper</li>
-                                            <li>Food & Grocery</li>
+                                            <li>Oziq-ovqat qoldiqlari</li>
+                                            <li>Maishiy chiqindilar</li>
+                                            <li>Gazeta va jurnallar</li>
+                                            <li>Elektron chiqindilar</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -424,8 +370,8 @@
         <section class="testimonial-section centred sec-pad">
             <div class="auto-container">
                 <div class="sec-title mb_50">
-                    <span class="sub-title">Testimonials</span>
-                    <h2>What our clients say <br />about wastix</h2>
+                    <span class="sub-title">Mijozlar fikri</span>
+                    <h2>Mijozlarimiz biz haqimizda <br />nima deydi</h2>
                 </div>
                 <div class="three-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
                     <div class="testimonial-block-one">
@@ -438,12 +384,12 @@
                                     <li><i class="icon-21"></i></li>
                                     <li><i class="icon-22"></i></li>
                                 </ul>
-                                <p>Lorem ipsum dolor sit amet consectetur vehicula et nulla sed. Proin nunc massa tempus convallis pellentesque. Tincidunt vitae est eget erat tristique.</p>
-                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-1.png" alt=""></figure>
+                                <p>Juda yaxshi xizmat! Har kuni o'z vaqtida kelib, chiqindilarimizni olib ketishadi. Hovlimiz doim toza va ozoda. Rahmat!</p>
+                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-1.png" alt="Mijoz"></figure>
                             </div>
                             <div class="author-box">
-                                <h3>Leslie Alexander</h3>
-                                <span class="designation">Creative Designer</span>
+                                <h3>Aziza Karimova</h3>
+                                <span class="designation">Uy bekasi</span>
                             </div>
                         </div>
                     </div>
@@ -457,12 +403,12 @@
                                     <li><i class="icon-21"></i></li>
                                     <li><i class="icon-22"></i></li>
                                 </ul>
-                                <p>Lorem ipsum dolor sit amet consectetur vehicula et nulla sed. Proin nunc massa tempus convallis pellentesque. Tincidunt vitae est eget erat tristique.</p>
-                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-2.png" alt=""></figure>
+                                <p>Bizning korxonamiz uchun konteyner ijarasi xizmatidan foydalanmoqdamiz. Narxi ham qulay, xizmati ham a'lo darajada.</p>
+                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-2.png" alt="Mijoz"></figure>
                             </div>
                             <div class="author-box">
-                                <h3>Savanah Nguyen</h3>
-                                <span class="designation">WP Developer</span>
+                                <h3>Jasur Toshmatov</h3>
+                                <span class="designation">Korxona direktori</span>
                             </div>
                         </div>
                     </div>
@@ -476,12 +422,12 @@
                                     <li><i class="icon-21"></i></li>
                                     <li><i class="icon-22"></i></li>
                                 </ul>
-                                <p>Lorem ipsum dolor sit amet consectetur vehicula et nulla sed. Proin nunc massa tempus convallis pellentesque. Tincidunt vitae est eget erat tristique.</p>
-                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-3.png" alt=""></figure>
+                                <p>Mahallada tozalik saqlanmoqda. Xodimlar juda mehnatkash va mas'uliyatli. Bunday xizmat uchun minnatdormiz.</p>
+                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-3.png" alt="Mijoz"></figure>
                             </div>
                             <div class="author-box">
-                                <h3>Ralph Edwards</h3>
-                                <span class="designation">UX Designer</span>
+                                <h3>Nodira Rahimova</h3>
+                                <span class="designation">Mahalla raisi</span>
                             </div>
                         </div>
                     </div>
@@ -497,36 +443,36 @@
                 <div class="project-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
                     <div class="project-block-one">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="/assets/images/project/project-1.jpg" alt=""></figure>
+                            <figure class="image-box"><img src="/assets/images/project/project-1.jpg" alt="Chiqindi yig'ish"></figure>
                             <div class="content-box">
                                 <div class="view-btn"><a href="/assets/images/project/project-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-23"></i></a></div>
                                 <div class="text-box">
-                                    <p>Waste Pickup</p>
-                                    <h3><a href="project-details.html">Garbage pickup</a></h3>
+                                    <p>Loyiha</p>
+                                    <h3><a href="/project-details">Shahar tozaligi</a></h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="project-block-one">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="/assets/images/project/project-2.jpg" alt=""></figure>
+                            <figure class="image-box"><img src="/assets/images/project/project-2.jpg" alt="Qayta ishlash"></figure>
                             <div class="content-box">
                                 <div class="view-btn"><a href="/assets/images/project/project-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-23"></i></a></div>
                                 <div class="text-box">
-                                    <p>Waste Pickup</p>
-                                    <h3><a href="project-details.html">Grocery waste removal</a></h3>
+                                    <p>Loyiha</p>
+                                    <h3><a href="/project-details">Bozor tozaligi</a></h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="project-block-one">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="/assets/images/project/project-3.jpg" alt=""></figure>
+                            <figure class="image-box"><img src="/assets/images/project/project-3.jpg" alt="Chiqindi olib ketish"></figure>
                             <div class="content-box">
                                 <div class="view-btn"><a href="/assets/images/project/project-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-23"></i></a></div>
                                 <div class="text-box">
-                                    <p>Waste Pickup</p>
-                                    <h3><a href="project-details.html">Waste collection</a></h3>
+                                    <p>Loyiha</p>
+                                    <h3><a href="/project-details">Sanoat zonasi</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -541,25 +487,25 @@
         <section class="news-section sec-pad">
             <div class="auto-container">
                 <div class="sec-title mb_50 centred">
-                    <span class="sub-title">Our Articles</span>
-                    <h2>Get more update from <br />wastix</h2>
+                    <span class="sub-title">Yangiliklar</span>
+                    <h2>Bizning so'nggi <br />yangiliklar</h2>
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                         <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="blog-details.html"><img src="/assets/images/news/news-1.jpg" alt=""></a></figure>
-                                    <div class="post-date"><h3>06 Dec</h3></div>
+                                    <figure class="image"><a href="/news"><img src="/assets/images/news/news-1.jpg" alt="Yangilik"></a></figure>
+                                    <div class="post-date"><h3>15 Yan</h3></div>
                                 </div>
                                 <div class="lower-content">
                                     <ul class="post-info mb_6 clearfix">
-                                        <li><i class="icon-24"></i><a href="blog-details.html">Admin</a></li>
-                                        <li><i class="icon-25"></i>0 Comnt</li>
+                                        <li><i class="icon-24"></i><a href="/news">Admin</a></li>
+                                        <li><i class="icon-25"></i>0 Izoh</li>
                                     </ul>
-                                    <h3><a href="blog-details.html">Largest solid waste management company</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Aliquet amet elementum.</p>
-                                    <div class="link"><a href="blog-details.html"><i class="icon-26"></i></a></div>
+                                    <h3><a href="/news">Yangi chiqindi yig'ish texnikasi xarid qilindi</a></h3>
+                                    <p>Kompaniyamiz zamonaviy texnikalar bilan boyitildi.</p>
+                                    <div class="link"><a href="/news"><i class="icon-26"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -568,17 +514,17 @@
                         <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="blog-details.html"><img src="/assets/images/news/news-2.jpg" alt=""></a></figure>
-                                    <div class="post-date"><h3>05 Dec</h3></div>
+                                    <figure class="image"><a href="/news"><img src="/assets/images/news/news-2.jpg" alt="Yangilik"></a></figure>
+                                    <div class="post-date"><h3>10 Yan</h3></div>
                                 </div>
                                 <div class="lower-content">
                                     <ul class="post-info mb_6 clearfix">
-                                        <li><i class="icon-24"></i><a href="blog-details.html">Admin</a></li>
-                                        <li><i class="icon-25"></i>4 Comnt</li>
+                                        <li><i class="icon-24"></i><a href="/news">Admin</a></li>
+                                        <li><i class="icon-25"></i>4 Izoh</li>
                                     </ul>
-                                    <h3><a href="blog-details.html">Approved wastix disposal facility expands capacity</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Aliquet amet elementum.</p>
-                                    <div class="link"><a href="blog-details.html"><i class="icon-26"></i></a></div>
+                                    <h3><a href="/news">Qayta ishlash zavodi quvvatini oshirdi</a></h3>
+                                    <p>Chiqindilarni qayta ishlash imkoniyatlari kengaydi.</p>
+                                    <div class="link"><a href="/news"><i class="icon-26"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -587,17 +533,17 @@
                         <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="blog-details.html"><img src="/assets/images/news/news-3.jpg" alt=""></a></figure>
-                                    <div class="post-date"><h3>04 Dec</h3></div>
+                                    <figure class="image"><a href="/news"><img src="/assets/images/news/news-3.jpg" alt="Yangilik"></a></figure>
+                                    <div class="post-date"><h3>05 Yan</h3></div>
                                 </div>
                                 <div class="lower-content">
                                     <ul class="post-info mb_6 clearfix">
-                                        <li><i class="icon-24"></i><a href="blog-details.html">Admin</a></li>
-                                        <li><i class="icon-25"></i>6 Comnt</li>
+                                        <li><i class="icon-24"></i><a href="/news">Admin</a></li>
+                                        <li><i class="icon-25"></i>6 Izoh</li>
                                     </ul>
-                                    <h3><a href="blog-details.html">Waste management container or bin for my home?</a></h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Aliquet amet elementum.</p>
-                                    <div class="link"><a href="blog-details.html"><i class="icon-26"></i></a></div>
+                                    <h3><a href="/news">Uy uchun qanday konteyner tanlash kerak?</a></h3>
+                                    <p>Konteyner tanlashda yordam beramiz.</p>
+                                    <div class="link"><a href="/news"><i class="icon-26"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -620,12 +566,12 @@
                 <div class="row clearfix">
                     <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
                         <div class="content-box">
-                            <h2>Subscribe to our <br />newsletter</h2>
+                            <h2>Yangiliklardan <br />xabardor bo'ling</h2>
                             <div class="form-inner">
-                                <form method="post" action="contact.html">
+                                <form method="post" action="/contact">
                                     <div class="form-group">
-                                        <input type="email" name="email" placeholder="Your email" required>
-                                        <button type="submit">Subscribe</button>
+                                        <input type="email" name="email" placeholder="Email manzilingiz" required>
+                                        <button type="submit">Obuna bo'lish</button>
                                     </div>
                                 </form>
                             </div>
@@ -642,8 +588,10 @@
 
 <script setup>
 useHead({
-  title: 'Wastix - HTML 5 Template Preview',
+  title: 'Wastix - Chiqindilarni boshqarish xizmatlari',
 })
 </script>
+
+
 
 

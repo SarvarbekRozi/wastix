@@ -1,4 +1,4 @@
-﻿<template>
+<template>
 <!-- preloader -->
         <div class="loader-wrap">
             <div class="preloader">
@@ -109,7 +109,7 @@
                         </ul>
                     </div>
                     <div class="top-right">
-                        <div class="login-box"><a href="/">Kirish</a></div>
+<!--                        <div class="login-box"><a href="/">Kirish</a></div>-->
                         <ul class="social-links clearfix">
                             <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="/"><i class="fab fa-twitter"></i></a></li>
@@ -135,17 +135,17 @@
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li class="current"><a href="/">Bosh sahifa</a></li>
-                                    <li class="dropdown"><a href="/about/tashkilot">Biz haqimizda</a>
+                                    <li class="dropdown"><a href="/about/organization">Biz haqimizda</a>
                                         <ul>
-                                            <li><a href="/about/tashkilot">Tashkilot haqida</a></li>
-                                            <li><a href="/about/rahbariyat">Rahbariyat</a></li>
-                                            <li><a href="/about/xodimlar">Xodimlar</a></li>
+                                            <li><a href="/about/organization">Tashkilot haqida</a></li>
+                                            <li><a href="/about/leadership">Rahbariyat</a></li>
+                                            <li><a href="/about/staff">Xodimlar</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/hududlar">Bizning hududlar</a></li>
-                                    <li><a href="/yangiliklar">Yangiliklar</a></li>
-                                    <li><a href="/elonlar">E'lonlar</a></li>
-                                    <li><a href="/aloqa">Aloqa</a></li>
+                                    <li><a href="/regions">Bizning hududlar</a></li>
+                                    <li><a href="/news">Yangiliklar</a></li>
+                                    <li><a href="/announcements">E'lonlar</a></li>
+                                    <li><a href="/contact">Aloqa</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -158,7 +158,7 @@
                                 <i class="icon-5"></i>
                             </li>
                             <li class="btn-box">
-                                <a href="/aloqa" class="theme-btn btn-one"><span>Ariza qoldirish</span></a>
+                                <a href="/contact" class="theme-btn btn-one"><span>Ariza qoldirish</span></a>
                             </li>
                         </ul>
                     </div>
@@ -185,7 +185,7 @@
                                     <i class="icon-5"></i>
                                 </li>
                                 <li class="btn-box">
-                                    <a href="/aloqa" class="theme-btn btn-one"><span>Ariza qoldirish</span></a>
+                                    <a href="/contact" class="theme-btn btn-one"><span>Ariza qoldirish</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -223,4 +223,7 @@
             </nav>
         </div><!-- End Mobile Menu -->
 </template>
+
+
+
 

@@ -15,10 +15,10 @@
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Contact Us</h1>
+                    <h1>Aloqa</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="/">Home</a></li>
-                        <li>Contact Us</li>
+                        <li><a href="/">Bosh sahifa</a></li>
+                        <li>Aloqa</li>
                     </ul>
                 </div>
             </div>
@@ -33,25 +33,25 @@
                     <div class="col-lg-4 col-md-12 col-sm-12 content-column">
                         <div class="content-box mr_70">
                             <div class="sec-title mb_45">
-                                <span class="sub-title">Find Our Office</span>
-                                <h2>Contact with the team</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur. Aliquet amet elementum.</p>
+                                <span class="sub-title">Bizning manzil</span>
+                                <h2>Jamoa bilan bog‘laning</h2>
+                                <p>Taklif va murojaatlaringizni yuboring, tez orada javob beramiz.</p>
                             </div>
                             <ul class="info-list clearfix">
                                 <li>
                                     <div class="icon"><i class="icon-43"></i></div>
-                                    <h4>Location</h4>
-                                    <p>New Hyde Park, NY 11040</p>
+                                    <h4>Manzil</h4>
+                                    <p>Toshkent shahri, O‘zbekiston</p>
                                 </li>
                                 <li>
                                     <div class="icon"><i class="icon-4"></i></div>
-                                    <h4>Phone no</h4>
-                                    <p><a href="tel:913336660021">(+91) 333 666 0021</a></p>
+                                    <h4>Telefon</h4>
+                                    <p><a href="tel:+998712000000">+998 (71) 200 00 00</a></p>
                                 </li>
                                 <li>
                                     <div class="icon"><i class="icon-2"></i></div>
                                     <h4>Email</h4>
-                                    <p><a href="mailto:support@example.com">support@example.com</a></p>
+                                    <p><a href="mailto:info@example.uz">info@example.uz</a></p>
                                 </li>
                             </ul>
                         </div>
@@ -61,22 +61,22 @@
                             <form method="post" action="sendemail.php" id="contact-form" class="default-form"> 
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="username" placeholder="Your Name" required="">
+                                        <input type="text" name="username" placeholder="Ismingiz" required="">
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="email" name="email" placeholder="Your email" required="">
+                                        <input type="email" name="email" placeholder="Email manzil" required="">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="phone" required="" placeholder="Phone">
+                                        <input type="text" name="phone" required="" placeholder="Telefon">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="subject" required="" placeholder="Subject">
+                                        <input type="text" name="subject" required="" placeholder="Mavzu">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <textarea name="message" placeholder="message"></textarea>
+                                        <textarea name="message" placeholder="Xabar"></textarea>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn centred">
-                                        <button class="theme-btn btn-one shadow" type="submit" name="submit-form"><span>Send Message</span></button>
+                                        <button class="theme-btn btn-one shadow" type="submit" name="submit-form"><span>Xabar yuborish</span></button>
                                     </div>
                                 </div>
                             </form>
@@ -85,56 +85,12 @@
                 </div>
             </div>
         </section>
-        <!-- contact-section end -->
 
-        <!-- google-map-section -->
-        <section class="google-map-section">
-            <div class="map-inner">
-                <div 
-                    class="google-map" 
-                    id="contact-google-map" 
-                    data-map-lat="40.712776" 
-                    data-map-lng="-74.005974" 
-                    data-icon-path="/assets/images/icons/map-marker.png"  
-                    data-map-title="Brooklyn, New York, United Kingdom" 
-                    data-map-zoom="12" 
-                    data-markers='{
-                        "marker-1": [40.712776, -74.005974, "<h4>Branch Office</h4><p>77/99 New York</p>","/assets/images/icons/map-marker.png"]
-                    }'>
-
-                </div>
-            </div>
-        </section>
-        <!-- google-map-section end -->
-
-
-        
-        
-    <!-- jequery plugins -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    <!-- map script -->
-    
-    
-    
-
-    <!-- main-js -->
-    
 </template>
 
 <script setup>
 useHead({
-  title: 'Wastix - HTML 5 Template Preview',
+  title: 'Aloqa',
   script: [
     {
       src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU',

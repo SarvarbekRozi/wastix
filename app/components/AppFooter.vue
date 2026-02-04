@@ -1,4 +1,4 @@
-﻿<template>
+<template>
 <!-- main-footer -->
         <footer class="main-footer">
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-13.png);"></div>
@@ -21,11 +21,11 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="/about/tashkilot">Tashkilot haqida</a></li>
-                                        <li><a href="/hududlar">Bizning hududlar</a></li>
-                                        <li><a href="/yangiliklar">Yangiliklar</a></li>
-                                        <li><a href="/elonlar">E'lonlar</a></li>
-                                        <li><a href="/aloqa">Aloqa</a></li>
+                                        <li><a href="/about/organization">Tashkilot haqida</a></li>
+                                        <li><a href="/regions">Bizning hududlar</a></li>
+                                        <li><a href="/news">Yangiliklar</a></li>
+                                        <li><a href="/announcements">E'lonlar</a></li>
+                                        <li><a href="/contact">Aloqa</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -92,4 +92,7 @@
         </div>
         <!-- Scroll to top end -->
 </template>
+
+
+
 
