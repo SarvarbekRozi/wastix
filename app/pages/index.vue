@@ -144,6 +144,11 @@
         <!-- about-section end -->
 
 
+        <!-- map-section -->
+        <UzbekistanMap />
+        <!-- map-section end -->
+
+
         <!-- service-section -->
         <section class="service-section sec-pad centred bg-color-1">
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-7.png);"></div>
