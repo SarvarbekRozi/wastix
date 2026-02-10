@@ -6,7 +6,10 @@
       "Bash(powershell -Command \"Invoke-WebRequest -Uri ''https://images.unsplash.com/photo-1526951521990-620dc14c214b?w=630&h=400&fit=crop'' -OutFile ''D:\\\\shablonlar\\\\wastix-nuxt\\\\public\\\\assets\\\\images\\\\project\\\\project-1.jpg''\")",
       "Bash(powershell -Command \"Invoke-WebRequest -Uri ''https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=630&h=400&fit=crop'' -OutFile ''D:\\\\shablonlar\\\\wastix-nuxt\\\\public\\\\assets\\\\images\\\\project\\\\project-3.jpg''\")",
       "Bash(powershell -Command \"Invoke-WebRequest -Uri ''https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=410&h=270&fit=crop'' -OutFile ''D:\\\\shablonlar\\\\wastix-nuxt\\\\public\\\\assets\\\\images\\\\news\\\\news-1.jpg''\")",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri ''http://localhost:3003'' -UseBasicParsing\\).Content\")",
+      "Bash(powershell:*)",
+      "Bash(npm run dev:*)"
     ]
   }
 }

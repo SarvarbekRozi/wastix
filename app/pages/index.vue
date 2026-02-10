@@ -17,7 +17,7 @@
                                     <h2 class="p_relative d_block">Chiqindilarni boshqarish yechimlari</h2>
                                     <p class="p_relative d_block">Biz sizning uyingiz va biznesingiz uchun professional chiqindilarni yig'ish va qayta ishlash xizmatlarini taqdim etamiz.</p>
                                     <div class="btn-box">
-                                        <a href="/about" class="theme-btn btn-one"><span>Batafsil</span></a>
+                                        <a href="/about/organization" class="theme-btn btn-one"><span>Batafsil</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -69,8 +69,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                             <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                                <div class="inner-box">
-                                    <div class="shape" style="background-image: url(/assets/images/shape/shape-6.png);"></div>
+                                <div class="inner-box feature-clean">
                                     <div class="icon-box"><i class="icon-8"></i></div>
                                     <h3><a href="">Konteyner o'lchamlari</a></h3>
                                     <p>Har xil hajmdagi <br>konteynerlar mavjud.</p>
@@ -79,8 +78,7 @@
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                             <div class="feature-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                <div class="inner-box">
-                                    <div class="shape" style="background-image: url(/assets/images/shape/shape-6.png);"></div>
+                                <div class="inner-box feature-clean">
                                     <div class="icon-box"><i class="icon-9"></i></div>
                                     <h3><a href="">Chiqindi yig'ish</a></h3>
                                     <p>Muntazam chiqindi yig'ish <br>xizmati.</p>
@@ -89,8 +87,7 @@
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                             <div class="feature-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                                <div class="inner-box">
-                                    <div class="shape" style="background-image: url(/assets/images/shape/shape-6.png);"></div>
+                                <div class="inner-box feature-clean">
                                     <div class="icon-box"><i class="icon-10"></i></div>
                                     <h3><a href="">Yig'ish jadvali</a></h3>
                                     <p>Qulay vaqtda chiqindi olib <br>ketish.</p>
@@ -123,7 +120,7 @@
                                     <li>Ekologik xavfsiz utilizatsiya</li>
                                 </ul>
                                 <div class="btn-box">
-                                    <a href="/contact" class="theme-btn btn-one shadow"><span>Bog'lanish</span></a>
+                                    <a href="/about/organization" class="theme-btn btn-one shadow"><span>Batafsil</span></a>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +147,7 @@
 
 
         <!-- service-section -->
-        <section class="service-section sec-pad centred bg-color-1">
+        <section class="service-section sec-pad centred bg-color-1" style="padding: 50px 0 100px 0;!important;">
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-7.png);"></div>
             <div class="auto-container">
                 <div class="sec-title mb_50">
@@ -221,7 +218,7 @@
         <!-- funfact-section -->
         <section class="funfact-section">
             <div class="auto-container">
-                <div class="inner-container">
+                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
                     <div class="funfact-block-one">
                         <div class="inner-box">
                             <div class="icon-box"><i class="icon-15"></i></div>
@@ -244,9 +241,36 @@
                         <div class="inner-box">
                             <div class="icon-box"><i class="icon-17"></i></div>
                             <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="20">0</span><span>5k</span>
+                                <span class="count-text" data-speed="1500" data-stop="25">0</span><span>k</span>
                             </div>
                             <h4>Yig'ilgan chiqindilar (tonna)</h4>
+                        </div>
+                    </div>
+                    <div class="funfact-block-one">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="icon-15"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="150">0</span><span>+</span>
+                            </div>
+                            <h4>Xodimlar soni</h4>
+                        </div>
+                    </div>
+                    <div class="funfact-block-one">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="icon-16"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="14">0</span>
+                            </div>
+                            <h4>Viloyatlarda faoliyat</h4>
+                        </div>
+                    </div>
+                    <div class="funfact-block-one">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="icon-17"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="500">0</span><span>+</span>
+                            </div>
+                            <h4>Konteynerlar o'rnatilgan</h4>
                         </div>
                     </div>
                 </div>
@@ -316,10 +340,10 @@
             <div class="auto-container">
                 <div class="inner-box">
                     <h2>Bizning mijozimiz bo'ling va <br />maxsus xizmatlardan foydalaning</h2>
-                    <div class="btn-box">
-                        <a href="/contact" class="theme-btn btn-one"><span>Bog'lanish</span></a>
-                        <a href="/contact" class="theme-btn btn-two"><span>Narx olish</span></a>
-                    </div>
+<!--                    <div class="btn-box">-->
+<!--                        <a href="/contact" class="theme-btn btn-one"><span>Bog'lanish</span></a>-->
+<!--                        <a href="/contact" class="theme-btn btn-two"><span>Narx olish</span></a>-->
+<!--                    </div>-->
                 </div>
             </div>
         </section>
@@ -372,7 +396,7 @@
 
 
         <!-- testimonial-section -->
-        <section class="testimonial-section centred sec-pad">
+        <section class="testimonial-section centred sec-pad"  style="padding: 50px 0 0 0;!important;">
             <div class="auto-container">
                 <div class="sec-title mb_50">
                     <span class="sub-title">Mijozlar fikri</span>
@@ -440,52 +464,6 @@
             </div>
         </section>
         <!-- testimonial-section end -->
-
-
-        <!-- project-section -->
-        <section class="project-section">
-            <div class="outer-container">
-                <div class="project-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                    <div class="project-block-one">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="/assets/images/project/project-1.jpg" alt="Chiqindi yig'ish"></figure>
-                            <div class="content-box">
-                                <div class="view-btn"><a href="/assets/images/project/project-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-23"></i></a></div>
-                                <div class="text-box">
-                                    <p>Loyiha</p>
-                                    <h3><a href="/project-details">Shahar tozaligi</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-block-one">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="/assets/images/project/project-2.jpg" alt="Qayta ishlash"></figure>
-                            <div class="content-box">
-                                <div class="view-btn"><a href="/assets/images/project/project-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-23"></i></a></div>
-                                <div class="text-box">
-                                    <p>Loyiha</p>
-                                    <h3><a href="/project-details">Bozor tozaligi</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-block-one">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="/assets/images/project/project-3.jpg" alt="Chiqindi olib ketish"></figure>
-                            <div class="content-box">
-                                <div class="view-btn"><a href="/assets/images/project/project-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-23"></i></a></div>
-                                <div class="text-box">
-                                    <p>Loyiha</p>
-                                    <h3><a href="/project-details">Sanoat zonasi</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- project-section end -->
 
 
         <!-- news-section -->
@@ -557,35 +535,6 @@
             </div>
         </section>
         <!-- news-section -->
-
-
-        <!-- subscribe-section -->
-        <section class="subscribe-section">
-            <div class="pattern-layer">
-                <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-27.png);"></div>
-                <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                <div class="pattern-3" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                <div class="pattern-4" style="background-image: url(/assets/images/shape/shape-28.png);"></div>
-            </div>
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
-                        <div class="content-box">
-                            <h2>Yangiliklardan <br />xabardor bo'ling</h2>
-                            <div class="form-inner">
-                                <form method="post" action="/contact">
-                                    <div class="form-group">
-                                        <input type="email" name="email" placeholder="Email manzilingiz" required>
-                                        <button type="submit">Obuna bo'lish</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- subscribe-section end -->
 
 
         

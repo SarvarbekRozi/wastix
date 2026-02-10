@@ -64,6 +64,32 @@
 }
 
 
+.feature-block-one .inner-box.feature-clean{
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 50px 40px 44px 40px;
+  text-align: center;
+  transition: all 500ms ease;
+}
+
+.feature-block-one .inner-box.feature-clean:hover{
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+  transform: translateY(-10px);
+}
+
+.feature-block-one .inner-box.feature-clean .icon-box{
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  border-radius: 50%;
+  background: rgba(58, 158, 30, 0.1);
+  margin: 0 auto 20px;
+  font-size: 42px;
+  text-align: center;
+}
+
+
 /** feature-style-two **/
 
 .feature-style-two{

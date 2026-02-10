@@ -1,8 +1,10 @@
 import HighchartsVue from 'highcharts-vue'
-import Highcharts from 'highcharts'
-import HighchartsMap from 'highcharts/modules/map'
 
-export default defineNuxtPlugin((nuxtApp) => {
-  HighchartsMap(Highcharts)
+export default defineNuxtPlugin(async (nuxtApp) => {
+  const Highcharts = (await import('highcharts')).default
+  const HighchartsMap = (await import('highcharts/modules/map')).default
+  if (typeof HighchartsMap === 'function') {
+    HighchartsMap(Highcharts)
+  }
   nuxtApp.vueApp.use(HighchartsVue)
 })

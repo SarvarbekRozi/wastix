@@ -157,9 +157,9 @@
                             <li class="search-box-outer search-toggler">
                                 <i class="icon-5"></i>
                             </li>
-                            <li class="btn-box">
-                                <a href="/contact" class="theme-btn btn-one"><span>Ariza qoldirish</span></a>
-                            </li>
+<!--                            <li class="btn-box">-->
+<!--                                <a href="/contact" class="theme-btn btn-one"><span>Ariza qoldirish</span></a>-->
+<!--                            </li>-->
                         </ul>
                     </div>
                 </div>
@@ -184,9 +184,9 @@
                                 <li class="search-box-outer search-toggler">
                                     <i class="icon-5"></i>
                                 </li>
-                                <li class="btn-box">
-                                    <a href="/contact" class="theme-btn btn-one"><span>Ariza qoldirish</span></a>
-                                </li>
+<!--                                <li class="btn-box">-->
+<!--                                    <a href="/contact" class="theme-btn btn-one"><span>Ariza qoldirish</span></a>-->
+<!--                                </li>-->
                             </ul>
                         </div>
                     </div>
