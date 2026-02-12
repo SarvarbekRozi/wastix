@@ -1,11 +1,11 @@
 <template>
-  <section class="map-section sec-pad">
+  <section class="map-section sec-pad" style="padding: 50px 0;">
     <div class="auto-container">
       <div class="sec-title mb_50 centred">
         <span class="sub-title">Bizning filiallar</span>
         <h2>O'zbekiston bo'ylab <br />xizmat ko'rsatish</h2>
       </div>
-      <div class="row clearfix">
+      <div class="row clearfix align-items-center">
         <!-- Map Column -->
         <div class="col-lg-7 col-md-12 col-sm-12 map-column">
           <div class="map-wrapper">
@@ -29,7 +29,10 @@
               :key="index"
               class="branch-card"
             >
-              <h4 class="branch-name">{{ branch.name }}</h4>
+              <h4 class="branch-name">
+                <i class="fas fa-building"></i>
+                {{ branch.name }}
+              </h4>
               <p class="branch-address">
                 <i class="fas fa-map-marker-alt"></i>
                 {{ branch.address }}
@@ -38,13 +41,17 @@
                 <i class="fas fa-phone-alt"></i>
                 {{ branch.phone }}
               </p>
-              <p class="branch-map-label">Quyidagi xaritalar orqali ochishingiz mumkin:</p>
               <div class="branch-buttons">
-                <a :href="branch.googleMap" target="_blank" class="map-btn google-btn">Google Map</a>
-                <a :href="branch.yandexMap" target="_blank" class="map-btn yandex-btn">Yandex Map</a>
+                <a :href="branch.googleMap" target="_blank" class="map-btn google-btn">
+                  <i class="fas fa-map"></i> Google Map
+                </a>
+                <a :href="branch.yandexMap" target="_blank" class="map-btn yandex-btn">
+                  <i class="fas fa-map-marked-alt"></i> Yandex Map
+                </a>
               </div>
             </div>
             <div v-if="filteredBranches.length === 0" class="no-branches">
+              <i class="fas fa-info-circle"></i>
               <p>Bu hududda filiallar hali mavjud emas.</p>
             </div>
           </div>
@@ -59,6 +66,9 @@ import { ref, computed } from 'vue'
 
 const selectedRegionKey = ref('uz-tk')
 const mapRef = ref(null)
+
+// Toshkent shahri va viloyati yashil rangda
+const activeRegions = ['uz-tk', 'uz-ta']
 
 const regionNames = {
   'uz-fa': "Farg'ona viloyati",
@@ -82,155 +92,27 @@ const selectedRegion = computed(() => regionNames[selectedRegionKey.value] || ''
 const branches = [
   {
     region: 'uz-tk',
-    name: "O'zbekiston Respublikasi Ekologiya vazirligi",
-    address: "Toshkent shahri, Chilonzor tumani, Bunyodkor shoh ko'chasi, 7-A uy",
-    phone: '+998712071107',
-    googleMap: 'https://maps.google.com/?q=41.2995,69.2401',
-    yandexMap: 'https://yandex.uz/maps/?pt=69.2401,41.2995&z=16'
-  },
-  {
-    region: 'uz-tk',
-    name: 'Toshkent shahar filiali — Qazi mahalla',
-    address: "Yunusobod tumani, Firdavsiy ko'chasi, 26-uy. Mo'ljal: 5-sonli stomatologiya...",
+    name: "Mirzo Ulug'bek tumani",
+    address: "Toshkent shahri, Mirzo Ulug'bek tumani, Buyuk Ipak Yo'li ko'chasi, 107-uy",
     phone: '+998 (78) 140 14 14',
-    googleMap: 'https://maps.google.com/?q=41.3547,69.2847',
-    yandexMap: 'https://yandex.uz/maps/?pt=69.2847,41.3547&z=16'
-  },
-  {
-    region: 'uz-tk',
-    name: 'Toshkent shahar filiali — Jarariq',
-    address: "Shayxontohur tumani, Jarariq va Yoqub Ziyoyev ko'chalari kesishmasida...",
-    phone: '+998 (78) 140 14 14',
-    googleMap: 'https://maps.google.com/?q=41.3247,69.2147',
-    yandexMap: 'https://yandex.uz/maps/?pt=69.2147,41.3247&z=16'
-  },
-  {
-    region: 'uz-tk',
-    name: 'Toshkent shahar filiali — Qorasaroy',
-    address: "Toshkent shahri, Olmazor tumani, Qorasaroy mahallasi, 91-A uy...",
-    phone: '+998 (78) 140 14 14',
-    googleMap: 'https://maps.google.com/?q=41.3447,69.1947',
-    yandexMap: 'https://yandex.uz/maps/?pt=69.1947,41.3447&z=16'
-  },
-  {
-    region: 'uz-tk',
-    name: 'Toshkent shahar filiali — Qoraqamish 1/3',
-    address: "Toshkent shahri, Qoraqamish 1/3, Sag'bon ko'chasi, 35-A-uy. Mo'ljal: Sulton...",
-    phone: '+998 (78) 140 14 14',
-    googleMap: 'https://maps.google.com/?q=41.2847,69.2547',
-    yandexMap: 'https://yandex.uz/maps/?pt=69.2547,41.2847&z=16'
-  },
-  {
-    region: 'uz-tk',
-    name: 'Toshkent shahar filiali — Qoraqamish 2/5',
-    address: "Olmazor tumani, \"Shodiyona\" MFY, Qoraqamish-2 ko'chasi, 17-uy...",
-    phone: '+998 (78) 140 14 14',
-    googleMap: 'https://maps.google.com/?q=41.2947,69.2047',
-    yandexMap: 'https://yandex.uz/maps/?pt=69.2047,41.2947&z=16'
-  },
-  {
-    region: 'uz-sa',
-    name: 'Samarqand viloyati filiali',
-    address: "Samarqand shahri, Registon ko'chasi, 15-uy",
-    phone: '+998 (66) 233 14 14',
-    googleMap: 'https://maps.google.com/?q=39.6547,66.9597',
-    yandexMap: 'https://yandex.uz/maps/?pt=66.9597,39.6547&z=16'
-  },
-  {
-    region: 'uz-fa',
-    name: "Farg'ona viloyati filiali",
-    address: "Farg'ona shahri, Mustaqillik ko'chasi, 42-uy",
-    phone: '+998 (73) 244 14 14',
-    googleMap: 'https://maps.google.com/?q=40.3847,71.7897',
-    yandexMap: 'https://yandex.uz/maps/?pt=71.7897,40.3847&z=16'
-  },
-  {
-    region: 'uz-bu',
-    name: 'Buxoro viloyati filiali',
-    address: "Buxoro shahri, Navoiy ko'chasi, 28-uy",
-    phone: '+998 (65) 221 14 14',
-    googleMap: 'https://maps.google.com/?q=39.7747,64.4297',
-    yandexMap: 'https://yandex.uz/maps/?pt=64.4297,39.7747&z=16'
-  },
-  {
-    region: 'uz-an',
-    name: 'Andijon viloyati filiali',
-    address: "Andijon shahri, Bobur shoh ko'chasi, 55-uy",
-    phone: '+998 (74) 223 14 14',
-    googleMap: 'https://maps.google.com/?q=40.7847,72.3447',
-    yandexMap: 'https://yandex.uz/maps/?pt=72.3447,40.7847&z=16'
-  },
-  {
-    region: 'uz-ng',
-    name: 'Namangan viloyati filiali',
-    address: "Namangan shahri, Uychi ko'chasi, 31-uy",
-    phone: '+998 (69) 228 14 14',
-    googleMap: 'https://maps.google.com/?q=40.9947,71.6697',
-    yandexMap: 'https://yandex.uz/maps/?pt=71.6697,40.9947&z=16'
-  },
-  {
-    region: 'uz-nw',
-    name: 'Navoiy viloyati filiali',
-    address: "Navoiy shahri, Navoiy ko'chasi, 10-uy",
-    phone: '+998 (79) 223 14 14',
-    googleMap: 'https://maps.google.com/?q=40.1047,65.3797',
-    yandexMap: 'https://yandex.uz/maps/?pt=65.3797,40.1047&z=16'
-  },
-  {
-    region: 'uz-kh',
-    name: 'Xorazm viloyati filiali',
-    address: "Urganch shahri, Al-Xorazmiy ko'chasi, 18-uy",
-    phone: '+998 (62) 224 14 14',
-    googleMap: 'https://maps.google.com/?q=41.5547,60.6297',
-    yandexMap: 'https://yandex.uz/maps/?pt=60.6297,41.5547&z=16'
-  },
-  {
-    region: 'uz-qr',
-    name: "Qoraqalpog'iston filiali",
-    address: "Nukus shahri, Berdax ko'chasi, 22-uy",
-    phone: '+998 (61) 222 14 14',
-    googleMap: 'https://maps.google.com/?q=42.4647,59.6047',
-    yandexMap: 'https://yandex.uz/maps/?pt=59.6047,42.4647&z=16'
-  },
-  {
-    region: 'uz-ji',
-    name: 'Jizzax viloyati filiali',
-    address: "Jizzax shahri, Sharof Rashidov ko'chasi, 7-uy",
-    phone: '+998 (72) 226 14 14',
-    googleMap: 'https://maps.google.com/?q=40.1247,67.8447',
-    yandexMap: 'https://yandex.uz/maps/?pt=67.8447,40.1247&z=16'
-  },
-  {
-    region: 'uz-si',
-    name: 'Sirdaryo viloyati filiali',
-    address: "Guliston shahri, Mustaqillik ko'chasi, 9-uy",
-    phone: '+998 (67) 225 14 14',
-    googleMap: 'https://maps.google.com/?q=40.4847,68.7847',
-    yandexMap: 'https://yandex.uz/maps/?pt=68.7847,40.4847&z=16'
-  },
-  {
-    region: 'uz-qa',
-    name: 'Qashqadaryo viloyati filiali',
-    address: "Qarshi shahri, Mustaqillik ko'chasi, 33-uy",
-    phone: '+998 (75) 225 14 14',
-    googleMap: 'https://maps.google.com/?q=38.8647,65.8047',
-    yandexMap: 'https://yandex.uz/maps/?pt=65.8047,38.8647&z=16'
-  },
-  {
-    region: 'uz-su',
-    name: 'Surxondaryo viloyati filiali',
-    address: "Termiz shahri, Al-Termiziy ko'chasi, 12-uy",
-    phone: '+998 (76) 227 14 14',
-    googleMap: 'https://maps.google.com/?q=37.2247,67.2797',
-    yandexMap: 'https://yandex.uz/maps/?pt=67.2797,37.2247&z=16'
+    googleMap: 'https://maps.google.com/?q=41.3389,69.3350',
+    yandexMap: 'https://yandex.uz/maps/?pt=69.3350,41.3389&z=16'
   },
   {
     region: 'uz-ta',
-    name: 'Toshkent viloyati filiali',
-    address: "Nurafshon shahri, Tinchlik ko'chasi, 5-uy",
+    name: "Yangiyo'l shahar",
+    address: "Toshkent viloyati, Yangiyo'l shahri, Mustaqillik ko'chasi, 22-uy",
     phone: '+998 (70) 202 14 14',
-    googleMap: 'https://maps.google.com/?q=41.0547,69.3297',
-    yandexMap: 'https://yandex.uz/maps/?pt=69.3297,41.0547&z=16'
+    googleMap: 'https://maps.google.com/?q=41.1117,69.0461',
+    yandexMap: 'https://yandex.uz/maps/?pt=69.0461,41.1117&z=16'
+  },
+  {
+    region: 'uz-ta',
+    name: "Yangiyo'l tumani",
+    address: "Toshkent viloyati, Yangiyo'l tumani, Navoiy ko'chasi, 8-uy",
+    phone: '+998 (70) 202 15 15',
+    googleMap: 'https://maps.google.com/?q=41.1050,69.0500',
+    yandexMap: 'https://yandex.uz/maps/?pt=69.0500,41.1050&z=16'
   }
 ]
 
@@ -244,7 +126,7 @@ const mapOptions = {
   chart: {
     map: mapData,
     backgroundColor: 'transparent',
-    height: 500
+    height: 420
   },
   title: { text: '' },
   credits: { enabled: false },
@@ -278,12 +160,12 @@ const mapOptions = {
   series: [{
     data: [
       { 'hc-key': 'uz-fa', value: 1 },
-      { 'hc-key': 'uz-tk', value: 1 },
+      { 'hc-key': 'uz-tk', value: 2, color: '#27ae60' },
       { 'hc-key': 'uz-an', value: 1 },
       { 'hc-key': 'uz-ng', value: 1 },
       { 'hc-key': 'uz-ji', value: 1 },
       { 'hc-key': 'uz-si', value: 1 },
-      { 'hc-key': 'uz-ta', value: 1 },
+      { 'hc-key': 'uz-ta', value: 2, color: '#27ae60' },
       { 'hc-key': 'uz-bu', value: 1 },
       { 'hc-key': 'uz-kh', value: 1 },
       { 'hc-key': 'uz-qr', value: 1 },
@@ -300,7 +182,7 @@ const mapOptions = {
       enabled: true,
       format: '{point.name}',
       style: {
-        fontSize: '9px',
+        fontSize: '8px',
         fontWeight: 'normal',
         textOutline: '1px white',
         color: '#2c3e50'
@@ -324,92 +206,79 @@ const mapOptions = {
 
 .selected-region-name {
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   color: #2c3e50;
-  margin-top: 10px;
+  margin-top: 5px;
   font-family: 'Fraunces', serif;
 }
 
 .branches-list {
-  max-height: 520px;
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-.branches-list::-webkit-scrollbar {
-  width: 4px;
-}
-
-.branches-list::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-.branches-list::-webkit-scrollbar-thumb {
-  background: #2e86c1;
-  border-radius: 4px;
+  padding-right: 5px;
 }
 
 .branch-card {
   background: #ffffff;
-  border-left: 4px solid #27ae60;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 3px solid #27ae60;
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
 }
 
 .branch-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
 }
 
 .branch-name {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   color: #2c3e50;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-family: 'Fraunces', serif;
+}
+
+.branch-name i {
+  color: #27ae60;
+  margin-right: 6px;
+  font-size: 14px;
 }
 
 .branch-address,
 .branch-phone {
-  font-size: 14px;
+  font-size: 13px;
   color: #555;
-  margin-bottom: 6px;
-  line-height: 1.6;
+  margin-bottom: 5px;
+  line-height: 1.5;
 }
 
 .branch-address i,
 .branch-phone i {
   color: #27ae60;
-  margin-right: 8px;
-  width: 16px;
+  margin-right: 6px;
+  width: 14px;
+  font-size: 12px;
 }
 
 .branch-phone i {
   color: #2e86c1;
 }
 
-.branch-map-label {
-  font-size: 13px;
-  color: #777;
-  margin-top: 10px;
-  margin-bottom: 8px;
-}
-
 .branch-buttons {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .map-btn {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 5px;
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
@@ -436,18 +305,21 @@ const mapOptions = {
 
 .no-branches {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 15px;
   color: #999;
-  font-size: 15px;
+  font-size: 14px;
+}
+
+.no-branches i {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+  color: #ccc;
 }
 
 @media (max-width: 991px) {
   .map-wrapper {
-    margin-bottom: 30px;
-  }
-
-  .branches-list {
-    max-height: 400px;
+    margin-bottom: 25px;
   }
 }
 
@@ -458,6 +330,7 @@ const mapOptions = {
 
   .map-btn {
     text-align: center;
+    justify-content: center;
   }
 }
 </style>
