@@ -7,7 +7,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget logo-widget mr_60">
-                                <figure class="footer-logo"><a href="/"><img src="/assets/images/logo-2.png" alt=""></a></figure>
+                                <figure class="footer-logo"><a href="/"><img src="/assets/images/logo-2.png" alt="" style="max-height:70px;width:auto;"></a></figure>
                                 <div class="text-box">
                                     <p>Chiqindilarni yig`ish, tashish va qayta ishlash bo`yicha to`liq xizmat.</p>
                                     <p>Barqaror ekologiya va toza shaharlar uchun yechimlar.</p>

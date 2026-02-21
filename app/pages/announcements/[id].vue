@@ -24,44 +24,33 @@
   <!-- sidebar-page-container -->
   <section class="sidebar-page-container blog-details pt_150 pb_150">
     <div class="auto-container">
-      <div class="row clearfix">
+      <div v-if="item" class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 content-side">
           <div class="blog-details-content">
             <div class="news-block-one">
               <div class="inner-box">
                 <div class="image-box">
-                  <figure class="image"><img src="/assets/images/news/news-14.jpg" alt=""></figure>
-                  <div class="post-date"><h3>18 DEK</h3></div>
+                  <figure class="image">
+                    <img :src="item.image_url || '/assets/images/news/news-14.jpg'" :alt="item.title_uz">
+                  </figure>
+                  <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
                 </div>
                 <div class="lower-content">
                   <ul class="post-info mb_6 clearfix">
                     <li><i class="icon-24"></i><span>Ma'muriyat</span></li>
-                    <li><i class="icon-25"></i>12</li>
+                    <li><i class="icon-25"></i>{{ item.views }}</li>
                   </ul>
-                  <h3>Chiqindilarni olib chiqish jadvali yangilandi</h3>
-                  <p>Mahallalar bo‘yicha olib chiqish kunlari qayta tasdiqlandi. Yangi jadval 20 DEK dan boshlab kuchga kiradi.</p>
-                  <p>Jadval bilan tanishish uchun rasmiy sahifalarimiz va call-markazga murojaat qilishingiz mumkin. Muammo va takliflar qabul qilinadi.</p>
-                  <blockquote>
-                    <div class="icon-box"><i class="icon-42"></i></div>
-                    <p>“O‘z vaqtida olib chiqish — toza hududning kafolatidir.”</p>
-                    <h4>Ma'muriyat</h4>
-                  </blockquote>
+                  <h3>{{ item.title_uz }}</h3>
+                  <div v-html="item.content_uz || item.excerpt_uz"></div>
                 </div>
               </div>
             </div>
-            <div class="content-one mb_100">
-              <div class="group-title">
-                <h3>E'lon mazmuni</h3>
-              </div>
-              <p>E'longa asosan quyidagi bandlarga e'tibor bering.</p>
-              <ul class="list-style-one clearfix">
-                <li>Jadvalga rioya qilish va konteynerlarni vaqtida chiqarmaslik</li>
-                <li>Qayta ishlanadigan chiqindilarni alohida ajratish</li>
-                <li>Murojaatlar uchun call-markazga yozish</li>
-              </ul>
-            </div>
           </div>
         </div>
+      </div>
+      <div v-else class="text-center py-5">
+        <p>E'lon topilmadi.</p>
+        <a href="/announcements" class="theme-btn btn-one mt-3"><span>E'lonlarga qaytish</span></a>
       </div>
     </div>
   </section>
@@ -69,8 +58,23 @@
 </template>
 
 <script setup>
-useHead({
-  title: "E'lonlar - Tafsilotlar",
-})
-</script>
+const config = useRuntimeConfig()
+const route = useRoute()
+const item = ref(null)
 
+try {
+  const data = await $fetch(`${config.public.apiBase}/announcements/${route.params.id}`)
+  item.value = data.data
+} catch (e) {
+  item.value = null
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return ''
+  const d = new Date(dateStr)
+  const months = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYL', 'AVG', 'SEP', 'OKT', 'NOY', 'DEK']
+  return `${d.getDate()} ${months[d.getMonth()]}`
+}
+
+useHead({ title: item.value ? item.value.title_uz + " - Truck Standart" : "E'lon" })
+</script>

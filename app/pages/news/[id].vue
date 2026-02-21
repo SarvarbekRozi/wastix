@@ -24,44 +24,33 @@
   <!-- sidebar-page-container -->
   <section class="sidebar-page-container blog-details pt_150 pb_150">
     <div class="auto-container">
-      <div class="row clearfix">
+      <div v-if="item" class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 content-side">
           <div class="blog-details-content">
             <div class="news-block-one">
               <div class="inner-box">
                 <div class="image-box">
-                  <figure class="image"><img src="/assets/images/news/news-15.jpg" alt=""></figure>
-                  <div class="post-date"><h3>12 DEK</h3></div>
+                  <figure class="image">
+                    <img :src="item.image_url || '/assets/images/news/news-15.jpg'" :alt="item.title_uz">
+                  </figure>
+                  <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
                 </div>
                 <div class="lower-content">
                   <ul class="post-info mb_6 clearfix">
-                    <li><i class="icon-24"></i><span>Tahririyat</span></li>
-                    <li><i class="icon-25"></i>20</li>
+                    <li><i class="icon-24"></i><span>{{ item.author || 'Tahririyat' }}</span></li>
+                    <li><i class="icon-25"></i>{{ item.views }}</li>
                   </ul>
-                  <h3>Shaharda chiqindi yig‘ish tizimi modernizatsiya qilindi</h3>
-                  <p>Yangi maxsus texnikalar yo‘lga qo‘yilib, xizmat ko‘rsatish tezligi va sifati oshirildi. Aholi murojaatlarini qabul qilish jarayoni ham raqamlashtirildi.</p>
-                  <p>Loyiha doirasida konteynerlar joylashuvi qayta ko‘rib chiqildi, tozalash jadvali optimallashtirildi va ma’lumot berish kanallari kengaytirildi.</p>
-                  <blockquote>
-                    <div class="icon-box"><i class="icon-42"></i></div>
-                    <p>“Maqsadimiz — hududlarda toza va xavfsiz muhitni ta’minlash.”</p>
-                    <h4>Matbuot xizmati</h4>
-                  </blockquote>
+                  <h3>{{ item.title_uz }}</h3>
+                  <div v-html="item.content_uz || item.excerpt_uz"></div>
                 </div>
               </div>
             </div>
-            <div class="content-one mb_100">
-              <div class="group-title">
-                <h3>Asosiy yo‘nalishlar</h3>
-              </div>
-              <p>Yangilanishlar quyidagi yo‘nalishlarda amalga oshirildi.</p>
-              <ul class="list-style-one clearfix">
-                <li>Chiqindilarni yig‘ish va olib chiqish jadvali</li>
-                <li>Qayta ishlashga yo‘naltirish va saralash</li>
-                <li>Aholi murojaatlari bilan ishlash</li>
-              </ul>
-            </div>
           </div>
         </div>
+      </div>
+      <div v-else class="text-center py-5">
+        <p>Yangilik topilmadi.</p>
+        <a href="/news" class="theme-btn btn-one mt-3"><span>Yangiliklarga qaytish</span></a>
       </div>
     </div>
   </section>
@@ -69,8 +58,23 @@
 </template>
 
 <script setup>
-useHead({
-  title: 'Yangiliklar - Tafsilotlar',
-})
-</script>
+const config = useRuntimeConfig()
+const route = useRoute()
+const item = ref(null)
 
+try {
+  const data = await $fetch(`${config.public.apiBase}/news/${route.params.id}`)
+  item.value = data.data
+} catch (e) {
+  item.value = null
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return ''
+  const d = new Date(dateStr)
+  const months = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYL', 'AVG', 'SEP', 'OKT', 'NOY', 'DEK']
+  return `${d.getDate()} ${months[d.getMonth()]}`
+}
+
+useHead({ title: item.value ? item.value.title_uz + ' - Truck Standart' : 'Yangilik' })
+</script>

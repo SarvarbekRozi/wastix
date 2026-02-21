@@ -20,66 +20,31 @@
   </section>
   <!-- page-title end -->
 
-
   <!-- sidebar-page-container -->
   <section class="sidebar-page-container pt_150 pb_150">
     <div class="auto-container">
       <div class="row clearfix">
         <div class="col-lg-8 col-md-12 col-sm-12 content-side">
           <div class="blog-classic-content">
-            <!-- Toshkent shahri -->
-            <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <div v-for="(region, i) in regions" :key="region.id"
+                 class="news-block-one wow fadeInUp animated"
+                 :data-wow-delay="(i * 200) + 'ms'" data-wow-duration="1500ms">
               <div class="inner-box">
                 <div class="image-box">
-                  <figure class="image"><a href="/regions/toshkent"><img src="/assets/images/project/project-1.jpg" alt="Toshkent shahri"></a></figure>
-                  <div class="post-date"><h3>12 tuman</h3></div>
+                  <figure class="image">
+                    <a :href="`/regions/${region.slug}`">
+                      <img :src="region.image_url || `/assets/images/project/project-${(i % 6) + 1}.jpg`" :alt="region.name_uz">
+                    </a>
+                  </figure>
+                  <div v-if="region.districts_count" class="post-date"><h3>{{ region.districts_count }} tuman</h3></div>
                 </div>
                 <div class="lower-content">
-                  <ul class="post-info mb_6 clearfix">
-                    <li><i class="icon-24"></i>500+ xizmat nuqtasi</li>
-                    <li><i class="icon-25"></i>100+ xodim</li>
+                  <ul v-if="region.phone" class="post-info mb_6 clearfix">
+                    <li><i class="icon-4"></i>{{ region.phone }}</li>
                   </ul>
-                  <h3><a href="/regions/toshkent">Toshkent shahri</a></h3>
-                  <p>Toshkent shahri - O'zbekiston Respublikasining poytaxti bo'lib, eng katta aholi va sanoat markazidir. Biz shaharning barcha 12 ta tumanida chiqindilarni yig'ish va qayta ishlash xizmatlarini ko'rsatamiz. Zamonaviy texnika va malakali xodimlar yordamida poytaxtimizni toza saqlashga hissa qo'shamiz.</p>
-                  <div class="link"><a href="/regions/toshkent"><i class="icon-26"></i></a></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Toshkent viloyati -->
-            <div class="news-block-one wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image"><a href="/regions/toshkent-viloyati"><img src="/assets/images/project/project-2.jpg" alt="Toshkent viloyati"></a></figure>
-                  <div class="post-date"><h3>15 tuman</h3></div>
-                </div>
-                <div class="lower-content">
-                  <ul class="post-info mb_6 clearfix">
-                    <li><i class="icon-24"></i>300+ xizmat nuqtasi</li>
-                    <li><i class="icon-25"></i>60+ xodim</li>
-                  </ul>
-                  <h3><a href="/regions/toshkent-viloyati">Toshkent viloyati</a></h3>
-                  <p>Toshkent viloyati - poytaxt atrofidagi eng yirik viloyat bo'lib, sanoat va qishloq xo'jaligi rivojlangan hududdir. Biz viloyatning barcha tumanlarida chiqindilarni yig'ish va utilizatsiya qilish xizmatlarini ko'rsatamiz. Angren, Olmaliq, Chirchiq va boshqa shaharlarda xizmat ko'rsatamiz.</p>
-                  <div class="link"><a href="/regions/toshkent-viloyati"><i class="icon-26"></i></a></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Samarqand viloyati -->
-            <div class="news-block-one wow fadeInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image"><a href="/regions/samarqand"><img src="/assets/images/project/project-3.jpg" alt="Samarqand viloyati"></a></figure>
-                  <div class="post-date"><h3>14 tuman</h3></div>
-                </div>
-                <div class="lower-content">
-                  <ul class="post-info mb_6 clearfix">
-                    <li><i class="icon-24"></i>250+ xizmat nuqtasi</li>
-                    <li><i class="icon-25"></i>50+ xodim</li>
-                  </ul>
-                  <h3><a href="/regions/samarqand">Samarqand viloyati</a></h3>
-                  <p>Samarqand viloyati - O'zbekistonning qadimiy madaniy markazi va muhim iqtisodiy hududidir. Biz viloyat bo'ylab chiqindilarni boshqarish xizmatlarini taqdim etamiz va tarixiy shaharni toza saqlashga yordam beramiz. Samarqand va Kattaqo'rg'on shaharlarida faoliyat yuritamiz.</p>
-                  <div class="link"><a href="/regions/samarqand"><i class="icon-26"></i></a></div>
+                  <h3><a :href="`/regions/${region.slug}`">{{ region.name_uz }}</a></h3>
+                  <p>{{ region.description_uz }}</p>
+                  <div class="link"><a :href="`/regions/${region.slug}`"><i class="icon-26"></i></a></div>
                 </div>
               </div>
             </div>
@@ -93,12 +58,12 @@
               </div>
               <div class="widget-content">
                 <ul class="category-list clearfix">
-                  <li><a href="/xizmatlar/chiqindi-yigish"><span>Chiqindi yig'ish</span></a></li>
-                  <li><a href="/xizmatlar/konteyner-ijarasi"><span>Konteyner ijarasi</span></a></li>
-                  <li><a href="/xizmatlar/qayta-ishlash"><span>Qayta ishlash</span></a></li>
-                  <li><a href="/xizmatlar/sanoat-chiqindilari"><span>Sanoat chiqindilari</span></a></li>
-                  <li><a href="/xizmatlar/turar-joy"><span>Turar-joy xizmati</span></a></li>
-                  <li><a href="/xizmatlar/maxsus-chiqindilar"><span>Maxsus chiqindilar</span></a></li>
+                  <li><a href="#"><span>Chiqindi yig'ish</span></a></li>
+                  <li><a href="#"><span>Konteyner ijarasi</span></a></li>
+                  <li><a href="#"><span>Qayta ishlash</span></a></li>
+                  <li><a href="#"><span>Sanoat chiqindilari</span></a></li>
+                  <li><a href="#"><span>Turar-joy xizmati</span></a></li>
+                  <li><a href="#"><span>Maxsus chiqindilar</span></a></li>
                 </ul>
               </div>
             </div>
@@ -112,21 +77,6 @@
                 </div>
               </div>
             </div>
-            <div class="sidebar-widget tags-widget">
-              <div class="widget-title">
-                <h3>Teglar</h3>
-              </div>
-              <div class="widget-content">
-                <ul class="tags-list clearfix">
-                  <li><a href="/regions/toshkent">Toshkent</a></li>
-                  <li><a href="/regions/toshkent-viloyati">Viloyat</a></li>
-                  <li><a href="/regions/samarqand">Samarqand</a></li>
-                  <li><a href="#">Chiqindi</a></li>
-                  <li><a href="#">Xizmat</a></li>
-                  <li><a href="#">Ekologiya</a></li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -136,8 +86,9 @@
 </template>
 
 <script setup>
-useHead({
-  title: 'Wastix - Bizning hududlar',
-})
-</script>
+const config = useRuntimeConfig()
+const data = await $fetch(`${config.public.apiBase}/regions`).catch(() => ({ data: [] }))
+const regions = data.data || []
 
+useHead({ title: 'Bizning hududlar - Truck Standart' })
+</script>

@@ -7,24 +7,7 @@
                     <div class="animation-preloader">
                         <div class="spinner"></div>
                         <div class="txt-loading">
-                            <span data-text-preloader="w" class="letters-loading">
-                                w
-                            </span>
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="s" class="letters-loading">
-                                s
-                            </span>
-                            <span data-text-preloader="t" class="letters-loading">
-                                t
-                            </span>
-                            <span data-text-preloader="i" class="letters-loading">
-                                i
-                            </span>
-                            <span data-text-preloader="x" class="letters-loading">
-                                x
-                            </span>
+                            <img src="/images/logo.png" alt="Trust Standart ECO" style="height:80px;object-fit:contain;margin-top:12px;">
                         </div>
                     </div>  
                 </div>
@@ -76,7 +59,7 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href="/"><img src="/assets/images/logo.png" alt=""></a></figure>
+                    <figure class="logo-box pull-left"><a href="/"><img src="/assets/images/logo.png" alt="" style="max-height:55px;width:auto;"></a></figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
                 </div>
                 <div class="overlay-layer"></div>
@@ -122,7 +105,7 @@
             <div class="header-lower">
                 <div class="outer-box">
                     <div class="logo-box">
-                        <figure class="logo"><a href="/"><img src="/assets/images/logo.png" alt=""></a></figure>
+                        <figure class="logo"><a href="/"><img src="/assets/images/logo.png" alt="" style="max-height:65px;width:auto;"></a></figure>
                     </div>
                     <div class="menu-area">
                         <!--Mobile Navigation Toggler-->
@@ -170,7 +153,7 @@
                 <div class="outer-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="/"><img src="/assets/images/logo.png" alt=""></a></figure>
+                            <figure class="logo"><a href="/"><img src="/assets/images/logo.png" alt="" style="max-height:65px;width:auto;"></a></figure>
                         </div>
                         <div class="menu-area">
                             <nav class="main-menu clearfix">

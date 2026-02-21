@@ -1,9 +1,9 @@
 <template>
-<!-- banner-section -->
+        <!-- banner-section -->
         <section class="banner-section p_relative">
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-1.png);"></div>
-            <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
-                <div class="slide-item p_relative">
+            <div class="banner-carousel owl-theme owl-carousel owl-dots-none" id="bannerCarousel">
+                <div v-for="(slider, i) in sliders" :key="slider.id" class="slide-item p_relative">
                     <div class="shape">
                         <div class="shape-1" style="background-image: url(/assets/images/shape/shape-3.png);"></div>
                         <div class="shape-2 float-bob-y" style="background-image: url(/assets/images/shape/shape-4.png);"></div>
@@ -13,45 +13,20 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                                 <div class="content-box p_relative d_block z_5">
-                                    <span class="title-text p_relative d_block">Chiqindilarni yig'ish</span>
-                                    <h2 class="p_relative d_block">Chiqindilarni boshqarish yechimlari</h2>
-                                    <p class="p_relative d_block">Biz sizning uyingiz va biznesingiz uchun professional chiqindilarni yig'ish va qayta ishlash xizmatlarini taqdim etamiz.</p>
-                                    <div class="btn-box">
-                                        <a href="/about/organization" class="theme-btn btn-one"><span>Batafsil</span></a>
+                                    <span class="title-text p_relative d_block">{{ slider.subtitle_uz }}</span>
+                                    <h2 class="p_relative d_block">{{ slider.title_uz }}</h2>
+                                    <div class="btn-box" v-if="slider.button_url">
+                                        <a :href="slider.button_url" class="theme-btn btn-one"><span>{{ slider.button_text_uz || 'Batafsil' }}</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                                 <div class="image-box p_relative">
                                     <div class="image-shape-1" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                                    <figure class="image clearfix"><img src="/assets/images/banner/banner-img-1.png" alt="Chiqindilarni yig'ish"></figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-item p_relative">
-                    <div class="shape">
-                        <div class="shape-1" style="background-image: url(/assets/images/shape/shape-3.png);"></div>
-                        <div class="shape-2 float-bob-y" style="background-image: url(/assets/images/shape/shape-4.png);"></div>
-                        <div class="shape-3 rotate-me" style="background-image: url(/assets/images/shape/shape-5.png);"></div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box p_relative d_block z_5">
-                                    <span class="title-text p_relative d_block">Qayta ishlash</span>
-                                    <h2 class="p_relative d_block">Ekologik toza kelajak uchun</h2>
-                                    <p class="p_relative d_block">Chiqindilarni qayta ishlash orqali tabiatni asraymiz va kelajak avlodlar uchun toza muhit yaratamiz.</p>
-                                    <div class="btn-box">
-                                        <a href="/service" class="theme-btn btn-one"><span>Xizmatlar</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <div class="image-box p_relative">
-                                    <div class="image-shape-2" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                                    <figure class="image clearfix"><img src="/assets/images/banner/banner-img-2.png" alt="Qayta ishlash"></figure>
+                                    <figure class="image clearfix">
+                                        <img :src="slider.image_url || `/assets/images/banner/banner-${(i % 3) + 1}.jpg`"
+                                             :alt="slider.title_uz" style="width:100%;border-radius:12px;object-fit:cover;max-height:420px;">
+                                    </figure>
                                 </div>
                             </div>
                         </div>
@@ -67,30 +42,13 @@
             <div class="auto-container">
                 <div class="inner-container">
                     <div class="row clearfix">
-                        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                            <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div v-for="(f, i) in features" :key="i" class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                            <div class="feature-block-one wow fadeInUp animated"
+                                 :data-wow-delay="(i * 300) + 'ms'" data-wow-duration="1500ms">
                                 <div class="inner-box feature-clean">
-                                    <div class="icon-box"><i class="icon-8"></i></div>
-                                    <h3><a href="">Konteyner o'lchamlari</a></h3>
-                                    <p>Har xil hajmdagi <br>konteynerlar mavjud.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                            <div class="feature-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                <div class="inner-box feature-clean">
-                                    <div class="icon-box"><i class="icon-9"></i></div>
-                                    <h3><a href="">Chiqindi yig'ish</a></h3>
-                                    <p>Muntazam chiqindi yig'ish <br>xizmati.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                            <div class="feature-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                                <div class="inner-box feature-clean">
-                                    <div class="icon-box"><i class="icon-10"></i></div>
-                                    <h3><a href="">Yig'ish jadvali</a></h3>
-                                    <p>Qulay vaqtda chiqindi olib <br>ketish.</p>
+                                    <div class="icon-box"><i :class="f.icon"></i></div>
+                                    <h3><a href="">{{ f.title }}</a></h3>
+                                    <p>{{ f.desc }}</p>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +100,7 @@
 
 
         <!-- map-section -->
-        <UzbekistanMap />
+        <UzbekistanMap :apiRegions="regions" />
         <!-- map-section end -->
 
 
@@ -155,56 +113,25 @@
                     <h2>Chiqindilarni boshqarish <br />xizmatlari</h2>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one mb_35 wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div v-for="(service, i) in services" :key="service.id"
+                         class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one mb_35 wow fadeInUp animated"
+                             :data-wow-delay="(i % 3) * 300 + 'ms'" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="/service-details"><img src="/assets/images/service/service-1.jpg" alt="Chiqindi yig'ish"></a></figure>
+                                <figure class="image-box">
+                                    <a href="#">
+                                        <img :src="service.image_url || `/assets/images/service/service-${(i % 3) + 1}.jpg`"
+                                             :alt="service.title_uz">
+                                    </a>
+                                </figure>
                                 <div class="lower-content">
                                     <div class="icon-box">
                                         <div class="icon-bg" style="background-image: url(/assets/images/icons/icon-bg-1.png);"></div>
-                                        <div class="icon"><i class="icon-12"></i></div>
+                                        <div class="icon"><i :class="service.icon"></i></div>
                                     </div>
-                                    <h3><a href="/service-details">Chiqindi yig'ish</a></h3>
-                                    <p>Uy-joy va korxonalardan muntazam ravishda chiqindilarni yig'ib olib ketish xizmati.</p>
-                                    <div class="link">
-                                        <a href="/service-details"><i class="icon-7"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one mb_35 wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <figure class="image-box"><a href="/service-details-2"><img src="/assets/images/service/service-2.jpg" alt="Konteyner ijarasi"></a></figure>
-                                <div class="lower-content">
-                                    <div class="icon-box">
-                                        <div class="icon-bg" style="background-image: url(/assets/images/icons/icon-bg-1.png);"></div>
-                                        <div class="icon"><i class="icon-13"></i></div>
-                                    </div>
-                                    <h3><a href="/service-details-2">Konteyner ijarasi</a></h3>
-                                    <p>Qurilish va katta hajmdagi chiqindilar uchun turli o'lchamdagi konteynerlar ijarasi.</p>
-                                    <div class="link">
-                                        <a href="/service-details-2"><i class="icon-7"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one mb_35 wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <figure class="image-box"><a href="/service-details-3"><img src="/assets/images/service/service-3.jpg" alt="Qayta ishlash"></a></figure>
-                                <div class="lower-content">
-                                    <div class="icon-box">
-                                        <div class="icon-bg" style="background-image: url(/assets/images/icons/icon-bg-1.png);"></div>
-                                        <div class="icon"><i class="icon-14"></i></div>
-                                    </div>
-                                    <h3><a href="/service-details-3">Qayta ishlash</a></h3>
-                                    <p>Chiqindilarni saralash va qayta ishlash orqali tabiatni muhofaza qilish.</p>
-                                    <div class="link">
-                                        <a href="/service-details-3"><i class="icon-7"></i></a>
-                                    </div>
+                                    <h3><a href="#">{{ service.title_uz }}</a></h3>
+                                    <p>{{ service.description_uz }}</p>
+                                    <div class="link"><a href="#"><i class="icon-7"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -219,58 +146,14 @@
         <section class="funfact-section">
             <div class="auto-container">
                 <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                    <div class="funfact-block-one">
+                    <div v-for="stat in statistics" :key="stat.id" class="funfact-block-one">
                         <div class="inner-box">
-                            <div class="icon-box"><i class="icon-15"></i></div>
+                            <div class="icon-box"><i :class="stat.icon || 'icon-15'"></i></div>
                             <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="20">0</span><span>k</span>
+                                <span class="count-text" data-speed="1500" :data-stop="stat.value">0</span>
+                                <span v-if="stat.suffix">{{ stat.suffix }}</span>
                             </div>
-                            <h4>Mamnun mijozlar</h4>
-                        </div>
-                    </div>
-                    <div class="funfact-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="icon-16"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="80">0</span><span>+</span>
-                            </div>
-                            <h4>Xizmat ko'rsatilgan hududlar</h4>
-                        </div>
-                    </div>
-                    <div class="funfact-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="icon-17"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="25">0</span><span>k</span>
-                            </div>
-                            <h4>Yig'ilgan chiqindilar (tonna)</h4>
-                        </div>
-                    </div>
-                    <div class="funfact-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="icon-15"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="150">0</span><span>+</span>
-                            </div>
-                            <h4>Xodimlar soni</h4>
-                        </div>
-                    </div>
-                    <div class="funfact-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="icon-16"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="14">0</span>
-                            </div>
-                            <h4>Viloyatlarda faoliyat</h4>
-                        </div>
-                    </div>
-                    <div class="funfact-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="icon-17"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="500">0</span><span>+</span>
-                            </div>
-                            <h4>Konteynerlar o'rnatilgan</h4>
+                            <h4>{{ stat.title_uz }}</h4>
                         </div>
                     </div>
                 </div>
@@ -290,7 +173,9 @@
                                 <div class="support-box">
                                     <div class="icon-box"><i class="icon-18"></i></div>
                                     <h5>Tez yordam</h5>
-                                    <h3><a href="tel:+998712000000">+998 71 200 00 00</a></h3>
+                                    <h3><a :href="`tel:${(settings.chooseus_phone || '').replace(/\s/g,'')}`">
+                                        {{ settings.chooseus_phone_label || '+998 71 200 00 00' }}
+                                    </a></h3>
                                 </div>
                                 <div class="image-shape">
                                     <div class="shape-1" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
@@ -304,21 +189,21 @@
                             <div class="content-box pt_40 pb_150 ml_30">
                                 <div class="sec-title mb_30">
                                     <span class="sub-title">Nima uchun biz</span>
-                                    <h2>Nima uchun bizning xizmatlarimizni tanlash kerak</h2>
+                                    <h2>{{ settings.chooseus_title || 'Nima uchun bizning xizmatlarimizni tanlash kerak' }}</h2>
                                 </div>
                                 <div class="text-box mb_35">
-                                    <p>Biz mijozlarimizga eng sifatli xizmatlarni taqdim etishga intilamiz. Zamonaviy texnika, tajribali mutaxassislar va qulay narxlar - bizning ustunliklarimiz.</p>
+                                    <p>{{ settings.chooseus_description || 'Biz mijozlarimizga eng sifatli xizmatlarni taqdim etishga intilamiz.' }}</p>
                                 </div>
                                 <div class="inner-box mb_35">
                                     <div class="single-item">
-                                        <div class="icon-box"><i class="icon-19"></i></div>
-                                        <h3>Uy-joy chiqindilari</h3>
-                                        <p>Turar-joy binolaridan muntazam ravishda chiqindilarni yig'ib olib ketish xizmati</p>
+                                        <div class="icon-box"><i :class="settings.chooseus_item_1_icon || 'icon-19'"></i></div>
+                                        <h3>{{ settings.chooseus_item_1_title || 'Uy-joy chiqindilari' }}</h3>
+                                        <p>{{ settings.chooseus_item_1_desc }}</p>
                                     </div>
                                     <div class="single-item">
-                                        <div class="icon-box"><i class="icon-20"></i></div>
-                                        <h3>Katta konteynerlar</h3>
-                                        <p>Qurilish va sanoat chiqindilari uchun turli hajmdagi konteynerlar ijarasi</p>
+                                        <div class="icon-box"><i :class="settings.chooseus_item_2_icon || 'icon-20'"></i></div>
+                                        <h3>{{ settings.chooseus_item_2_title || 'Katta konteynerlar' }}</h3>
+                                        <p>{{ settings.chooseus_item_2_desc }}</p>
                                     </div>
                                 </div>
                                 <div class="btn-box">
@@ -339,11 +224,7 @@
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-11.png);"></div>
             <div class="auto-container">
                 <div class="inner-box">
-                    <h2>Bizning mijozimiz bo'ling va <br />maxsus xizmatlardan foydalaning</h2>
-<!--                    <div class="btn-box">-->
-<!--                        <a href="/contact" class="theme-btn btn-one"><span>Bog'lanish</span></a>-->
-<!--                        <a href="/contact" class="theme-btn btn-two"><span>Narx olish</span></a>-->
-<!--                    </div>-->
+                    <h2>{{ settings.cta_title || "Bizning mijozimiz bo'ling va maxsus xizmatlardan foydalaning" }}</h2>
                 </div>
             </div>
         </section>
@@ -396,67 +277,28 @@
 
 
         <!-- testimonial-section -->
-        <section class="testimonial-section centred sec-pad"  style="padding: 50px 0 0 0;!important;">
+        <section class="testimonial-section centred sec-pad" style="padding: 50px 0 0 0;">
             <div class="auto-container">
                 <div class="sec-title mb_50">
                     <span class="sub-title">Mijozlar fikri</span>
                     <h2>Mijozlarimiz biz haqimizda <br />nima deydi</h2>
                 </div>
-                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
-                    <div class="testimonial-block-one">
+                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one" id="testimonialCarousel">
+                    <div v-for="(t, i) in testimonials" :key="t.id" class="testimonial-block-one">
                         <div class="inner-box">
                             <div class="text-box">
                                 <ul class="rating clearfix">
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-22"></i></li>
+                                    <li v-for="n in t.rating" :key="n"><i class="icon-21"></i></li>
+                                    <li v-for="n in (5 - t.rating)" :key="'e'+n"><i class="icon-22"></i></li>
                                 </ul>
-                                <p>Juda yaxshi xizmat! Har kuni o'z vaqtida kelib, chiqindilarimizni olib ketishadi. Hovlimiz doim toza va ozoda. Rahmat!</p>
-                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-1.png" alt="Mijoz"></figure>
+                                <p>{{ t.content_uz }}</p>
+                                <figure class="thumb-box">
+                                    <img :src="`/assets/images/resource/testimonial-${(i % 3) + 1}.png`" alt="Mijoz">
+                                </figure>
                             </div>
                             <div class="author-box">
-                                <h3>Aziza Karimova</h3>
-                                <span class="designation">Uy bekasi</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-block-one">
-                        <div class="inner-box">
-                            <div class="text-box">
-                                <ul class="rating clearfix">
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-22"></i></li>
-                                </ul>
-                                <p>Bizning korxonamiz uchun konteyner ijarasi xizmatidan foydalanmoqdamiz. Narxi ham qulay, xizmati ham a'lo darajada.</p>
-                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-2.png" alt="Mijoz"></figure>
-                            </div>
-                            <div class="author-box">
-                                <h3>Jasur Toshmatov</h3>
-                                <span class="designation">Korxona direktori</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-block-one">
-                        <div class="inner-box">
-                            <div class="text-box">
-                                <ul class="rating clearfix">
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-21"></i></li>
-                                    <li><i class="icon-22"></i></li>
-                                </ul>
-                                <p>Mahallada tozalik saqlanmoqda. Xodimlar juda mehnatkash va mas'uliyatli. Bunday xizmat uchun minnatdormiz.</p>
-                                <figure class="thumb-box"><img src="/assets/images/resource/testimonial-3.png" alt="Mijoz"></figure>
-                            </div>
-                            <div class="author-box">
-                                <h3>Nodira Rahimova</h3>
-                                <span class="designation">Mahalla raisi</span>
+                                <h3>{{ t.name }}</h3>
+                                <span class="designation">{{ t.position_uz }}</span>
                             </div>
                         </div>
                     </div>
@@ -474,59 +316,27 @@
                     <h2>Bizning so'nggi <br />yangiliklar</h2>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div v-for="(item, i) in latestNews" :key="item.id"
+                         class="col-lg-4 col-md-6 col-sm-12 news-block">
+                        <div class="news-block-one wow fadeInUp animated"
+                             :data-wow-delay="(i * 300) + 'ms'" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="/news"><img src="/assets/images/news/news-1.jpg" alt="Yangilik"></a></figure>
-                                    <div class="post-date"><h3>15 Yan</h3></div>
+                                    <figure class="image">
+                                        <a :href="`/news/${item.slug}`">
+                                            <img :src="item.image_url || `/assets/images/news/news-${i + 1}.jpg`" alt="Yangilik">
+                                        </a>
+                                    </figure>
+                                    <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
                                 </div>
                                 <div class="lower-content">
                                     <ul class="post-info mb_6 clearfix">
-                                        <li><i class="icon-24"></i><a href="/news">Admin</a></li>
-                                        <li><i class="icon-25"></i>0 Izoh</li>
+                                        <li><i class="icon-24"></i><span>{{ item.author || 'Tahririyat' }}</span></li>
+                                        <li><i class="icon-25"></i>{{ item.views }}</li>
                                     </ul>
-                                    <h3><a href="/news">Yangi chiqindi yig'ish texnikasi xarid qilindi</a></h3>
-                                    <p>Kompaniyamiz zamonaviy texnikalar bilan boyitildi.</p>
-                                    <div class="link"><a href="/news"><i class="icon-26"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><a href="/news"><img src="/assets/images/news/news-2.jpg" alt="Yangilik"></a></figure>
-                                    <div class="post-date"><h3>10 Yan</h3></div>
-                                </div>
-                                <div class="lower-content">
-                                    <ul class="post-info mb_6 clearfix">
-                                        <li><i class="icon-24"></i><a href="/news">Admin</a></li>
-                                        <li><i class="icon-25"></i>4 Izoh</li>
-                                    </ul>
-                                    <h3><a href="/news">Qayta ishlash zavodi quvvatini oshirdi</a></h3>
-                                    <p>Chiqindilarni qayta ishlash imkoniyatlari kengaydi.</p>
-                                    <div class="link"><a href="/news"><i class="icon-26"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><a href="/news"><img src="/assets/images/news/news-3.jpg" alt="Yangilik"></a></figure>
-                                    <div class="post-date"><h3>05 Yan</h3></div>
-                                </div>
-                                <div class="lower-content">
-                                    <ul class="post-info mb_6 clearfix">
-                                        <li><i class="icon-24"></i><a href="/news">Admin</a></li>
-                                        <li><i class="icon-25"></i>6 Izoh</li>
-                                    </ul>
-                                    <h3><a href="/news">Uy uchun qanday konteyner tanlash kerak?</a></h3>
-                                    <p>Konteyner tanlashda yordam beramiz.</p>
-                                    <div class="link"><a href="/news"><i class="icon-26"></i></a></div>
+                                    <h3><a :href="`/news/${item.slug}`">{{ item.title_uz }}</a></h3>
+                                    <p>{{ item.excerpt_uz }}</p>
+                                    <div class="link"><a :href="`/news/${item.slug}`"><i class="icon-26"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -534,18 +344,84 @@
                 </div>
             </div>
         </section>
-        <!-- news-section -->
-
-
-        
+        <!-- news-section end -->
 </template>
 
 <script setup>
+const config = useRuntimeConfig()
+
+// useAsyncData ensures SSR + client-side refetch if SSR fails
+const { data: homeData } = await useAsyncData('home', () =>
+  $fetch(`${config.public.apiBase}/home`).catch(() => ({}))
+)
+
+const sliders      = computed(() => homeData.value?.sliders     || [])
+const statistics   = computed(() => homeData.value?.statistics  || [])
+const services     = computed(() => homeData.value?.services    || [])
+const latestNews   = computed(() => homeData.value?.latest_news || [])
+const testimonials = computed(() => homeData.value?.testimonials || [])
+const regions      = computed(() => homeData.value?.regions     || [])
+const settings     = computed(() => homeData.value?.settings    || {})
+
+const features = computed(() => [
+  { icon: settings.value.feature_1_icon || 'icon-8',  title: settings.value.feature_1_title || "Konteyner o'lchamlari", desc: settings.value.feature_1_desc || "Har xil hajmdagi konteynerlar mavjud." },
+  { icon: settings.value.feature_2_icon || 'icon-9',  title: settings.value.feature_2_title || "Chiqindi yig'ish",       desc: settings.value.feature_2_desc || "Muntazam chiqindi yig'ish xizmati." },
+  { icon: settings.value.feature_3_icon || 'icon-10', title: settings.value.feature_3_title || "Yig'ish jadvali",        desc: settings.value.feature_3_desc || "Qulay vaqtda chiqindi olib ketish." },
+])
+
+function formatDate(dateStr) {
+  if (!dateStr) return ''
+  const d = new Date(dateStr)
+  const months = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek']
+  return `${d.getDate()} ${months[d.getMonth()]}`
+}
+
+function initCarousel($el, options) {
+  if (!$el || !$el.length) return
+  if ($el.hasClass('owl-loaded')) {
+    $el.trigger('destroy.owl.carousel')
+    $el.removeClass('owl-loaded owl-drag')
+  }
+  $el.owlCarousel(options)
+}
+
+onMounted(() => {
+  nextTick(() => {
+    const $ = window.$
+    if (!$ || !$.fn || !$.fn.owlCarousel) return
+
+    // Banner slider
+    if (sliders.value.length) {
+      initCarousel($('#bannerCarousel'), {
+        loop: true, animateOut: 'fadeOut', animateIn: 'fadeIn',
+        items: 1, margin: 0, nav: false, dots: false,
+        autoplay: true, autoplayTimeout: 5000, smartSpeed: 1000
+      })
+    }
+
+    // Testimonials carousel
+    if (testimonials.value.length) {
+      initCarousel($('#testimonialCarousel'), {
+        loop: testimonials.value.length > 2,
+        margin: 30, nav: true, dots: false,
+        autoplay: true, autoplayTimeout: 4000, smartSpeed: 700,
+        navText: ['<span class="icon-30"></span>', '<span class="icon-31"></span>'],
+        responsive: { 0: { items: 1 }, 768: { items: 2 }, 1024: { items: 3 } }
+      })
+    }
+
+    // Funfact stats carousel
+    if (statistics.value.length) {
+      initCarousel($('.four-item-carousel'), {
+        loop: true, margin: 0, nav: false, dots: false,
+        autoplay: true, autoplayTimeout: 3000, smartSpeed: 700,
+        responsive: { 0: { items: 1 }, 600: { items: 2 }, 992: { items: 4 } }
+      })
+    }
+  })
+})
+
 useHead({
-  title: 'Wastix - Chiqindilarni boshqarish xizmatlari',
+  title: 'Truck Standart - Chiqindilarni boshqarish xizmatlari',
 })
 </script>
-
-
-
-
