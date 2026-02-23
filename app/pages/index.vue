@@ -394,8 +394,9 @@ onMounted(() => {
     if (sliders.value.length) {
       initCarousel($('#bannerCarousel'), {
         loop: true, animateOut: 'fadeOut', animateIn: 'fadeIn',
-        items: 1, margin: 0, nav: false, dots: false,
-        autoplay: true, autoplayTimeout: 5000, smartSpeed: 1000
+        items: 1, margin: 0, nav: true, dots: false,
+        autoplay: true, autoplayTimeout: 5000, smartSpeed: 1000,
+        navText: ['<span class="icon-6"></span>', '<span class="icon-7"></span>']
       })
     }
 
