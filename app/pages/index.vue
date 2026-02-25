@@ -143,14 +143,14 @@
 
 
         <!-- funfact-section -->
-        <section class="funfact-section">
+        <section class="funfact-section" v-if="statistics.length">
             <div class="auto-container">
                 <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
                     <div v-for="stat in statistics" :key="stat.id" class="funfact-block-one">
                         <div class="inner-box">
                             <div class="icon-box"><i :class="stat.icon || 'icon-15'"></i></div>
                             <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" :data-stop="stat.value">0</span>
+                                <span class="count-text" data-speed="1500" :data-stop="stat.value">{{ stat.value }}</span>
                                 <span v-if="stat.suffix">{{ stat.suffix }}</span>
                             </div>
                             <h4>{{ stat.title_uz }}</h4>
@@ -160,8 +160,6 @@
             </div>
         </section>
         <!-- funfact-section end -->
-
-
         <!-- chooseus-section -->
         <section class="chooseus-section pt_100">
             <div class="auto-container">
@@ -356,7 +354,7 @@ const { data: homeData } = await useAsyncData('home', () =>
 )
 
 const sliders      = computed(() => homeData.value?.sliders     || [])
-const statistics   = computed(() => homeData.value?.statistics  || [])
+const statistics = computed(() => homeData.value?.statistics || [])
 const services     = computed(() => homeData.value?.services    || [])
 const latestNews   = computed(() => homeData.value?.latest_news || [])
 const testimonials = computed(() => homeData.value?.testimonials || [])
@@ -417,6 +415,16 @@ onMounted(() => {
         loop: true, margin: 0, nav: false, dots: false,
         autoplay: true, autoplayTimeout: 3000, smartSpeed: 700,
         responsive: { 0: { items: 1 }, 600: { items: 2 }, 992: { items: 4 } }
+      })
+      // Counter animatsiyasini carousel init dan keyin qo'lda ishga tushirish
+      $('.four-item-carousel .count-text').each(function () {
+        const $this = $(this)
+        const stop = parseInt($this.data('stop')) || 0
+        $({ Counter: 0 }).animate({ Counter: stop }, {
+          duration: 1500,
+          step: function () { $this.text(Math.ceil(this.Counter)) },
+          complete: function () { $this.text(stop) }
+        })
       })
     }
   })
