@@ -281,7 +281,7 @@
                     <span class="sub-title">Mijozlar fikri</span>
                     <h2>Mijozlarimiz biz haqimizda <br />nima deydi</h2>
                 </div>
-                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one" id="testimonialCarousel">
+                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none" id="testimonialCarousel">
                     <div v-for="(t, i) in testimonials" :key="t.id" class="testimonial-block-one">
                         <div class="inner-box">
                             <div class="text-box">
@@ -313,11 +313,9 @@
                     <span class="sub-title">Yangiliklar</span>
                     <h2>Bizning so'nggi <br />yangiliklar</h2>
                 </div>
-                <div class="row clearfix">
-                    <div v-for="(item, i) in latestNews" :key="item.id"
-                         class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-one wow fadeInUp animated"
-                             :data-wow-delay="(i * 300) + 'ms'" data-wow-duration="1500ms">
+                <div class="news-carousel owl-carousel owl-theme owl-dots-none owl-nav-none" id="newsCarousel">
+                    <div v-for="(item, i) in latestNews" :key="item.id" class="news-block">
+                        <div class="news-block-one compact-news-card">
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
@@ -328,10 +326,6 @@
                                     <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
                                 </div>
                                 <div class="lower-content">
-                                    <ul class="post-info mb_6 clearfix">
-                                        <li><i class="icon-24"></i><span>{{ item.author || 'Tahririyat' }}</span></li>
-                                        <li><i class="icon-25"></i>{{ item.views }}</li>
-                                    </ul>
                                     <h3><a :href="`/news/${item.slug}`">{{ item.title_uz }}</a></h3>
                                     <p>{{ item.excerpt_uz }}</p>
                                     <div class="link"><a :href="`/news/${item.slug}`"><i class="icon-26"></i></a></div>
@@ -402,9 +396,18 @@ onMounted(() => {
     if (testimonials.value.length) {
       initCarousel($('#testimonialCarousel'), {
         loop: testimonials.value.length > 2,
-        margin: 30, nav: true, dots: false,
+        margin: 30, nav: false, dots: false,
         autoplay: true, autoplayTimeout: 4000, smartSpeed: 700,
-        navText: ['<span class="icon-30"></span>', '<span class="icon-31"></span>'],
+        responsive: { 0: { items: 1 }, 768: { items: 2 }, 1024: { items: 3 } }
+      })
+    }
+
+    // News carousel
+    if (latestNews.value.length) {
+      initCarousel($('#newsCarousel'), {
+        loop: true,
+        margin: 30, nav: false, dots: false,
+        autoplay: true, autoplayTimeout: 3500, smartSpeed: 800,
         responsive: { 0: { items: 1 }, 768: { items: 2 }, 1024: { items: 3 } }
       })
     }
@@ -434,3 +437,51 @@ useHead({
   title: 'Truck Standart - Chiqindilarni boshqarish xizmatlari',
 })
 </script>
+
+<style scoped>
+.compact-news-card .image-box .image {
+  height: 220px;
+}
+
+.compact-news-card .image-box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compact-news-card .image-box .post-date h3 {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.compact-news-card .lower-content {
+  padding: 20px 20px 18px;
+}
+
+.compact-news-card .lower-content h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.compact-news-card .lower-content h3 a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.compact-news-card .lower-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+  .compact-news-card .image-box .image {
+    height: 190px;
+  }
+}
+</style>

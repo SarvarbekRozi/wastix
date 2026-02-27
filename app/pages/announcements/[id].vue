@@ -1,7 +1,7 @@
 <template>
   <!-- page-title -->
   <section class="page-title p_relative centred">
-    <div class="bg-layer" style="background-image: url(/assets/images/background/page-title.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(https://images.unsplash.com/photo-1532996122724-e3c893ab4ffa?w=1920&q=80);"></div>
     <div class="pattern-layer">
       <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
       <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
@@ -36,10 +36,6 @@
                   <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
                 </div>
                 <div class="lower-content">
-                  <ul class="post-info mb_6 clearfix">
-                    <li><i class="icon-24"></i><span>Ma'muriyat</span></li>
-                    <li><i class="icon-25"></i>{{ item.views }}</li>
-                  </ul>
                   <h3>{{ item.title_uz }}</h3>
                   <div v-html="item.content_uz || item.excerpt_uz"></div>
                 </div>
@@ -78,3 +74,23 @@ function formatDate(dateStr) {
 
 useHead({ title: item.value ? item.value.title_uz + " - Truck Standart" : "E'lon" })
 </script>
+<style scoped>
+.blog-details-content .news-block-one .inner-box .image-box .image {
+  height: 360px;
+}
+
+.blog-details-content .news-block-one .inner-box .image-box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .blog-details-content .news-block-one .inner-box .image-box .image {
+    height: 220px;
+  }
+}
+</style>
+
+
+

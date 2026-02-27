@@ -1,7 +1,7 @@
 <template>
   <!-- page-title -->
   <section class="page-title p_relative centred">
-    <div class="bg-layer" style="background-image: url(/assets/images/background/page-title.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(https://images.unsplash.com/photo-1532996122724-e3c893ab4ffa?w=1920&q=80);"></div>
     <div class="pattern-layer">
       <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
       <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
