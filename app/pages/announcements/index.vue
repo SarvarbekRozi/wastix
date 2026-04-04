@@ -10,10 +10,10 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>E'lonlar</h1>
+        <h1>{{ $t('nav.announcements') }}</h1>
         <ul class="bread-crumb clearfix">
-          <li><a href="/">Bosh sahifa</a></li>
-          <li>E'lonlar</li>
+          <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+          <li>{{ $t('nav.announcements') }}</li>
         </ul>
       </div>
     </div>
@@ -39,9 +39,9 @@
                   <span class="post-date">{{ formatDate(item.published_at) }}</span>
                 </div>
                 <div class="lower-content">
-                  <span class="category">E'lon</span>
-                  <h3><a :href="`/announcements/${item.slug}`">{{ item.title_uz }}</a></h3>
-                  <p>{{ item.excerpt_uz }}</p>
+                  <span class="category">{{ $t('page.e_lon_34') }}</span>
+                  <h3><a :href="`/announcements/${item.slug}`">{{ item[`title_${$i18n.locale}`] }}</a></h3>
+                  <p>{{ item[`excerpt_${$i18n.locale}`] }}</p>
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@
         </template>
         <template v-else>
           <div class="col-12 text-center py-5">
-            <p>E'lonlar yuklanmoqda...</p>
+            <p>{{ $t('page.e_lonlar_yuklanmoqda_35') }}</p>
           </div>
         </template>
       </div>
@@ -86,11 +86,15 @@ await fetchPage(1)
 function formatDate(dateStr) {
   if (!dateStr) return ''
   const d = new Date(dateStr)
-  const months = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYL', 'AVG', 'SEP', 'OKT', 'NOY', 'DEK']
+  const monthsUz = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYL', 'AVG', 'SEP', 'OKT', 'NOY', 'DEK']
+  const monthsRu = ['ЯНВ', 'ФЕВ', 'МАР', 'АПР', 'МАЙ', 'ИЮН', 'ИЮЛ', 'АВГ', 'СЕН', 'ОКТ', 'НОЯ', 'ДЕК']
+  const { locale } = useI18n()
+  const months = locale.value === 'ru' ? monthsRu : monthsUz
   return `${d.getDate()} ${months[d.getMonth()]}`
 }
 
-useHead({ title: "E'lonlar - Truck Standart" })
+const { t } = useI18n()
+useHead({ title: computed(() => `${t('nav.announcements')} - Trust Standart`) })
 </script>
 
 <style scoped>

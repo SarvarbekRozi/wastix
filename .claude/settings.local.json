@@ -14,7 +14,8 @@
       "Read(//c/php/**)",
       "Read(//c/xampp/php/**)",
       "Read(//c/laragon/bin/**)",
-      "Bash(/d/OSPanel/modules/php/PHP_8.1/php.exe artisan:*)"
+      "Bash(/d/OSPanel/modules/php/PHP_8.1/php.exe artisan:*)",
+      "Bash(xargs grep:*)"
     ]
   }
 }

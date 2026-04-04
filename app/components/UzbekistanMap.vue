@@ -2,8 +2,8 @@
   <section class="map-section sec-pad" style="padding: 50px 0;">
     <div class="auto-container">
       <div class="sec-title mb_50 centred">
-        <span class="sub-title">Bizning filiallar</span>
-        <h2>O'zbekiston bo'ylab <br />xizmat ko'rsatish</h2>
+        <span class="sub-title">{{ $t('map.subtitle') }}</span>
+        <h2>{{ $t('map.title') }}</h2>
       </div>
       <div class="row clearfix align-items-center">
         <!-- Map Column -->
@@ -17,7 +17,7 @@
               />
             </client-only>
             <div class="selected-region-name">
-              Toshkent shahri va Toshkent viloyati
+              {{ selectedRegionKey === 'uz-tk' || selectedRegionKey === 'uz-ta' ? $t('map.default_region_name') : selectedRegion }}
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@
             </div>
             <div v-if="filteredBranches.length === 0" class="no-branches">
               <i class="fas fa-info-circle"></i>
-              <p>Bu hududda filiallar hali mavjud emas.</p>
+              <p>{{ $t('map.no_branches') }}</p>
             </div>
           </div>
         </div>
@@ -64,6 +64,8 @@
 <script setup>
 import { ref, computed } from 'vue'
 
+const { t, locale } = useI18n()
+
 const props = defineProps({
   apiRegions: { type: Array, default: () => [] }
 })
@@ -74,24 +76,7 @@ const mapRef = ref(null)
 // Toshkent shahri va viloyati yashil rangda
 const activeRegions = ['uz-tk', 'uz-ta']
 
-const regionNames = {
-  'uz-fa': "Farg'ona viloyati",
-  'uz-tk': 'Toshkent shahri',
-  'uz-an': 'Andijon viloyati',
-  'uz-ng': 'Namangan viloyati',
-  'uz-ji': 'Jizzax viloyati',
-  'uz-si': 'Sirdaryo viloyati',
-  'uz-ta': 'Toshkent viloyati',
-  'uz-bu': 'Buxoro viloyati',
-  'uz-kh': 'Xorazm viloyati',
-  'uz-qr': "Qoraqalpog'iston Respublikasi",
-  'uz-nw': 'Navoiy viloyati',
-  'uz-sa': 'Samarqand viloyati',
-  'uz-qa': 'Qashqadaryo viloyati',
-  'uz-su': 'Surxondaryo viloyati'
-}
-
-const selectedRegion = computed(() => regionNames[selectedRegionKey.value] || '')
+const selectedRegion = computed(() => t('map.' + selectedRegionKey.value) || '')
 
 const fallbackBranches = [
   {
@@ -125,8 +110,8 @@ const branches = computed(() => {
   if (props.apiRegions && props.apiRegions.length > 0) {
     return props.apiRegions.map(r => ({
       region: r.region_key || 'uz-tk',
-      name: r.name_uz,
-      address: r.address_uz || '',
+      name: r['name_' + locale.value] || r.name_uz,
+      address: r['address_' + locale.value] || r.address_uz || '',
       phone: r.phone || '',
       googleMap: r.google_map_url || '#',
       yandexMap: r.yandex_map_url || '#'

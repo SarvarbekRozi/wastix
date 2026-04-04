@@ -10,10 +10,10 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>Biz haqimizda</h1>
+        <h1>{{ $t('nav.about_org') }}</h1>
         <ul class="bread-crumb clearfix">
-          <li><a href="/">Bosh sahifa</a></li>
-          <li>Tashkilot haqida</li>
+          <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+          <li>{{ $t('nav.about_org') }}</li>
         </ul>
       </div>
     </div>
@@ -29,24 +29,24 @@
           <div class="service-sidebar default-sidebar mr_40">
             <div class="question-widget sidebar-widget">
               <div class="widget-title">
-                <h3>Savol bering</h3>
+                <h3>{{ $t('page.savol_bering_8') }}</h3>
               </div>
               <div class="form-inner">
                 <form method="post" action="/contact">
                   <div class="form-group">
-                    <input type="text" name="name" placeholder="Ismingiz" required>
+                    <input type="text" name="name" :placeholder="$t('contact.placeholder_name')" required>
                   </div>
                   <div class="form-group">
-                    <input type="email" name="email" placeholder="E-mail manzil" required>
+                    <input type="email" name="email" :placeholder="$t('contact.placeholder_email')" required>
                   </div>
                   <div class="form-group">
-                    <input type="text" name="phone" placeholder="Telefon" required>
+                    <input type="text" name="phone" :placeholder="$t('contact.placeholder_phone')" required>
                   </div>
                   <div class="form-group">
-                    <textarea name="message" placeholder="Xabaringiz"></textarea>
+                    <textarea name="message" :placeholder="$t('contact.placeholder_msg')"></textarea>
                   </div>
                   <div class="form-group message-btn">
-                    <button type="submit" class="theme-btn btn-one"><span>Xabar yuborish</span></button>
+                    <button type="submit" class="theme-btn btn-one"><span>{{ $t('contact.send_btn') }}</span></button>
                   </div>
                 </form>
               </div>
@@ -77,15 +77,15 @@
                   <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                     <div class="single-item">
                       <div class="icon-box"><i class="icon-40"></i></div>
-                      <h3>Chiqindini yig‘ish</h3>
-                      <p>Hududingiz bo‘yicha xavfsiz va tartibli yig‘im tizimi.</p>
+                      <h3>{{ $t('page.chiqindini_yig_ish_9') }}</h3>
+                      <p>{{ $t('page.hududingiz_bo_yicha_xavfsiz_va_10') }}</p>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                     <div class="single-item">
                       <div class="icon-box"><i class="icon-40"></i></div>
-                      <h3>Qayta ishlash</h3>
-                      <p>Ajratilgan chiqindilarni qayta ishlashga yo‘naltiramiz.</p>
+                      <h3>{{ $t('page.qayta_ishlash_11') }}</h3>
+                      <p>{{ $t('page.ajratilgan_chiqindilarni_qayta_12') }}</p>
                     </div>
                   </div>
                 </div>
@@ -93,12 +93,12 @@
             </div>
             <div class="content-two mb_65">
               <div class="text-box mb_65">
-                <h3>Xizmat afzalliklari</h3>
-                <p>Tartibli reja, aniq muddatlar va shaffof hisob-kitob orqali xarajatlarni nazoratda ushlaysiz. Qulay logistika atrof-muhitga yukni kamaytirishga xizmat qiladi.</p>
+                <h3>{{ $t('page.xizmat_afzalliklari_13') }}</h3>
+                <p>{{ $t('page.tartibli_reja_aniq_muddatlar_v_14') }}</p>
                 <ul class="list-style-one clearfix">
-                  <li>Moslashuvchan jadval va tezkor xizmat</li>
-                  <li>Ekologik talablarga rioya</li>
-                  <li>Mutaxassislar nazorati</li>
+                  <li>{{ $t('page.moslashuvchan_jadval_va_tezkor_15') }}</li>
+                  <li>{{ $t('page.ekologik_talablarga_rioya_16') }}</li>
+                  <li>{{ $t('page.mutaxassislar_nazorati_17') }}</li>
                 </ul>
               </div>
               <div class="image-inner">
@@ -114,42 +114,42 @@
             </div>
             <div class="content-three">
               <div class="text-box mb_55">
-                <h3>Yechimlarimiz</h3>
-                <p>Hududingiz va hajmingizga mos yechimlarni taklif qilamiz: konteynerlar joylashuvi, olib ketish jadvali va qayta ishlash yo‘nalishlari batafsil rejalashtiriladi.</p>
+                <h3>{{ $t('page.yechimlarimiz_18') }}</h3>
+                <p>{{ $t('page.hududingiz_va_hajmingizga_mos__19') }}</p>
               </div>
               <div class="accordion-inner">
-                <h3>Biz sizga mas’uliyat bilan yordam beramiz</h3>
+                <h3>{{ $t('page.biz_sizga_mas_uliyat_bilan_yor_20') }}</h3>
                 <ul class="accordion-box">
                   <li class="accordion block active-block">
                     <div class="acc-btn active">
                       <div class="icon-box"><i class="icon-33"></i></div>
-                      <h4>Biznesim uchun qaysi hajmdagi konteyner mos?</h4>
+                      <h4>{{ $t('page.biznesim_uchun_qaysi_hajmdagi__21') }}</h4>
                     </div>
                     <div class="acc-content current">
                       <div class="text">
-                        <p>Chiqindi hajmi, yig‘ish tezligi va joylashuvni hisobga olib, mos hajmni tanlaymiz.</p>
+                        <p>{{ $t('page.chiqindi_hajmi_yig_ish_tezligi_22') }}</p>
                       </div>
                     </div>
                   </li>
                   <li class="accordion block">
                     <div class="acc-btn">
                       <div class="icon-box"><i class="icon-33"></i></div>
-                      <h4>Konteynerlar qayerga o‘rnatiladi?</h4>
+                      <h4>{{ $t('page.konteynerlar_qayerga_o_rnatila_23') }}</h4>
                     </div>
                     <div class="acc-content">
                       <div class="text">
-                        <p>Qulay kirish va xavfsizlikni inobatga olgan holda eng maqbul joy tanlanadi.</p>
+                        <p>{{ $t('page.qulay_kirish_va_xavfsizlikni_i_24') }}</p>
                       </div>
                     </div>
                   </li>
                   <li class="accordion block">
                     <div class="acc-btn">
                       <div class="icon-box"><i class="icon-33"></i></div>
-                      <h4>Chiqindi qanchalik tez-tez olib ketiladi?</h4>
+                      <h4>{{ $t('page.chiqindi_qanchalik_tez_tez_oli_25') }}</h4>
                     </div>
                     <div class="acc-content">
                       <div class="text">
-                        <p>Jadval sizning ehtiyojingizga ko‘ra haftasiga bir necha marta yoki kunlik belgilanadi.</p>
+                        <p>{{ $t('page.jadval_sizning_ehtiyojingizga__26') }}</p>
                       </div>
                     </div>
                   </li>
@@ -184,8 +184,9 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
 useHead({
-  title: 'Wastix - Xizmat tafsilotlari',
+  title: computed(() => `${t('nav.about_org')} - Trust Standart`),
 })
 </script>
 

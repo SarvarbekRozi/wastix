@@ -15,10 +15,10 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>Hudud tafsilotlari</h1>
+        <h1>{{ $t('page.hudud_tafsilotlari_74') }}</h1>
         <ul class="bread-crumb clearfix">
-          <li><a href="/">Bosh sahifa</a></li>
-          <li>Hudud tafsilotlari</li>
+          <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+          <li>{{ $t('page.hudud_tafsilotlari_75') }}</li>
         </ul>
       </div>
     </div>
@@ -38,21 +38,21 @@
                   <figure class="image"><img src="/assets/images/news/news-15.jpg" alt=""></figure>
                 </div>
                 <div class="lower-content">
-                  <h3>Hudud haqida qisqacha</h3>
-                  <p>Ushbu sahifa hududning asosiy ko‘rsatkichlari, xizmatlar va infratuzilma imkoniyatlarini qisqacha tanishtirish uchun mo‘ljallangan. Ma’lumotlar hudud bo‘yicha yangilanib boradi.</p>
-                  <p>Hududda ekologiya, chiqindilarni boshqarish va xizmat ko‘rsatish yo‘nalishlari bo‘yicha ustuvor loyihalar amalga oshiriladi. Aholiga qulay va xavfsiz xizmatlarni rivojlantirish asosiy maqsad hisoblanadi.</p>
+                  <h3>{{ $t('page.hudud_haqida_qisqacha_76') }}</h3>
+                  <p>{{ $t('page.ushbu_sahifa_hududning_asosiy__77') }}</p>
+                  <p>{{ $t('page.hududda_ekologiya_chiqindilarn_78') }}</p>
                 </div>
               </div>
             </div>
             <div class="content-one mb_100">
               <div class="group-title">
-                <h3>Hududdagi xizmatlar</h3>
+                <h3>{{ $t('page.hududdagi_xizmatlar_79') }}</h3>
               </div>
-              <p>Hudud aholisiga qulaylik yaratish maqsadida quyidagi yo‘nalishlar bo‘yicha xizmatlar yo‘lga qo‘yilgan.</p>
+              <p>{{ $t('page.hudud_aholisiga_qulaylik_yarat_80') }}</p>
               <ul class="list-style-one clearfix">
-                <li>Chiqindilarni yig‘ish va olib chiqish</li>
-                <li>Qayta ishlashga yo‘naltirish va saralash</li>
-                <li>Aholi bilan murojaat va xizmat ko‘rsatish</li>
+                <li>{{ $t('page.chiqindilarni_yig_ish_va_olib__81') }}</li>
+                <li>{{ $t('page.qayta_ishlashga_yo_naltirish_v_82') }}</li>
+                <li>{{ $t('page.aholi_bilan_murojaat_va_xizmat_83') }}</li>
               </ul>
             </div>
           </div>
@@ -83,8 +83,9 @@
 </template>
 
 <script setup>
+const { t, locale } = useI18n()
 useHead({
-  title: 'Wastix - HTML 5 Template Preview',
+  title: computed(() => `${t('page.hudud_tafsilotlari_84')} - Trust Standart`),
 })
 </script>
 

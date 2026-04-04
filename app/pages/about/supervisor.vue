@@ -10,10 +10,10 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>Nazoratchilar</h1>
+        <h1>{{ $t('page.nazoratchilar_30') }}</h1>
         <ul class="bread-crumb clearfix">
-          <li><a href="/">Bosh sahifa</a></li>
-          <li>Nazoratchilar</li>
+          <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+          <li>{{ $t('page.nazoratchilar_31') }}</li>
         </ul>
       </div>
     </div>
@@ -34,14 +34,14 @@
                      :alt="member.name_uz">
               </figure>
               <div class="lower-content">
-                <h3>{{ member.name_uz }}</h3>
-                <span class="designation">{{ member.title_uz }}</span>
+                <h3>{{ member[`name_${$i18n.locale}`] }}</h3>
+                <span class="designation">{{ member[`title_${$i18n.locale}`] }}</span>
               </div>
             </div>
           </div>
         </div>
         <div v-if="!members.length" class="col-12 text-center py-5">
-          <p class="text-muted">Nazoratchilar hali qo'shilmagan</p>
+          <p class="text-muted">{{ $t('page.nazoratchilar_hali_qo_shilmaga_32') }}</p>
         </div>
       </div>
     </div>
@@ -54,5 +54,6 @@ const config = useRuntimeConfig()
 const data = await $fetch(`${config.public.apiBase}/team/supervisor`).catch(() => ({ data: [] }))
 const members = data.data || []
 
-useHead({ title: 'Nazoratchilar - Trust Standart' })
+const { t, locale } = useI18n()
+useHead({ title: computed(() => `${t('page.nazoratchilar_33')} - Trust Standart`) })
 </script>

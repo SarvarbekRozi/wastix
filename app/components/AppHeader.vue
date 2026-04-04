@@ -112,14 +112,18 @@
                 <div class="top-inner">
                     <div class="top-left">
                         <ul class="info-list clearfix">
-                            <li><i class="icon-1"></i>Ish vaqti: <span>Dush-Shan 09:00 - 18:00</span></li>
-                            <li><i class="icon-2"></i>Email: <a href="Truststandartuz@gmail.com">info@waste.uz</a></li>
-                            <li><i class="icon-3"></i>Manzil: <span>Toshkent shahar Mirzo Ulug‘bek tumani Xumoyun ko‘chasi 3a-uy</span></li>
+                            <li><i class="icon-1"></i>{{ $t('header.work_time') }} <span>{{ $t('header.work_time_val') }}</span></li>
+                            <li><i class="icon-2"></i>Email: <a href="mailto:Truststandartuz@gmail.com">info@waste.uz</a></li>
+                            <li><i class="icon-3"></i>{{ $t('header.address') }} <span>{{ $t('header.address_val') }}</span></li>
                         </ul>
                     </div>
                     <div class="top-right">
-<!--                        <div class="login-box"><a href="/">Kirish</a></div>-->
-                        <ul class="social-links clearfix">
+                        <div class="language-switcher" style="display:inline-block; margin-right: 15px;">
+                          <a href="#" @click.prevent="setLocale('uz')" :class="{'fw-bold': locale === 'uz'}" style="color:white; margin-right:5px">UZ</a>
+                          <span style="color:white">|</span>
+                          <a href="#" @click.prevent="setLocale('ru')" :class="{'fw-bold': locale === 'ru'}" style="color:white; margin-left:5px">RU</a>
+                        </div>
+                        <ul class="social-links clearfix" style="display:inline-block;">
                             <li><a target="_blank" href="https://www.instagram.com/truststandart.uz?igsh=and4Yzg5b2FkeXA2&utm_source=qr"><i class="fab fa-instagram"></i></a></li>
                             <li><a target="_blank" href="https://t.me/tsceuz"><i class="fab fa-telegram-plane"></i></a></li>
                         </ul>
@@ -142,20 +146,20 @@
                         <nav class="main-menu navbar-expand-md navbar-light clearfix">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current"><a href="/">Bosh sahifa</a></li>
-                                    <li class="dropdown"><a href="/about/organization">Biz haqimizda</a>
+                                    <li class="current"><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+                                    <li class="dropdown"><nuxt-link to="/about/organization">{{ $t('nav.about') }}</nuxt-link>
                                         <ul>
-                                            <li><a href="/about/organization">Tashkilot haqida</a></li>
-                                            <li><a href="/about/leadership">Rahbariyat</a></li>
-                                            <li><a href="/about/staff">Xodimlar</a></li>
-                                            <li><a href="/about/supervisor">Nazoratchilar</a></li>
-                                            <li><a href="/about/driver">Haydovchilar</a></li>
+                                            <li><nuxt-link to="/about/organization">{{ $t('nav.about_org') }}</nuxt-link></li>
+                                            <li><nuxt-link to="/about/leadership">{{ $t('nav.leadership') }}</nuxt-link></li>
+                                            <li><nuxt-link to="/about/staff">{{ $t('nav.staff') }}</nuxt-link></li>
+                                            <li><nuxt-link to="/about/supervisor">{{ $t('nav.supervisor') }}</nuxt-link></li>
+                                            <li><nuxt-link to="/about/driver">{{ $t('nav.driver') }}</nuxt-link></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/regions">Bizning hududlar</a></li>
-                                    <li><a href="/news">Yangiliklar</a></li>
-                                    <li><a href="/announcements">E'lonlar</a></li>
-                                    <li><a href="/contact">Aloqa</a></li>
+                                    <li><nuxt-link to="/regions">{{ $t('nav.regions') }}</nuxt-link></li>
+                                    <li><nuxt-link to="/news">{{ $t('nav.news') }}</nuxt-link></li>
+                                    <li><nuxt-link to="/announcements">{{ $t('nav.announcements') }}</nuxt-link></li>
+                                    <li><nuxt-link to="/contact">{{ $t('nav.contact') }}</nuxt-link></li>
                                 </ul>
                             </div>
                         </nav>
@@ -184,7 +188,24 @@
                         </div>
                         <div class="menu-area">
                             <nav class="main-menu clearfix">
-                                <!--Keep This Empty / Menu will come through Javascript-->
+                                <div class="collapse navbar-collapse show clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+                                        <li class="dropdown"><nuxt-link to="/about/organization">{{ $t('nav.about') }}</nuxt-link>
+                                            <ul>
+                                                <li><nuxt-link to="/about/organization">{{ $t('nav.about_org') }}</nuxt-link></li>
+                                                <li><nuxt-link to="/about/leadership">{{ $t('nav.leadership') }}</nuxt-link></li>
+                                                <li><nuxt-link to="/about/staff">{{ $t('nav.staff') }}</nuxt-link></li>
+                                                <li><nuxt-link to="/about/supervisor">{{ $t('nav.supervisor') }}</nuxt-link></li>
+                                                <li><nuxt-link to="/about/driver">{{ $t('nav.driver') }}</nuxt-link></li>
+                                            </ul>
+                                        </li>
+                                        <li><nuxt-link to="/regions">{{ $t('nav.regions') }}</nuxt-link></li>
+                                        <li><nuxt-link to="/news">{{ $t('nav.news') }}</nuxt-link></li>
+                                        <li><nuxt-link to="/announcements">{{ $t('nav.announcements') }}</nuxt-link></li>
+                                        <li><nuxt-link to="/contact">{{ $t('nav.contact') }}</nuxt-link></li>
+                                    </ul>
+                                </div>
                             </nav>
                             <ul class="menu-right-content">
                                 <li class="support-box">
@@ -214,9 +235,9 @@
                 <div class="nav-logo"><a href="/"><img src="/assets/images/logo-2.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
-                    <h4>Aloqa ma`lumotlari</h4>
+                    <h4>{{ $t('footer.contact_info') }}</h4>
                     <ul>
-                        <li>Toshkent shahar Mirzo Ulug‘bek tumani Xumoyun ko‘chasi 3a-uy</li>
+                        <li>{{ $t('header.address_val') }}</li>
                         <li><a href="tel:+998712000000">+998 95 177 09 09</a></li>
                         <li><a href="mailto:info@waste.uz">Truststandartuz@gmail.com</a></li>
                     </ul>
@@ -230,6 +251,10 @@
             </nav>
         </div><!-- End Mobile Menu -->
 </template>
+
+<script setup>
+const { locale, setLocale } = useI18n()
+</script>
 
 <style>
 /* ===== CUSTOM PRELOADER ===== */
