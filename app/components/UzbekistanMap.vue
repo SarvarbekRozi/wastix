@@ -96,24 +96,24 @@ const selectedRegion = computed(() => regionNames[selectedRegionKey.value] || ''
 const fallbackBranches = [
   {
     region: 'uz-tk',
-    name: "Mirzo Ulug'bek tumani",
-    address: "Toshkent shahri, Mirzo Ulug'bek tumani, Buyuk Ipak Yo'li ko'chasi, 107-uy",
+    name: "Toshkent shahar Mirzo Ulug'bek tumani",
+    address: "Toshkent shahar Mirzo Ulug‘bek tumani Xumoyun ko‘chasi 3a-uy",
     phone: '+998 (78) 140 14 14',
     googleMap: 'https://maps.google.com/?q=41.3389,69.3350',
     yandexMap: 'https://yandex.uz/maps/?pt=69.3350,41.3389&z=16'
   },
   {
     region: 'uz-ta',
-    name: "Yangiyo'l shahar",
-    address: "Toshkent viloyati, Yangiyo'l shahri, Mustaqillik ko'chasi, 22-uy",
+    name: "Toshkent viloyati Yangiyo'l shahri",
+    address: "Toshkent viloyati Yangiyo‘l shahar, Mevazor ko‘chasi, 38-uy",
     phone: '+998 (70) 202 14 14',
     googleMap: 'https://maps.google.com/?q=41.1117,69.0461',
     yandexMap: 'https://yandex.uz/maps/?pt=69.0461,41.1117&z=16'
   },
   {
     region: 'uz-ta',
-    name: "Yangiyo'l tumani",
-    address: "Toshkent viloyati, Yangiyo'l tumani, Navoiy ko'chasi, 8-uy",
+    name: "Toshkent viloyati Yangi yo'l tumani",
+    address: "Toshkent viloyati Yangiyo‘l shahar, Mevazor ko‘chasi, 38-uy",
     phone: '+998 (70) 202 15 15',
     googleMap: 'https://maps.google.com/?q=41.1050,69.0500',
     yandexMap: 'https://yandex.uz/maps/?pt=69.0500,41.1050&z=16'

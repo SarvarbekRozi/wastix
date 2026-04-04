@@ -56,10 +56,8 @@
                                         <li><i class="icon-4"></i>Telefon:  <a href="tel:+998712000000">+998 71 200 00 00</a></li>
                                     </ul>
                                     <ul class="social-links clearfix">
-                                        <li><a href="/index-3"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="/index-3"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="/index-3"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="/index-3"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="/"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="/"><i class="fab fa-telegram-plane"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

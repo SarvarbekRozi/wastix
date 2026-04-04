@@ -98,6 +98,37 @@
         </section>
         <!-- about-section end -->
 
+        <!-- news-section -->
+        <section class="news-section sec-pad">
+          <div class="auto-container">
+            <div class="sec-title mb_50 centred">
+              <span class="sub-title">Yangiliklar</span>
+              <h2>Bizning so'ngi <br />yangiliklar</h2>
+            </div>
+            <div class="news-carousel owl-carousel owl-theme owl-dots-none owl-nav-none" id="newsCarousel">
+              <div v-for="(item, i) in latestNews" :key="item.id" class="news-block">
+                <div class="news-block-one compact-news-card">
+                  <div class="inner-box">
+                    <div class="image-box">
+                      <figure class="image">
+                        <a :href="`/news/${item.slug}`">
+                          <img :src="item.image_url || `/assets/images/news/news-${i + 1}.jpg`" alt="Yangilik">
+                        </a>
+                      </figure>
+                      <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
+                    </div>
+                    <div class="lower-content">
+                      <h3><a :href="`/news/${item.slug}`">{{ item.title_uz }}</a></h3>
+                      <p>{{ item.excerpt_uz }}</p>
+                      <div class="link"><a :href="`/news/${item.slug}`"><i class="icon-26"></i></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- news-section end -->
 
         <!-- map-section -->
         <UzbekistanMap :apiRegions="regions" />
@@ -145,21 +176,11 @@
         <!-- funfact-section -->
         <section class="funfact-section" v-if="statistics.length">
             <div class="auto-container">
-                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                    <div v-for="stat in statistics" :key="stat.id" class="funfact-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box"><i :class="stat.icon || 'icon-15'"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" :data-stop="stat.value">{{ stat.value }}</span>
-                                <span v-if="stat.suffix">{{ stat.suffix }}</span>
-                            </div>
-                            <h4>{{ stat.title_uz }}</h4>
-                        </div>
-                    </div>
-                </div>
+                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none"></div>
             </div>
         </section>
         <!-- funfact-section end -->
+
         <!-- chooseus-section -->
         <section class="chooseus-section pt_100">
             <div class="auto-container">
@@ -275,68 +296,19 @@
 
 
         <!-- testimonial-section -->
-        <section class="testimonial-section centred sec-pad" style="padding: 50px 0 0 0;">
+        <section class="testimonial-section centred sec-pad" style="padding: 50px 0 ;">
             <div class="auto-container">
                 <div class="sec-title mb_50">
                     <span class="sub-title">Mijozlar fikri</span>
                     <h2>Mijozlarimiz biz haqimizda <br />nima deydi</h2>
                 </div>
-                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none" id="testimonialCarousel">
-                    <div v-for="(t, i) in testimonials" :key="t.id" class="testimonial-block-one">
-                        <div class="inner-box">
-                            <div class="text-box">
-                                <ul class="rating clearfix">
-                                    <li v-for="n in t.rating" :key="n"><i class="icon-21"></i></li>
-                                    <li v-for="n in (5 - t.rating)" :key="'e'+n"><i class="icon-22"></i></li>
-                                </ul>
-                                <p>{{ t.content_uz }}</p>
-                                <figure class="thumb-box">
-                                    <img :src="`/assets/images/resource/testimonial-${(i % 3) + 1}.png`" alt="Mijoz">
-                                </figure>
-                            </div>
-                            <div class="author-box">
-                                <h3>{{ t.name }}</h3>
-                                <span class="designation">{{ t.position_uz }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none" id="testimonialCarousel"></div>
             </div>
         </section>
         <!-- testimonial-section end -->
 
 
-        <!-- news-section -->
-        <section class="news-section sec-pad">
-            <div class="auto-container">
-                <div class="sec-title mb_50 centred">
-                    <span class="sub-title">Yangiliklar</span>
-                    <h2>Bizning so'nggi <br />yangiliklar</h2>
-                </div>
-                <div class="news-carousel owl-carousel owl-theme owl-dots-none owl-nav-none" id="newsCarousel">
-                    <div v-for="(item, i) in latestNews" :key="item.id" class="news-block">
-                        <div class="news-block-one compact-news-card">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a :href="`/news/${item.slug}`">
-                                            <img :src="item.image_url || `/assets/images/news/news-${i + 1}.jpg`" alt="Yangilik">
-                                        </a>
-                                    </figure>
-                                    <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a :href="`/news/${item.slug}`">{{ item.title_uz }}</a></h3>
-                                    <p>{{ item.excerpt_uz }}</p>
-                                    <div class="link"><a :href="`/news/${item.slug}`"><i class="icon-26"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- news-section end -->
+
 </template>
 
 <script setup>
@@ -392,10 +364,35 @@ onMounted(() => {
       })
     }
 
-    // Testimonials carousel
+    // Testimonials carousel — HTML manually built to avoid Vue/Owl DOM conflict
     if (testimonials.value.length) {
-      initCarousel($('#testimonialCarousel'), {
-        loop: testimonials.value.length > 2,
+      const $tc = $('#testimonialCarousel')
+      const html = testimonials.value.map((t, i) => {
+        const stars = Array.from({ length: 5 }, (_, s) =>
+          `<li><i class="${s < t.rating ? 'icon-21' : 'icon-22'}"></i></li>`
+        ).join('')
+        const img = t.image
+          ? t.image
+          : `/assets/images/resource/default-avatar.svg`
+        return `
+          <div class="testimonial-block-one">
+            <div class="inner-box">
+              <div class="text-box">
+                <ul class="rating clearfix">${stars}</ul>
+                <p>${t.content_uz || ''}</p>
+                <figure class="thumb-box"><img src="${img}" alt="Mijoz"></figure>
+              </div>
+              <div class="author-box">
+                <h3>${t.name || ''}</h3>
+                <span class="designation">${t.position_uz || ''}</span>
+              </div>
+            </div>
+          </div>`
+      }).join('')
+      $tc.html(html)
+      initCarousel($tc, {
+        loop: testimonials.value.length > 3,
+        rewind: testimonials.value.length <= 3,
         margin: 30, nav: false, dots: false,
         autoplay: true, autoplayTimeout: 4000, smartSpeed: 700,
         responsive: { 0: { items: 1 }, 768: { items: 2 }, 1024: { items: 3 } }
@@ -412,15 +409,29 @@ onMounted(() => {
       })
     }
 
-    // Funfact stats carousel
+    // Funfact stats carousel — HTML manually built to avoid Vue/Owl DOM conflict
     if (statistics.value.length) {
-      initCarousel($('.four-item-carousel'), {
+      const $fc = $('.four-item-carousel')
+      const statsHtml = statistics.value.map(stat => `
+        <div class="funfact-block-one">
+          <div class="inner-box">
+            <div class="icon-box"><i class="${stat.icon || 'icon-15'}"></i></div>
+            <div class="count-outer count-box">
+              <span class="count-text" data-speed="1500" data-stop="${stat.value}">${stat.value}</span>
+              ${stat.suffix ? `<span>${stat.suffix}</span>` : ''}
+            </div>
+            <h4>${stat.title_uz || ''}</h4>
+          </div>
+        </div>`
+      ).join('')
+      $fc.html(statsHtml)
+      initCarousel($fc, {
         loop: true, margin: 0, nav: false, dots: false,
         autoplay: true, autoplayTimeout: 3000, smartSpeed: 700,
         responsive: { 0: { items: 1 }, 600: { items: 2 }, 992: { items: 4 } }
       })
       // Counter animatsiyasini carousel init dan keyin qo'lda ishga tushirish
-      $('.four-item-carousel .count-text').each(function () {
+      $fc.find('.count-text').each(function () {
         const $this = $(this)
         const stop = parseInt($this.data('stop')) || 0
         $({ Counter: 0 }).animate({ Counter: stop }, {

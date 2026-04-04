@@ -112,17 +112,16 @@
                 <div class="top-inner">
                     <div class="top-left">
                         <ul class="info-list clearfix">
-                            <li><i class="icon-1"></i>Ish vaqti: <span>Dush-Shan 8:00 - 18:00</span></li>
-                            <li><i class="icon-2"></i>Email: <a href="mailto:info@waste.uz">info@waste.uz</a></li>
-                            <li><i class="icon-3"></i>Manzil: <span>Toshkent sh., Chilonzor tumani</span></li>
+                            <li><i class="icon-1"></i>Ish vaqti: <span>Dush-Shan 09:00 - 18:00</span></li>
+                            <li><i class="icon-2"></i>Email: <a href="Truststandartuz@gmail.com">info@waste.uz</a></li>
+                            <li><i class="icon-3"></i>Manzil: <span>Toshkent shahar Mirzo Ulug‘bek tumani Xumoyun ko‘chasi 3a-uy</span></li>
                         </ul>
                     </div>
                     <div class="top-right">
 <!--                        <div class="login-box"><a href="/">Kirish</a></div>-->
                         <ul class="social-links clearfix">
-                            <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="/"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="/"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a target="_blank" href="https://www.instagram.com/truststandart.uz?igsh=and4Yzg5b2FkeXA2&utm_source=qr"><i class="fab fa-instagram"></i></a></li>
+                            <li><a target="_blank" href="https://t.me/tsceuz"><i class="fab fa-telegram-plane"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -149,6 +148,8 @@
                                             <li><a href="/about/organization">Tashkilot haqida</a></li>
                                             <li><a href="/about/leadership">Rahbariyat</a></li>
                                             <li><a href="/about/staff">Xodimlar</a></li>
+                                            <li><a href="/about/supervisor">Nazoratchilar</a></li>
+                                            <li><a href="/about/driver">Haydovchilar</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="/regions">Bizning hududlar</a></li>
@@ -161,7 +162,7 @@
                         <ul class="menu-right-content">
                             <li class="support-box">
                                 <i class="icon-4"></i>
-                                <a href="tel:+998712000000">+998 71 200 00 00</a>
+                                <a href="tel:+998712000000">+998 95 177 09 09</a>
                             </li>
                             <li class="search-box-outer search-toggler">
                                 <i class="icon-5"></i>
@@ -188,7 +189,7 @@
                             <ul class="menu-right-content">
                                 <li class="support-box">
                                     <i class="icon-4"></i>
-                                    <a href="tel:+998712000000">+998 71 200 00 00</a>
+                                    <a href="tel:+998712000000">+998 95 177 09 09</a>
                                 </li>
                                 <li class="search-box-outer search-toggler">
                                     <i class="icon-5"></i>
@@ -215,18 +216,15 @@
                 <div class="contact-info">
                     <h4>Aloqa ma`lumotlari</h4>
                     <ul>
-                        <li>Toshkent sh., Chilonzor tumani</li>
-                        <li><a href="tel:+998712000000">+998 71 200 00 00</a></li>
-                        <li><a href="mailto:info@waste.uz">info@waste.uz</a></li>
+                        <li>Toshkent shahar Mirzo Ulug‘bek tumani Xumoyun ko‘chasi 3a-uy</li>
+                        <li><a href="tel:+998712000000">+998 95 177 09 09</a></li>
+                        <li><a href="mailto:info@waste.uz">Truststandartuz@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="/"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="/"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="/"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="/"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="/"><span class="fab fa-youtube"></span></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/truststandart.uz?igsh=and4Yzg5b2FkeXA2&utm_source=qr"><span class="fab fa-instagram"></span></a></li>
+                        <li><a target="_blank"  href="https://t.me/tsceuz"><span class="fab fa-telegram-plane"></span></a></li>
                     </ul>
                 </div>
             </nav>
