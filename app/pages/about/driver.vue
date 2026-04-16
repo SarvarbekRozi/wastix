@@ -10,10 +10,10 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>{{ $t('page.rahbariyat_5') }}</h1>
+        <h1>{{ $t('page.haydovchilar_1') }}</h1>
         <ul class="bread-crumb clearfix">
           <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
-          <li>{{ $t('page.rahbariyat_6') }}</li>
+          <li>{{ $t('page.haydovchilar_2') }}</li>
         </ul>
       </div>
     </div>
@@ -36,17 +36,12 @@
               <div class="lower-content">
                 <h3>{{ member[`name_${$i18n.locale}`] }}</h3>
                 <span class="designation">{{ member[`title_${$i18n.locale}`] }}</span>
-                <div class="share-box">
-                  <div class="share-icon"><i class="fas fa-share-alt"></i></div>
-                  <ul class="social-links clearfix">
-                    <li><a href="/"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="/"><i class="fab fa-linkedin-in"></i></a></li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div v-if="!members.length" class="col-12 text-center py-5">
+          <p class="text-muted">{{ $t('page.haydovchilar_hali_qo_shilmagan_3') }}</p>
         </div>
       </div>
     </div>
@@ -56,12 +51,9 @@
 
 <script setup>
 const config = useRuntimeConfig()
-const data = await $fetch(`${config.public.apiBase}/team/leadership`).catch(() => ({ data: [] }))
+const data = await $fetch(`${config.public.apiBase}/team/driver`).catch(() => ({ data: [] }))
 const members = data.data || []
 
 const { t, locale } = useI18n()
-useHead({ title: computed(() => `${t('page.rahbariyat_7')} - Trust Standart`) })
+useHead({ title: computed(() => `${t('page.haydovchilar_4')} - Trust Standart`) })
 </script>
-
-
-

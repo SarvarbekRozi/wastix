@@ -1,7 +1,7 @@
 <template>
   <!-- page-title -->
   <section class="page-title p_relative centred">
-    <div class="bg-layer" style="background-image: url(/assets/images/background/page-title.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(https://images.unsplash.com/photo-1532996122724-e3c893ab4ffa?w=1920&q=80);"></div>
     <div class="pattern-layer">
       <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
       <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
@@ -10,10 +10,10 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>Yangiliklar</h1>
+        <h1>{{ $t('nav.news') }}</h1>
         <ul class="bread-crumb clearfix">
-          <li><a href="/">Bosh sahifa</a></li>
-          <li>Yangiliklar</li>
+          <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+          <li>{{ $t('nav.news') }}</li>
         </ul>
       </div>
     </div>
@@ -27,7 +27,7 @@
         <template v-if="news.length">
           <div v-for="(item, index) in news" :key="item.id"
                class="col-lg-4 col-md-6 col-sm-12 news-block">
-            <div class="news-block-two wow fadeInUp animated"
+            <div class="news-block-two compact-news-card wow fadeInUp animated"
                  :data-wow-delay="(index % 3) * 300 + 'ms'" data-wow-duration="1500ms">
               <div class="inner-box">
                 <div class="image-box">
@@ -39,16 +39,9 @@
                   <span class="post-date">{{ formatDate(item.published_at) }}</span>
                 </div>
                 <div class="lower-content">
-                  <span class="category">Yangilik</span>
-                  <h3><a :href="`/news/${item.slug}`">{{ item.title_uz }}</a></h3>
-                  <p>{{ item.excerpt_uz }}</p>
-                  <ul class="post-info clearfix">
-                    <li class="author-box">
-                      <div class="author-thumb"><img src="/assets/images/news/author-1.jpg" alt=""></div>
-                      <span>{{ item.author || 'Tahririyat' }}</span>
-                    </li>
-                    <li><i class="icon-25"></i>{{ item.views }}</li>
-                  </ul>
+                  <span class="category">{{ $t('nav.news') }}</span>
+                  <h3><nuxt-link :to="`/news/${item.slug}`">{{ item[`title_${$i18n.locale}`] }}</nuxt-link></h3>
+                  <p>{{ item[`excerpt_${$i18n.locale}`] }}</p>
                 </div>
               </div>
             </div>
@@ -56,7 +49,7 @@
         </template>
         <template v-else>
           <div class="col-12 text-center py-5">
-            <p>Yangiliklar yuklanmoqda...</p>
+            <p>{{ $t('page.yangiliklar_yuklanmoqda_61') }}</p>
           </div>
         </template>
       </div>
@@ -93,9 +86,59 @@ await fetchPage(1)
 function formatDate(dateStr) {
   if (!dateStr) return ''
   const d = new Date(dateStr)
-  const months = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYL', 'AVG', 'SEP', 'OKT', 'NOY', 'DEK']
+  const monthsUz = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYL', 'AVG', 'SEP', 'OKT', 'NOY', 'DEK']
+  const monthsRu = ['ЯНВ', 'ФЕВ', 'МАР', 'АПР', 'МАЙ', 'ИЮН', 'ИЮЛ', 'АВГ', 'СЕН', 'ОКТ', 'НОЯ', 'ДЕК']
+  const { locale } = useI18n()
+  const months = locale.value === 'ru' ? monthsRu : monthsUz
   return `${d.getDate()} ${months[d.getMonth()]}`
 }
 
-useHead({ title: 'Yangiliklar - Truck Standart' })
+const { t } = useI18n()
+useHead({ title: computed(() => `${t('nav.news')} - Trust Standart`) })
 </script>
+
+<style scoped>
+.compact-news-card .image-box .image {
+  height: 215px;
+}
+
+.compact-news-card .image-box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compact-news-card .lower-content {
+  padding: 20px 20px 16px;
+}
+
+.compact-news-card .lower-content h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.compact-news-card .lower-content h3 a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.compact-news-card .lower-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .compact-news-card .image-box .image {
+    height: 190px;
+  }
+}
+</style>
+
+
+

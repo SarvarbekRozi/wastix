@@ -1,4 +1,4 @@
-﻿<template>
+<template>
 
 
         
@@ -6,7 +6,7 @@
 
         <!-- page-title -->
         <section class="page-title p_relative centred">
-            <div class="bg-layer" style="background-image: url(/assets/images/background/page-title.jpg);"></div>
+            <div class="bg-layer" style="background-image: url(https://images.unsplash.com/photo-1532996122724-e3c893ab4ffa?w=1920&q=80);"></div>
             <div class="pattern-layer">
                 <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
                 <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
@@ -15,10 +15,10 @@
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>404 Error</h1>
+                    <h1>{{ $t('page.404_xatolik_39') }}</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="/">Home</a></li>
-                        <li>404 Error</li>
+                        <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+                        <li>{{ $t('page.404_xatolik_40') }}</li>
                     </ul>
                 </div>
             </div>
@@ -31,8 +31,8 @@
             <div class="auto-container">
                 <div class="content-box">
                     <figure class="error-image"><img src="/assets/images/icons/error.png" alt=""></figure>
-                    <h2>Oops! that page can not <br />be found.</h2>
-                    <a href="/" class="theme-btn btn-one"><i class="icon-44"></i> Back to Homepage</a>
+                    <h2>{{ $t('page.kechirasiz_sahifa_topilmadi_41') }}</h2>
+                    <nuxt-link to="/" class="theme-btn btn-one"><i class="icon-44"></i> {{ $t('page.bosh_sahifaga_qaytish_42') }}</nuxt-link>
                 </div>
             </div>
         </section>
@@ -59,8 +59,9 @@
 </template>
 
 <script setup>
+const { t, locale } = useI18n()
 useHead({
-  title: 'Wastix - HTML 5 Template Preview',
+  title: computed(() => `${t('page.sahifa_topilmadi_43')} - Trust Standart`),
 })
 </script>
 

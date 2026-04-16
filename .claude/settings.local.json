@@ -9,7 +9,13 @@
       "Bash(curl:*)",
       "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri ''http://localhost:3003'' -UseBasicParsing\\).Content\")",
       "Bash(powershell:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(where php:*)",
+      "Read(//c/php/**)",
+      "Read(//c/xampp/php/**)",
+      "Read(//c/laragon/bin/**)",
+      "Bash(/d/OSPanel/modules/php/PHP_8.1/php.exe artisan:*)",
+      "Bash(xargs grep:*)"
     ]
   }
 }

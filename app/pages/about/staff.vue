@@ -1,7 +1,7 @@
 <template>
   <!-- page-title -->
   <section class="page-title p_relative centred">
-    <div class="bg-layer" style="background-image: url(/assets/images/background/page-title.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(https://images.unsplash.com/photo-1532996122724-e3c893ab4ffa?w=1920&q=80);"></div>
     <div class="pattern-layer">
       <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
       <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
@@ -10,10 +10,10 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>Xodimlar</h1>
+        <h1>{{ $t('page.xodimlar_27') }}</h1>
         <ul class="bread-crumb clearfix">
-          <li><a href="/">Bosh sahifa</a></li>
-          <li>Xodimlar</li>
+          <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+          <li>{{ $t('page.xodimlar_28') }}</li>
         </ul>
       </div>
     </div>
@@ -34,8 +34,8 @@
                      :alt="member.name_uz">
               </figure>
               <div class="lower-content">
-                <h3>{{ member.name_uz }}</h3>
-                <span class="designation">{{ member.title_uz }}</span>
+                <h3>{{ member[`name_${$i18n.locale}`] }}</h3>
+                <span class="designation">{{ member[`title_${$i18n.locale}`] }}</span>
                 <div class="share-box">
                   <div class="share-icon"><i class="fas fa-share-alt"></i></div>
                   <ul class="social-links clearfix">
@@ -59,5 +59,6 @@ const config = useRuntimeConfig()
 const data = await $fetch(`${config.public.apiBase}/team/staff`).catch(() => ({ data: [] }))
 const members = data.data || []
 
-useHead({ title: 'Xodimlar - Truck Standart' })
+const { t, locale } = useI18n()
+useHead({ title: computed(() => `${t('page.xodimlar_29')} - Trust Standart`) })
 </script>

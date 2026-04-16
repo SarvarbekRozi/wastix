@@ -3,9 +3,26 @@ export default defineNuxtConfig({
   srcDir: 'app',
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  modules: ['@nuxtjs/i18n'],
+  i18n: {
+    strategy: 'no_prefix',
+    langDir: 'locales',
+    locales: [
+      { code: 'uz', file: 'uz.json', name: 'O\'zbekcha' },
+      { code: 'ru', file: 'ru.json', name: 'Русский' }
+    ],
+    defaultLocale: 'uz',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_locale',
+      alwaysRedirect: false,
+      fallbackLocale: 'uz',
+    },
+    vueI18n: './i18n.config.ts'
+  },
   runtimeConfig: {
     public: {
-      apiBase: 'http://127.0.0.1:8000/api/v1',
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://127.0.0.1:8000/api/v1',
     }
   },
   app: {

@@ -1,7 +1,7 @@
 <template>
   <!-- page-title -->
   <section class="page-title p_relative centred">
-    <div class="bg-layer" style="background-image: url(/assets/images/background/page-title.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(https://images.unsplash.com/photo-1532996122724-e3c893ab4ffa?w=1920&q=80);"></div>
     <div class="pattern-layer">
       <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
       <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
@@ -10,10 +10,10 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>Bizning hududlar</h1>
+        <h1>{{ $t('nav.regions') }}</h1>
         <ul class="bread-crumb clearfix">
-          <li><a href="/">Bosh sahifa</a></li>
-          <li>Hududlar</li>
+          <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+          <li>{{ $t('nav.regions') }}</li>
         </ul>
       </div>
     </div>
@@ -36,14 +36,14 @@
                       <img :src="region.image_url || `/assets/images/project/project-${(i % 6) + 1}.jpg`" :alt="region.name_uz">
                     </a>
                   </figure>
-                  <div v-if="region.districts_count" class="post-date"><h3>{{ region.districts_count }} tuman</h3></div>
+                  <div v-if="region.districts_count" class="post-date"><h3>{{ region.districts_count }} {{ $t('page.tuman_65') }}</h3></div>
                 </div>
                 <div class="lower-content">
                   <ul v-if="region.phone" class="post-info mb_6 clearfix">
                     <li><i class="icon-4"></i>{{ region.phone }}</li>
                   </ul>
-                  <h3><a :href="`/regions/${region.slug}`">{{ region.name_uz }}</a></h3>
-                  <p>{{ region.description_uz }}</p>
+                  <h3><a :href="`/regions/${region.slug}`">{{ region[`name_${$i18n.locale}`] }}</a></h3>
+                  <p>{{ region[`description_${$i18n.locale}`] }}</p>
                   <div class="link"><a :href="`/regions/${region.slug}`"><i class="icon-26"></i></a></div>
                 </div>
               </div>
@@ -54,23 +54,23 @@
           <div class="blog-sidebar default-sidebar ml_40">
             <div class="sidebar-widget category-widget">
               <div class="widget-title">
-                <h3>Xizmat turlari</h3>
+                <h3>{{ $t('page.xizmat_turlari_66') }}</h3>
               </div>
               <div class="widget-content">
                 <ul class="category-list clearfix">
-                  <li><a href="#"><span>Chiqindi yig'ish</span></a></li>
-                  <li><a href="#"><span>Konteyner ijarasi</span></a></li>
-                  <li><a href="#"><span>Qayta ishlash</span></a></li>
-                  <li><a href="#"><span>Sanoat chiqindilari</span></a></li>
-                  <li><a href="#"><span>Turar-joy xizmati</span></a></li>
-                  <li><a href="#"><span>Maxsus chiqindilar</span></a></li>
+                  <li><a href="#"><span>{{ $t('page.chiqindi_yig_ish_67') }}</span></a></li>
+                  <li><a href="#"><span>{{ $t('page.konteyner_ijarasi_68') }}</span></a></li>
+                  <li><a href="#"><span>{{ $t('page.qayta_ishlash_69') }}</span></a></li>
+                  <li><a href="#"><span>{{ $t('page.sanoat_chiqindilari_70') }}</span></a></li>
+                  <li><a href="#"><span>{{ $t('page.turar_joy_xizmati_71') }}</span></a></li>
+                  <li><a href="#"><span>{{ $t('page.maxsus_chiqindilar_72') }}</span></a></li>
                 </ul>
               </div>
             </div>
             <div class="sidebar-widget contact-widget centred">
               <div class="widget-content">
                 <div class="icon-box"><i class="icon-39"></i></div>
-                <h3>Yordam <br />kerakmi?</h3>
+                <h3>{{ $t('page.yordam_kerakmi_73') }}</h3>
                 <div class="lower-box">
                   <p><a href="mailto:info@wastix.uz">info@wastix.uz</a></p>
                   <h2><a href="tel:+998712000000">+998 71 200 00 00</a></h2>
@@ -90,5 +90,9 @@ const config = useRuntimeConfig()
 const data = await $fetch(`${config.public.apiBase}/regions`).catch(() => ({ data: [] }))
 const regions = data.data || []
 
-useHead({ title: 'Bizning hududlar - Truck Standart' })
+const { t, locale } = useI18n()
+useHead({ title: computed(() => `${t('nav.regions')} - Trust Standart`) })
 </script>
+
+
+

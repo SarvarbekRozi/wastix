@@ -13,10 +13,10 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                                 <div class="content-box p_relative d_block z_5">
-                                    <span class="title-text p_relative d_block">{{ slider.subtitle_uz }}</span>
-                                    <h2 class="p_relative d_block">{{ slider.title_uz }}</h2>
+                                    <span class="title-text p_relative d_block">{{ slider[`subtitle_${$i18n.locale}`] }}</span>
+                                    <h2 class="p_relative d_block">{{ slider[`title_${$i18n.locale}`] }}</h2>
                                     <div class="btn-box" v-if="slider.button_url">
-                                        <a :href="slider.button_url" class="theme-btn btn-one"><span>{{ slider.button_text_uz || 'Batafsil' }}</span></a>
+                                        <a :href="slider.button_url" class="theme-btn btn-one"><span>{{ slider[`button_text_${$i18n.locale}`] || $t('common.more') }}</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                                     <div class="image-shape-1" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
                                     <figure class="image clearfix">
                                         <img :src="slider.image_url || `/assets/images/banner/banner-${(i % 3) + 1}.jpg`"
-                                             :alt="slider.title_uz" style="width:100%;border-radius:12px;object-fit:cover;max-height:420px;">
+                                             :alt="slider[`title_${$i18n.locale}`]" style="width:100%;border-radius:12px;object-fit:cover;max-height:420px;">
                                     </figure>
                                 </div>
                             </div>
@@ -68,17 +68,17 @@
                         <div class="content_block_one">
                             <div class="content-box mr_40">
                                 <div class="sec-title mb_25">
-                                    <span class="sub-title">Biz haqimizda</span>
-                                    <h2>Chiqindilarni boshqarish sohasida tajriba</h2>
+                                    <span class="sub-title">{{ $t('about_section.sub_title') }}</span>
+                                    <h2>{{ $t('about_section.title') }}</h2>
                                 </div>
-                                <p>Biz 10 yildan ortiq tajribaga ega bo'lgan chiqindilarni yig'ish va qayta ishlash kompaniyasimiz. Zamonaviy texnologiyalar va malakali mutaxassislar yordamida shahar va tumanlarni toza saqlashga hissa qo'shamiz.</p>
+                                <p>{{ $t('about_section.desc') }}</p>
                                 <ul class="list-style-one mb_35 clearfix">
-                                    <li>Maishiy chiqindilarni yig'ish</li>
-                                    <li>Sanoat chiqindilarini qayta ishlash</li>
-                                    <li>Ekologik xavfsiz utilizatsiya</li>
+                                    <li>{{ $t('about_section.list_1') }}</li>
+                                    <li>{{ $t('about_section.list_2') }}</li>
+                                    <li>{{ $t('about_section.list_3') }}</li>
                                 </ul>
                                 <div class="btn-box">
-                                    <a href="/about/organization" class="theme-btn btn-one shadow"><span>Batafsil</span></a>
+                                    <a href="/about/organization" class="theme-btn btn-one shadow"><span>{{ $t('about_section.btn') }}</span></a>
                                 </div>
                             </div>
                         </div>
@@ -98,6 +98,37 @@
         </section>
         <!-- about-section end -->
 
+        <!-- news-section -->
+        <section class="news-section sec-pad">
+          <div class="auto-container">
+            <div class="sec-title mb_50 centred">
+              <span class="sub-title">{{ $t('nav.news') }}</span>
+              <h2>{{ $t('page.bizning_so_ngi_n_yangiliklar_44') }}</h2>
+            </div>
+            <div class="news-carousel owl-carousel owl-theme owl-dots-none owl-nav-none" id="newsCarousel">
+              <div v-for="(item, i) in latestNews" :key="item.id" class="news-block">
+                <div class="news-block-one compact-news-card">
+                  <div class="inner-box">
+                    <div class="image-box">
+                      <figure class="image">
+                        <a :href="`/news/${item.slug}`">
+                          <img :src="item.image_url || `/assets/images/news/news-${i + 1}.jpg`" alt="Yangilik">
+                        </a>
+                      </figure>
+                      <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
+                    </div>
+                    <div class="lower-content">
+                      <h3><a :href="`/news/${item.slug}`">{{ item[`title_${$i18n.locale}`] }}</a></h3>
+                      <p>{{ item[`excerpt_${$i18n.locale}`] }}</p>
+                      <div class="link"><a :href="`/news/${item.slug}`"><i class="icon-26"></i></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- news-section end -->
 
         <!-- map-section -->
         <UzbekistanMap :apiRegions="regions" />
@@ -109,8 +140,8 @@
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-7.png);"></div>
             <div class="auto-container">
                 <div class="sec-title mb_50">
-                    <span class="sub-title">Xizmatlar</span>
-                    <h2>Chiqindilarni boshqarish <br />xizmatlari</h2>
+                    <span class="sub-title">{{ $t('footer.services') }}</span>
+                    <h2>{{ $t('page.chiqindilarni_boshqarish_nxizm_45') }}</h2>
                 </div>
                 <div class="row clearfix">
                     <div v-for="(service, i) in services" :key="service.id"
@@ -121,7 +152,7 @@
                                 <figure class="image-box">
                                     <a href="#">
                                         <img :src="service.image_url || `/assets/images/service/service-${(i % 3) + 1}.jpg`"
-                                             :alt="service.title_uz">
+                                             :alt="service[`title_${$i18n.locale}`]">
                                     </a>
                                 </figure>
                                 <div class="lower-content">
@@ -129,8 +160,8 @@
                                         <div class="icon-bg" style="background-image: url(/assets/images/icons/icon-bg-1.png);"></div>
                                         <div class="icon"><i :class="service.icon"></i></div>
                                     </div>
-                                    <h3><a href="#">{{ service.title_uz }}</a></h3>
-                                    <p>{{ service.description_uz }}</p>
+                                    <h3><a href="#">{{ service[`title_${$i18n.locale}`] }}</a></h3>
+                                    <p>{{ service[`description_${$i18n.locale}`] }}</p>
                                     <div class="link"><a href="#"><i class="icon-7"></i></a></div>
                                 </div>
                             </div>
@@ -143,24 +174,12 @@
 
 
         <!-- funfact-section -->
-        <section class="funfact-section">
+        <section class="funfact-section" v-if="statistics.length">
             <div class="auto-container">
-                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                    <div v-for="stat in statistics" :key="stat.id" class="funfact-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box"><i :class="stat.icon || 'icon-15'"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" :data-stop="stat.value">0</span>
-                                <span v-if="stat.suffix">{{ stat.suffix }}</span>
-                            </div>
-                            <h4>{{ stat.title_uz }}</h4>
-                        </div>
-                    </div>
-                </div>
+                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none"></div>
             </div>
         </section>
         <!-- funfact-section end -->
-
 
         <!-- chooseus-section -->
         <section class="chooseus-section pt_100">
@@ -174,7 +193,7 @@
                                     <div class="icon-box"><i class="icon-18"></i></div>
                                     <h5>Tez yordam</h5>
                                     <h3><a :href="`tel:${(settings.chooseus_phone || '').replace(/\s/g,'')}`">
-                                        {{ settings.chooseus_phone_label || '+998 71 200 00 00' }}
+                                        {{ settings.chooseus_phone_label || '+998 95 177 09 09' }}
                                     </a></h3>
                                 </div>
                                 <div class="image-shape">
@@ -188,26 +207,26 @@
                         <div class="content_block_two">
                             <div class="content-box pt_40 pb_150 ml_30">
                                 <div class="sec-title mb_30">
-                                    <span class="sub-title">Nima uchun biz</span>
-                                    <h2>{{ settings.chooseus_title || 'Nima uchun bizning xizmatlarimizni tanlash kerak' }}</h2>
+                                    <span class="sub-title">{{ $t('page.nima_uchun_biz_46') }}</span>
+                                    <h2>{{ settings[`chooseus_title_${$i18n.locale}`] || ($t('page.nima_uchun_bizning_xizmatlarim_47')) }}</h2>
                                 </div>
                                 <div class="text-box mb_35">
-                                    <p>{{ settings.chooseus_description || 'Biz mijozlarimizga eng sifatli xizmatlarni taqdim etishga intilamiz.' }}</p>
+                                    <p>{{ settings[`chooseus_description_${$i18n.locale}`] || ($t('page.biz_mijozlarimizga_eng_sifatli_48')) }}</p>
                                 </div>
                                 <div class="inner-box mb_35">
                                     <div class="single-item">
                                         <div class="icon-box"><i :class="settings.chooseus_item_1_icon || 'icon-19'"></i></div>
-                                        <h3>{{ settings.chooseus_item_1_title || 'Uy-joy chiqindilari' }}</h3>
-                                        <p>{{ settings.chooseus_item_1_desc }}</p>
+                                        <h3>{{ settings[`chooseus_item_1_title_${$i18n.locale}`] || ($t('page.uy_joy_chiqindilari_49')) }}</h3>
+                                        <p>{{ settings[`chooseus_item_1_desc_${$i18n.locale}`] || $t('page.chooseus_item_1_desc') }}</p>
                                     </div>
                                     <div class="single-item">
                                         <div class="icon-box"><i :class="settings.chooseus_item_2_icon || 'icon-20'"></i></div>
-                                        <h3>{{ settings.chooseus_item_2_title || 'Katta konteynerlar' }}</h3>
-                                        <p>{{ settings.chooseus_item_2_desc }}</p>
+                                        <h3>{{ settings[`chooseus_item_2_title_${$i18n.locale}`] || ($t('page.katta_konteynerlar_50')) }}</h3>
+                                        <p>{{ settings[`chooseus_item_2_desc_${$i18n.locale}`] || $t('page.chooseus_item_2_desc') }}</p>
                                     </div>
                                 </div>
                                 <div class="btn-box">
-                                    <a href="/contact" class="theme-btn btn-one shadow"><span>Bog'lanish</span></a>
+                                    <nuxt-link to="/contact" class="theme-btn btn-one shadow"><span>{{ $t('common.contact_us') }}</span></nuxt-link>
                                 </div>
                             </div>
                         </div>
@@ -224,7 +243,7 @@
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-11.png);"></div>
             <div class="auto-container">
                 <div class="inner-box">
-                    <h2>{{ settings.cta_title || "Bizning mijozimiz bo'ling va maxsus xizmatlardan foydalaning" }}</h2>
+                    <h2>{{ settings[`cta_title_${$i18n.locale}`] || ($t('page.bizning_mijozimiz_bo_ling_va_m_51')) }}</h2>
                 </div>
             </div>
         </section>
@@ -242,8 +261,8 @@
                     <div class="row clearfix">
                         <div class="col-lg-6 col-md-12 col-sm-12 title-column">
                             <div class="sec-title light pr_90">
-                                <span class="sub-title">Qayta ishlanadigan materiallar</span>
-                                <h2>Biz barcha turdagi materiallarni yig'amiz va qayta ishlaymiz</h2>
+                                <span class="sub-title">{{ $t('materials.subtitle') }}</span>
+                                <h2>{{ $t('materials.title') }}</h2>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 list-column">
@@ -251,19 +270,19 @@
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <ul class="list-style-one clearfix">
-                                            <li>Temir va po'lat</li>
-                                            <li>Plastmassa</li>
-                                            <li>Lampalar va chiroqlar</li>
-                                            <li>Kitob va qog'oz</li>
-                                            <li>Shisha idishlar</li>
+                                            <li>{{ $t('materials.list_1') }}</li>
+                                            <li>{{ $t('materials.list_2') }}</li>
+                                            <li>{{ $t('materials.list_3') }}</li>
+                                            <li>{{ $t('materials.list_4') }}</li>
+                                            <li>{{ $t('materials.list_5') }}</li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <ul class="list-style-one clearfix">
-                                            <li>Oziq-ovqat qoldiqlari</li>
-                                            <li>Maishiy chiqindilar</li>
-                                            <li>Gazeta va jurnallar</li>
-                                            <li>Elektron chiqindilar</li>
+                                            <li>{{ $t('materials.list_6') }}</li>
+                                            <li>{{ $t('materials.list_7') }}</li>
+                                            <li>{{ $t('materials.list_8') }}</li>
+                                            <li>{{ $t('materials.list_9') }}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -277,74 +296,19 @@
 
 
         <!-- testimonial-section -->
-        <section class="testimonial-section centred sec-pad" style="padding: 50px 0 0 0;">
+        <section class="testimonial-section centred sec-pad" style="padding: 50px 0 ;">
             <div class="auto-container">
                 <div class="sec-title mb_50">
-                    <span class="sub-title">Mijozlar fikri</span>
-                    <h2>Mijozlarimiz biz haqimizda <br />nima deydi</h2>
+                    <span class="sub-title">{{ $t('page.mijozlar_fikri_52') }}</span>
+                    <h2>{{ $t('page.mijozlarimiz_biz_haqimizda_nni_53') }}</h2>
                 </div>
-                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one" id="testimonialCarousel">
-                    <div v-for="(t, i) in testimonials" :key="t.id" class="testimonial-block-one">
-                        <div class="inner-box">
-                            <div class="text-box">
-                                <ul class="rating clearfix">
-                                    <li v-for="n in t.rating" :key="n"><i class="icon-21"></i></li>
-                                    <li v-for="n in (5 - t.rating)" :key="'e'+n"><i class="icon-22"></i></li>
-                                </ul>
-                                <p>{{ t.content_uz }}</p>
-                                <figure class="thumb-box">
-                                    <img :src="`/assets/images/resource/testimonial-${(i % 3) + 1}.png`" alt="Mijoz">
-                                </figure>
-                            </div>
-                            <div class="author-box">
-                                <h3>{{ t.name }}</h3>
-                                <span class="designation">{{ t.position_uz }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none" id="testimonialCarousel"></div>
             </div>
         </section>
         <!-- testimonial-section end -->
 
 
-        <!-- news-section -->
-        <section class="news-section sec-pad">
-            <div class="auto-container">
-                <div class="sec-title mb_50 centred">
-                    <span class="sub-title">Yangiliklar</span>
-                    <h2>Bizning so'nggi <br />yangiliklar</h2>
-                </div>
-                <div class="row clearfix">
-                    <div v-for="(item, i) in latestNews" :key="item.id"
-                         class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-one wow fadeInUp animated"
-                             :data-wow-delay="(i * 300) + 'ms'" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a :href="`/news/${item.slug}`">
-                                            <img :src="item.image_url || `/assets/images/news/news-${i + 1}.jpg`" alt="Yangilik">
-                                        </a>
-                                    </figure>
-                                    <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
-                                </div>
-                                <div class="lower-content">
-                                    <ul class="post-info mb_6 clearfix">
-                                        <li><i class="icon-24"></i><span>{{ item.author || 'Tahririyat' }}</span></li>
-                                        <li><i class="icon-25"></i>{{ item.views }}</li>
-                                    </ul>
-                                    <h3><a :href="`/news/${item.slug}`">{{ item.title_uz }}</a></h3>
-                                    <p>{{ item.excerpt_uz }}</p>
-                                    <div class="link"><a :href="`/news/${item.slug}`"><i class="icon-26"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- news-section end -->
+
 </template>
 
 <script setup>
@@ -355,8 +319,10 @@ const { data: homeData } = await useAsyncData('home', () =>
   $fetch(`${config.public.apiBase}/home`).catch(() => ({}))
 )
 
+const { t, locale } = useI18n()
+
 const sliders      = computed(() => homeData.value?.sliders     || [])
-const statistics   = computed(() => homeData.value?.statistics  || [])
+const statistics = computed(() => homeData.value?.statistics || [])
 const services     = computed(() => homeData.value?.services    || [])
 const latestNews   = computed(() => homeData.value?.latest_news || [])
 const testimonials = computed(() => homeData.value?.testimonials || [])
@@ -364,9 +330,9 @@ const regions      = computed(() => homeData.value?.regions     || [])
 const settings     = computed(() => homeData.value?.settings    || {})
 
 const features = computed(() => [
-  { icon: settings.value.feature_1_icon || 'icon-8',  title: settings.value.feature_1_title || "Konteyner o'lchamlari", desc: settings.value.feature_1_desc || "Har xil hajmdagi konteynerlar mavjud." },
-  { icon: settings.value.feature_2_icon || 'icon-9',  title: settings.value.feature_2_title || "Chiqindi yig'ish",       desc: settings.value.feature_2_desc || "Muntazam chiqindi yig'ish xizmati." },
-  { icon: settings.value.feature_3_icon || 'icon-10', title: settings.value.feature_3_title || "Yig'ish jadvali",        desc: settings.value.feature_3_desc || "Qulay vaqtda chiqindi olib ketish." },
+  { icon: settings.value.feature_1_icon || 'icon-8',  title: settings.value[`feature_1_title_${locale.value}`] || (t('page.konteyner_o_lchamlari_54')), desc: settings.value[`feature_1_desc_${locale.value}`] || (t('page.har_xil_hajmdagi_konteynerlar__55')) },
+  { icon: settings.value.feature_2_icon || 'icon-9',  title: settings.value[`feature_2_title_${locale.value}`] || (t('page.chiqindi_yig_ish_56')),       desc: settings.value[`feature_2_desc_${locale.value}`] || (t('page.muntazam_chiqindi_yig_ish_xizm_57')) },
+  { icon: settings.value.feature_3_icon || 'icon-10', title: settings.value[`feature_3_title_${locale.value}`] || (t('page.yig_ish_jadvali_58')),        desc: settings.value[`feature_3_desc_${locale.value}`] || (t('page.qulay_vaqtda_chiqindi_olib_ket_59')) },
 ])
 
 function formatDate(dateStr) {
@@ -385,7 +351,7 @@ function initCarousel($el, options) {
   $el.owlCarousel(options)
 }
 
-onMounted(() => {
+function buildDynamicCarousels() {
   nextTick(() => {
     const $ = window.$
     if (!$ || !$.fn || !$.fn.owlCarousel) return
@@ -394,34 +360,149 @@ onMounted(() => {
     if (sliders.value.length) {
       initCarousel($('#bannerCarousel'), {
         loop: true, animateOut: 'fadeOut', animateIn: 'fadeIn',
-        items: 1, margin: 0, nav: false, dots: false,
-        autoplay: true, autoplayTimeout: 5000, smartSpeed: 1000
+        items: 1, margin: 0, nav: true, dots: false,
+        autoplay: true, autoplayTimeout: 5000, smartSpeed: 1000,
+        navText: ['<span class="icon-6"></span>', '<span class="icon-7"></span>']
       })
     }
 
-    // Testimonials carousel
+    // Testimonials carousel — HTML manually built to avoid Vue/Owl DOM conflict
     if (testimonials.value.length) {
-      initCarousel($('#testimonialCarousel'), {
-        loop: testimonials.value.length > 2,
-        margin: 30, nav: true, dots: false,
+      const $tc = $('#testimonialCarousel')
+      const html = testimonials.value.map((testim, i) => {
+        const stars = Array.from({ length: 5 }, (_, s) =>
+          `<li><i class="${s < testim.rating ? 'icon-21' : 'icon-22'}"></i></li>`
+        ).join('')
+        const img = testim.image
+          ? testim.image
+          : `/assets/images/resource/default-avatar.svg`
+        return `
+          <div class="testimonial-block-one">
+            <div class="inner-box">
+              <div class="text-box">
+                <ul class="rating clearfix">${stars}</ul>
+                <p>${testim['content_' + locale.value] || testim.content_uz || ''}</p>
+                <figure class="thumb-box"><img src="${img}" alt="Mijoz"></figure>
+              </div>
+              <div class="author-box">
+                <h3>${testim.name || ''}</h3>
+                <span class="designation">${testim['position_' + locale.value] || testim.position_uz || ''}</span>
+              </div>
+            </div>
+          </div>`
+      }).join('')
+      $tc.html(html)
+      initCarousel($tc, {
+        loop: testimonials.value.length > 3,
+        rewind: testimonials.value.length <= 3,
+        margin: 30, nav: false, dots: false,
         autoplay: true, autoplayTimeout: 4000, smartSpeed: 700,
-        navText: ['<span class="icon-30"></span>', '<span class="icon-31"></span>'],
         responsive: { 0: { items: 1 }, 768: { items: 2 }, 1024: { items: 3 } }
       })
     }
 
-    // Funfact stats carousel
+    // News carousel
+    if (latestNews.value.length) {
+      initCarousel($('#newsCarousel'), {
+        loop: true,
+        margin: 30, nav: false, dots: false,
+        autoplay: true, autoplayTimeout: 3500, smartSpeed: 800,
+        responsive: { 0: { items: 1 }, 768: { items: 2 }, 1024: { items: 3 } }
+      })
+    }
+
+    // Funfact stats carousel — HTML manually built to avoid Vue/Owl DOM conflict
     if (statistics.value.length) {
-      initCarousel($('.four-item-carousel'), {
+      const $fc = $('.four-item-carousel')
+      const statsHtml = statistics.value.map(stat => `
+        <div class="funfact-block-one">
+          <div class="inner-box">
+            <div class="icon-box"><i class="${stat.icon || 'icon-15'}"></i></div>
+            <div class="count-outer count-box">
+              <span class="count-text" data-speed="1500" data-stop="${stat.value}">${stat.value}</span>
+              ${stat.suffix ? `<span>${stat.suffix}</span>` : ''}
+            </div>
+            <h4>${stat['title_' + locale.value] || stat.title_uz || ''}</h4>
+          </div>
+        </div>`
+      ).join('')
+      $fc.html(statsHtml)
+      initCarousel($fc, {
         loop: true, margin: 0, nav: false, dots: false,
         autoplay: true, autoplayTimeout: 3000, smartSpeed: 700,
         responsive: { 0: { items: 1 }, 600: { items: 2 }, 992: { items: 4 } }
       })
+      // Counter animatsiyasini carousel init dan keyin qo'lda ishga tushirish
+      $fc.find('.count-text').each(function () {
+        const $this = $(this)
+        const stop = parseInt($this.data('stop')) || 0
+        $({ Counter: 0 }).animate({ Counter: stop }, {
+          duration: 1500,
+          step: function () { $this.text(Math.ceil(this.Counter)) },
+          complete: function () { $this.text(stop) }
+        })
+      })
     }
   })
+}
+
+onMounted(() => {
+  buildDynamicCarousels()
+})
+
+watch(locale, () => {
+  buildDynamicCarousels()
 })
 
 useHead({
-  title: 'Truck Standart - Chiqindilarni boshqarish xizmatlari',
+  title: computed(() => t('page.trust_standart_chiqindilarni_b_60')),
 })
 </script>
+
+<style scoped>
+.compact-news-card .image-box .image {
+  height: 220px;
+}
+
+.compact-news-card .image-box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compact-news-card .image-box .post-date h3 {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.compact-news-card .lower-content {
+  padding: 20px 20px 18px;
+}
+
+.compact-news-card .lower-content h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.compact-news-card .lower-content h3 a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.compact-news-card .lower-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+  .compact-news-card .image-box .image {
+    height: 190px;
+  }
+}
+</style>

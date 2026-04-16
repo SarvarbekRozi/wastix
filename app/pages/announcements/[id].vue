@@ -1,7 +1,7 @@
 <template>
   <!-- page-title -->
   <section class="page-title p_relative centred">
-    <div class="bg-layer" style="background-image: url(/assets/images/background/page-title.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(https://images.unsplash.com/photo-1532996122724-e3c893ab4ffa?w=1920&q=80);"></div>
     <div class="pattern-layer">
       <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
       <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-14.png);"></div>
@@ -10,11 +10,11 @@
     </div>
     <div class="auto-container">
       <div class="content-box">
-        <h1>E'lon tafsilotlari</h1>
+        <h1>{{ $t('nav.announcements') }}</h1>
         <ul class="bread-crumb clearfix">
-          <li><a href="/">Bosh sahifa</a></li>
-          <li><a href="/announcements">E'lonlar</a></li>
-          <li>Tafsilotlar</li>
+          <li><nuxt-link to="/">{{ $t('nav.home') }}</nuxt-link></li>
+          <li><nuxt-link to="/announcements">{{ $t('nav.announcements') }}</nuxt-link></li>
+          <li>{{ $t('page.tafsilotlar_36') }}</li>
         </ul>
       </div>
     </div>
@@ -36,12 +36,8 @@
                   <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
                 </div>
                 <div class="lower-content">
-                  <ul class="post-info mb_6 clearfix">
-                    <li><i class="icon-24"></i><span>Ma'muriyat</span></li>
-                    <li><i class="icon-25"></i>{{ item.views }}</li>
-                  </ul>
-                  <h3>{{ item.title_uz }}</h3>
-                  <div v-html="item.content_uz || item.excerpt_uz"></div>
+                  <h3>{{ item[`title_${$i18n.locale}`] }}</h3>
+                  <div v-html="item[`content_${$i18n.locale}`] || item[`excerpt_${$i18n.locale}`]"></div>
                 </div>
               </div>
             </div>
@@ -49,8 +45,8 @@
         </div>
       </div>
       <div v-else class="text-center py-5">
-        <p>E'lon topilmadi.</p>
-        <a href="/announcements" class="theme-btn btn-one mt-3"><span>E'lonlarga qaytish</span></a>
+        <p>{{ $t('page.e_lon_topilmadi_37') }}</p>
+        <nuxt-link to="/announcements" class="theme-btn btn-one mt-3"><span>{{ $t('page.e_lonlarga_qaytish_38') }}</span></nuxt-link>
       </div>
     </div>
   </section>
@@ -72,9 +68,33 @@ try {
 function formatDate(dateStr) {
   if (!dateStr) return ''
   const d = new Date(dateStr)
-  const months = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYL', 'AVG', 'SEP', 'OKT', 'NOY', 'DEK']
+  const monthsUz = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYL', 'AVG', 'SEP', 'OKT', 'NOY', 'DEK']
+  const monthsRu = ['ЯНВ', 'ФЕВ', 'МАР', 'АПР', 'МАЙ', 'ИЮН', 'ИЮЛ', 'АВГ', 'СЕН', 'ОКТ', 'НОЯ', 'ДЕК']
+  const { locale } = useI18n()
+  const months = locale.value === 'ru' ? monthsRu : monthsUz
   return `${d.getDate()} ${months[d.getMonth()]}`
 }
 
-useHead({ title: item.value ? item.value.title_uz + " - Truck Standart" : "E'lon" })
+const { t, locale } = useI18n()
+useHead({ title: computed(() => item.value ? item.value[`title_${locale.value}`] + " - Trust Standart" : t('nav.announcements')) })
 </script>
+<style scoped>
+.blog-details-content .news-block-one .inner-box .image-box .image {
+  height: 360px;
+}
+
+.blog-details-content .news-block-one .inner-box .image-box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .blog-details-content .news-block-one .inner-box .image-box .image {
+    height: 220px;
+  }
+}
+</style>
+
+
+
