@@ -23,7 +23,7 @@
                                 <circle class="pre-ring-dash" cx="60" cy="60" r="54" stroke-width="4" stroke-linecap="round"/>
                             </svg>
                             <div class="pre-logo-wrap">
-                                <img src="/assets/images/logo.png" alt="Wastix" class="pre-logo">
+                                <img src="/assets/images/logo-white.png" alt="Wastix" class="pre-logo">
                             </div>
                         </div>
                         <!-- company name -->
@@ -113,7 +113,7 @@
                     <div class="top-left">
                         <ul class="info-list clearfix">
                             <li><i class="icon-1"></i>{{ $t('header.work_time') }} <span>{{ $t('header.work_time_val') }}</span></li>
-                            <li><i class="icon-2"></i>Email: <a href="mailto:Truststandartuz@gmail.com">info@waste.uz</a></li>
+                            <li><i class="icon-2"></i>Email: <a href="mailto:Truststandartuz@gmail.com">Truststandartuz@gmail.com</a></li>
                             <li><i class="icon-3"></i>{{ $t('header.address') }} <span>{{ $t('header.address_val') }}</span></li>
                         </ul>
                     </div>
@@ -232,14 +232,19 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
             
             <nav class="menu-box">
-                <div class="nav-logo"><a href="/"><img src="/assets/images/logo-2.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="/"><img src="/assets/images/logo-white.png" alt="" title="" style="max-height:60px;width:auto;"></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <div class="mobile-lang-switcher">
+                    <a href="#" @click.prevent="setLocale('uz')" :class="{'active': locale === 'uz'}">UZ</a>
+                    <span>|</span>
+                    <a href="#" @click.prevent="setLocale('ru')" :class="{'active': locale === 'ru'}">RU</a>
+                </div>
                 <div class="contact-info">
                     <h4>{{ $t('footer.contact_info') }}</h4>
                     <ul>
                         <li>{{ $t('header.address_val') }}</li>
                         <li><a href="tel:+998712000000">+998 95 177 09 09</a></li>
-                        <li><a href="mailto:info@waste.uz">Truststandartuz@gmail.com</a></li>
+                        <li><a href="mailto:Truststandartuz@gmail.com">Truststandartuz@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="social-links">
@@ -413,6 +418,45 @@ const { locale, setLocale } = useI18n()
   100% { width: 100%; }
 }
 
+/* header-top mobileda yashirish */
+@media (max-width: 767px) {
+  .main-header .header-top {
+    display: none !important;
+  }
+}
+
+/* mobil menyu padding tuzatish */
+.mobile-menu .nav-logo {
+  padding: 20px 25px 15px !important;
+}
+.mobile-menu .contact-info {
+  padding: 20px 25px !important;
+}
+
+/* mobil menyu til almashtirish */
+.mobile-lang-switcher {
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mobile-lang-switcher a {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.mobile-lang-switcher a.active,
+.mobile-lang-switcher a:hover {
+  color: #ffffff;
+}
+.mobile-lang-switcher span {
+  color: rgba(255,255,255,0.3);
+}
+
 /* close button yangi ko'rinish */
 .preloader-close {
   width: 36px !important;
@@ -429,7 +473,3 @@ const { locale, setLocale } = useI18n()
   background: rgba(76,222,110,0.3) !important;
 }
 </style>
-
-
-
-

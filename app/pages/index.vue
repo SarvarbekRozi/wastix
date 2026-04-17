@@ -191,7 +191,7 @@
                                 <figure class="image"><img src="/assets/images/resource/chooseus-1.png" alt="Nima uchun biz"></figure>
                                 <div class="support-box">
                                     <div class="icon-box"><i class="icon-18"></i></div>
-                                    <h5>Tez yordam</h5>
+                                    <h5>{{ $t('chooseus.trust_phone') }}</h5>
                                     <h3><a :href="`tel:${(settings.chooseus_phone || '').replace(/\s/g,'')}`">
                                         {{ settings.chooseus_phone_label || '+998 95 177 09 09' }}
                                     </a></h3>
@@ -373,8 +373,8 @@ function buildDynamicCarousels() {
         const stars = Array.from({ length: 5 }, (_, s) =>
           `<li><i class="${s < testim.rating ? 'icon-21' : 'icon-22'}"></i></li>`
         ).join('')
-        const img = testim.image
-          ? testim.image
+        const img = testim.image_url
+          ? testim.image_url
           : `/assets/images/resource/default-avatar.svg`
         return `
           <div class="testimonial-block-one">
