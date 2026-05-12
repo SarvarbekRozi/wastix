@@ -124,133 +124,86 @@ const mapOptions = computed(() => {
   // and the formatter pulls the updated translations.
   void locale.value
   return {
-  chart: {
-    map: mapData,
-    backgroundColor: 'transparent',
-    height: 440,
-    spacing: [8, 8, 8, 8]
-  },
-  title: { text: '' },
-  credits: { enabled: false },
-  legend: { enabled: false },
-  colorAxis: false,
-  mapNavigation: { enabled: false },
-  tooltip: { enabled: false },
-  plotOptions: {
-    series: {
-      cursor: 'default',
-      allowPointSelect: false,
-      point: {
-        events: {
-          click: function () { return false }
+    chart: {
+      map: mapData,
+      backgroundColor: 'transparent',
+      height: 420
+    },
+    title: { text: '' },
+    credits: { enabled: false },
+    legend: { enabled: false },
+    mapNavigation: { enabled: false },
+    tooltip: { enabled: false },
+    plotOptions: {
+      series: {
+        cursor: 'default',
+        allowPointSelect: false,
+        point: { events: { click: function () { return false } } },
+        states: {
+          hover: { enabled: false },
+          inactive: { opacity: 1 }
         }
-      },
-      states: {
-        hover: { enabled: false },
-        inactive: { opacity: 1 }
-      }
-    }
-  },
-  series: [{
-    data: [
-      { 'hc-key': 'uz-fa' },
-      { 'hc-key': 'uz-tk', color: '#27ae60' },
-      { 'hc-key': 'uz-an' },
-      { 'hc-key': 'uz-ng' },
-      { 'hc-key': 'uz-ji' },
-      { 'hc-key': 'uz-si' },
-      { 'hc-key': 'uz-ta' },
-      { 'hc-key': 'uz-bu' },
-      { 'hc-key': 'uz-kh' },
-      { 'hc-key': 'uz-qr' },
-      { 'hc-key': 'uz-nw' },
-      { 'hc-key': 'uz-sa' },
-      { 'hc-key': 'uz-qa' },
-      { 'hc-key': 'uz-su' }
-    ],
-    name: 'Viloyatlar',
-    color: '#e4eddf',
-    borderColor: '#ffffff',
-    borderWidth: 1.2,
-    dataLabels: {
-      enabled: true,
-      allowOverlap: false,
-      crop: false,
-      overflow: 'allow',
-      padding: 0,
-      formatter: function () {
-        const key = this.point['hc-key']
-        const full = t('map.' + key)
-        return shortenRegionLabel(full || this.point.name)
-      },
-      style: {
-        fontSize: '11px',
-        fontWeight: '600',
-        fontFamily: "'Poppins', sans-serif",
-        textOutline: '2px rgba(255,255,255,0.95)',
-        color: '#1f2d3d'
       }
     },
-    nullColor: '#e4eddf'
-  }]
+    series: [{
+      data: [
+        { 'hc-key': 'uz-fa', value: 1 },
+        { 'hc-key': 'uz-tk', value: 2, color: '#27ae60' },
+        { 'hc-key': 'uz-an', value: 1 },
+        { 'hc-key': 'uz-ng', value: 1 },
+        { 'hc-key': 'uz-ji', value: 1 },
+        { 'hc-key': 'uz-si', value: 1 },
+        { 'hc-key': 'uz-ta', value: 1 },
+        { 'hc-key': 'uz-bu', value: 1 },
+        { 'hc-key': 'uz-kh', value: 1 },
+        { 'hc-key': 'uz-qr', value: 1 },
+        { 'hc-key': 'uz-nw', value: 1 },
+        { 'hc-key': 'uz-sa', value: 1 },
+        { 'hc-key': 'uz-qa', value: 1 },
+        { 'hc-key': 'uz-su', value: 1 }
+      ],
+      name: 'Viloyatlar',
+      color: '#2e86c1',
+      borderColor: '#ffffff',
+      borderWidth: 1,
+      dataLabels: {
+        enabled: true,
+        formatter: function () {
+          const key = this.point['hc-key']
+          const full = t('map.' + key)
+          return shortenRegionLabel(full || this.point.name)
+        },
+        style: {
+          fontSize: '13px',
+          fontWeight: '600',
+          textOutline: '1px white',
+          color: '#2c3e50'
+        }
+      },
+      nullColor: '#d5e8f0'
+    }]
   }
 })
 </script>
 
 <style scoped>
 .map-section {
+  background-color: #f8f9fa;
   position: relative;
-  background-color: #fbfcfa;
-  background-image:
-    radial-gradient(circle at 0% 0%, rgba(58, 158, 30, 0.035), transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(58, 158, 30, 0.03), transparent 50%);
   overflow: hidden;
-}
-
-.map-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(58, 158, 30, 0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(58, 158, 30, 0.018) 1px, transparent 1px);
-  background-size: 36px 36px;
-  pointer-events: none;
-}
-
-.map-section > .auto-container {
-  position: relative;
-  z-index: 1;
 }
 
 .map-wrapper {
   position: relative;
-  background: #ffffff;
-  border: 1px solid #e3ebe1;
-  border-radius: 10px;
-  padding: 14px 14px 18px;
-  box-shadow: 0 4px 16px rgba(26, 92, 40, 0.08);
 }
 
 .selected-region-name {
-  display: block;
   text-align: center;
-  margin-top: 18px;
   font-size: 18px;
-  font-weight: 600;
-  color: #1a3d24;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 5px;
   font-family: 'Fraunces', serif;
-  letter-spacing: 0.4px;
-}
-
-.selected-region-name::after {
-  content: '';
-  display: block;
-  width: 42px;
-  height: 2px;
-  background: #27ae60;
-  margin: 8px auto 0;
-  border-radius: 2px;
 }
 
 .branches-list {
