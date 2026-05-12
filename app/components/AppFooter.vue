@@ -7,7 +7,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget logo-widget mr_60">
-                                <figure class="footer-logo"><a href="/"><img src="/assets/images/logo-2.png" alt="" style="max-height:70px;width:auto;"></a></figure>
+                                <figure class="footer-logo"><a href="/"><img src="/assets/images/logo-white.png" alt="" style="max-height:70px;width:auto;"></a></figure>
                                 <div class="text-box">
                                     <p>{{ $t('page.chiqindilarni_yig_ish_tashish__85') }}</p>
                                     <p>{{ $t('page.barqaror_ekologiya_va_toza_sha_86') }}</p>
@@ -52,7 +52,7 @@
                                 <div class="widget-content">
                                     <ul class="info-list mb_30 clearfix">
                                         <li><i class="icon-3"></i>{{ $t('header.address') }} {{ $t('page.toshkent_sh_chilonzor_tumani_91') }}</li>
-                                        <li><i class="icon-2"></i>Email:  <a href="mailto:info@waste.uz">info@waste.uz</a></li>
+                                        <li style="display: flex; gap: 5px;"><i class="icon-2"></i>Email: <a href="mailto:Truststandartuz@gmail.com">Truststandartuz@gmail.com</a></li>
                                         <li><i class="icon-4"></i>{{ $t('page.telefon_92') }}:  <a href="tel:+998712000000">+998 71 200 00 00</a></li>
                                     </ul>
                                     <ul class="social-links clearfix">
@@ -90,7 +90,3 @@
         </div>
         <!-- Scroll to top end -->
 </template>
-
-
-
-

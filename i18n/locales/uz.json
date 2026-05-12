@@ -40,13 +40,16 @@
     "close": "Yopish",
     "loading": "Yuklanmoqda..."
   },
+  "chooseus": {
+    "trust_phone": "Ishonch telefoni"
+  },
   "contact": {
     "title": "Aloqa",
     "address_title": "Bizning manzil",
     "get_in_touch": "Jamoa bilan bog'laning",
     "desc": "Taklif va murojaatlaringizni yuboring, tez orada javob beramiz.",
     "address_label": "Manzil",
-    "address_val": "Toshkent shahri, O'zbekiston",
+    "address_val": "Toshkent shahar Mirzo Ulug‘bek tumani Xumoyun ko‘chasi 3a-uy",
     "phone_label": "Telefon",
     "email_label": "Email",
     "placeholder_name": "Ismingiz",

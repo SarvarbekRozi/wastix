@@ -40,12 +40,12 @@
               <li>
                 <div class="icon"><i class="icon-4"></i></div>
                 <h4>{{ $t('contact.phone_label') }}</h4>
-                <p><a href="tel:+998712000000">+998 (71) 200 00 00</a></p>
+                <p><a href="tel:+998951770909">+998 (95) 177 09 09</a></p>
               </li>
               <li>
                 <div class="icon"><i class="icon-2"></i></div>
                 <h4>{{ $t('contact.email_label') }}</h4>
-                <p><a href="mailto:info@waste.uz">info@waste.uz</a></p>
+                <p><a href="mailto:Truststandartuz@gmail.com">Truststandartuz@gmail.com</a></p>
               </li>
             </ul>
           </div>
@@ -116,6 +116,3 @@ async function submitForm() {
 
 useHead({ title: computed(() => `${t('contact.title')} - Trust Standart`) })
 </script>
-
-
-
