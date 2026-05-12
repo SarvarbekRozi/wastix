@@ -71,17 +71,18 @@
 <script setup>
 const config = useRuntimeConfig()
 const page = ref(1)
-const items = ref([])
-const meta = ref(null)
 
-async function fetchPage(p) {
+const { data } = await useAsyncData('announcements-list', () =>
+  $fetch(`${config.public.apiBase}/announcements?page=${page.value}`).catch(() => ({ data: [], meta: null })),
+  { watch: [page] }
+)
+
+const items = computed(() => data.value?.data || [])
+const meta = computed(() => data.value?.meta || null)
+
+function fetchPage(p) {
   page.value = p
-  const data = await $fetch(`${config.public.apiBase}/announcements?page=${p}`)
-  items.value = data.data || []
-  meta.value = data.meta || null
 }
-
-await fetchPage(1)
 
 function formatDate(dateStr) {
   if (!dateStr) return ''

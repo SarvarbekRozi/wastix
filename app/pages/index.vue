@@ -1,36 +1,9 @@
 <template>
         <!-- banner-section -->
         <section class="banner-section p_relative">
-            <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-1.png);"></div>
             <div class="banner-carousel owl-theme owl-carousel owl-dots-none" id="bannerCarousel">
-                <div v-for="(slider, i) in sliders" :key="slider.id" class="slide-item p_relative">
-                    <div class="shape">
-                        <div class="shape-1" style="background-image: url(/assets/images/shape/shape-3.png);"></div>
-                        <div class="shape-2 float-bob-y" style="background-image: url(/assets/images/shape/shape-4.png);"></div>
-                        <div class="shape-3 rotate-me" style="background-image: url(/assets/images/shape/shape-5.png);"></div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box p_relative d_block z_5">
-                                    <span class="title-text p_relative d_block">{{ slider[`subtitle_${$i18n.locale}`] }}</span>
-                                    <h2 class="p_relative d_block">{{ slider[`title_${$i18n.locale}`] }}</h2>
-                                    <div class="btn-box" v-if="slider.button_url">
-                                        <a :href="slider.button_url" class="theme-btn btn-one"><span>{{ slider[`button_text_${$i18n.locale}`] || $t('common.more') }}</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <div class="image-box p_relative">
-                                    <div class="image-shape-1" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
-                                    <figure class="image clearfix">
-                                        <img :src="slider.image_url || `/assets/images/banner/banner-${(i % 3) + 1}.jpg`"
-                                             :alt="slider[`title_${$i18n.locale}`]" style="width:100%;border-radius:12px;object-fit:cover;max-height:420px;">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div v-for="(img, i) in bannerImages" :key="i" class="slide-item banner-slide-image">
+                    <img :src="img" :alt="`Banner ${i + 1}`">
                 </div>
             </div>
         </section>
@@ -321,7 +294,11 @@ const { data: homeData } = await useAsyncData('home', () =>
 
 const { t, locale } = useI18n()
 
-const sliders      = computed(() => homeData.value?.sliders     || [])
+const bannerImages = [
+  '/assets/images/banner/1.png',
+  '/assets/images/banner/2.png',
+  '/assets/images/banner/3.png',
+]
 const statistics = computed(() => homeData.value?.statistics || [])
 const services     = computed(() => homeData.value?.services    || [])
 const latestNews   = computed(() => homeData.value?.latest_news || [])
@@ -357,14 +334,12 @@ function buildDynamicCarousels() {
     if (!$ || !$.fn || !$.fn.owlCarousel) return
 
     // Banner slider
-    if (sliders.value.length) {
-      initCarousel($('#bannerCarousel'), {
-        loop: true, animateOut: 'fadeOut', animateIn: 'fadeIn',
-        items: 1, margin: 0, nav: true, dots: false,
-        autoplay: true, autoplayTimeout: 5000, smartSpeed: 1000,
-        navText: ['<span class="icon-6"></span>', '<span class="icon-7"></span>']
-      })
-    }
+    initCarousel($('#bannerCarousel'), {
+      loop: true, animateOut: 'fadeOut', animateIn: 'fadeIn',
+      items: 1, margin: 0, nav: true, dots: false,
+      autoplay: true, autoplayTimeout: 5000, smartSpeed: 1000,
+      navText: ['<span class="icon-6"></span>', '<span class="icon-7"></span>']
+    })
 
     // Testimonials carousel — HTML manually built to avoid Vue/Owl DOM conflict
     if (testimonials.value.length) {
@@ -460,6 +435,94 @@ useHead({
 </script>
 
 <style scoped>
+.banner-slide-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-slide-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .banner-slide-image img {
+    max-height: 720px;
+    object-fit: cover;
+  }
+}
+
+/* === Banner slider nav buttons (smaller, themed) === */
+.banner-section :deep(.banner-carousel .owl-nav) {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-top: -22px;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.banner-section :deep(.banner-carousel .owl-nav button) {
+  position: absolute;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: #1a5c28;
+  font-size: 14px;
+  border: 1px solid rgba(58, 158, 30, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.banner-section :deep(.banner-carousel .owl-nav button.owl-prev) {
+  left: 24px;
+}
+
+.banner-section :deep(.banner-carousel .owl-nav button.owl-next) {
+  right: 24px;
+}
+
+.banner-section :deep(.banner-carousel .owl-nav button:hover) {
+  background: var(--theme-color, #3A9E1E);
+  color: #fff;
+  border-color: var(--theme-color, #3A9E1E);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(58, 158, 30, 0.35);
+}
+
+.banner-section :deep(.banner-carousel .owl-nav button span) {
+  font-size: 14px;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .banner-section :deep(.banner-carousel .owl-nav button) {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+  }
+  .banner-section :deep(.banner-carousel .owl-nav button.owl-prev) {
+    left: 10px;
+  }
+  .banner-section :deep(.banner-carousel .owl-nav button.owl-next) {
+    right: 10px;
+  }
+}
+
 .compact-news-card .image-box .image {
   height: 220px;
 }

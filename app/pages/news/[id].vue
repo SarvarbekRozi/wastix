@@ -56,14 +56,12 @@
 <script setup>
 const config = useRuntimeConfig()
 const route = useRoute()
-const item = ref(null)
 
-try {
-  const data = await $fetch(`${config.public.apiBase}/news/${route.params.id}`)
-  item.value = data.data
-} catch (e) {
-  item.value = null
-}
+const { data } = await useAsyncData(`news-${route.params.id}`, () =>
+  $fetch(`${config.public.apiBase}/news/${route.params.id}`).catch(() => null)
+)
+
+const item = computed(() => data.value?.data || null)
 
 function formatDate(dateStr) {
   if (!dateStr) return ''

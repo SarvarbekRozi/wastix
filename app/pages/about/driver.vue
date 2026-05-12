@@ -51,8 +51,10 @@
 
 <script setup>
 const config = useRuntimeConfig()
-const data = await $fetch(`${config.public.apiBase}/team/driver`).catch(() => ({ data: [] }))
-const members = data.data || []
+const { data } = await useAsyncData('team-driver', () =>
+  $fetch(`${config.public.apiBase}/team/driver`).catch(() => ({ data: [] }))
+)
+const members = computed(() => data.value?.data || [])
 
 const { t, locale } = useI18n()
 useHead({ title: computed(() => `${t('page.haydovchilar_4')} - Trust Standart`) })

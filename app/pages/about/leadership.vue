@@ -56,8 +56,10 @@
 
 <script setup>
 const config = useRuntimeConfig()
-const data = await $fetch(`${config.public.apiBase}/team/leadership`).catch(() => ({ data: [] }))
-const members = data.data || []
+const { data } = await useAsyncData('team-leadership', () =>
+  $fetch(`${config.public.apiBase}/team/leadership`).catch(() => ({ data: [] }))
+)
+const members = computed(() => data.value?.data || [])
 
 const { t, locale } = useI18n()
 useHead({ title: computed(() => `${t('page.rahbariyat_7')} - Trust Standart`) })

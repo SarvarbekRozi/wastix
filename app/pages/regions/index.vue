@@ -24,7 +24,7 @@
   <section class="sidebar-page-container pt_150 pb_150">
     <div class="auto-container">
       <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+        <div class="col-lg-12 col-md-12 col-sm-12 content-side">
           <div class="blog-classic-content">
             <div v-for="(region, i) in regions" :key="region.id"
                  class="news-block-one wow fadeInUp animated"
@@ -50,35 +50,6 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-          <div class="blog-sidebar default-sidebar ml_40">
-            <div class="sidebar-widget category-widget">
-              <div class="widget-title">
-                <h3>{{ $t('page.xizmat_turlari_66') }}</h3>
-              </div>
-              <div class="widget-content">
-                <ul class="category-list clearfix">
-                  <li><a href="#"><span>{{ $t('page.chiqindi_yig_ish_67') }}</span></a></li>
-                  <li><a href="#"><span>{{ $t('page.konteyner_ijarasi_68') }}</span></a></li>
-                  <li><a href="#"><span>{{ $t('page.qayta_ishlash_69') }}</span></a></li>
-                  <li><a href="#"><span>{{ $t('page.sanoat_chiqindilari_70') }}</span></a></li>
-                  <li><a href="#"><span>{{ $t('page.turar_joy_xizmati_71') }}</span></a></li>
-                  <li><a href="#"><span>{{ $t('page.maxsus_chiqindilar_72') }}</span></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="sidebar-widget contact-widget centred">
-              <div class="widget-content">
-                <div class="icon-box"><i class="icon-39"></i></div>
-                <h3>{{ $t('page.yordam_kerakmi_73') }}</h3>
-                <div class="lower-box">
-                  <p><a href="mailto:info@wastix.uz">info@wastix.uz</a></p>
-                  <h2><a href="tel:+998712000000">+998 71 200 00 00</a></h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -87,8 +58,10 @@
 
 <script setup>
 const config = useRuntimeConfig()
-const data = await $fetch(`${config.public.apiBase}/regions`).catch(() => ({ data: [] }))
-const regions = data.data || []
+const { data } = await useAsyncData('regions-list', () =>
+  $fetch(`${config.public.apiBase}/regions`).catch(() => ({ data: [] }))
+)
+const regions = computed(() => data.value?.data || [])
 
 const { t, locale } = useI18n()
 useHead({ title: computed(() => `${t('nav.regions')} - Trust Standart`) })
