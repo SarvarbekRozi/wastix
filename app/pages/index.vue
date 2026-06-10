@@ -335,7 +335,7 @@ function buildDynamicCarousels() {
 
     // Banner slider
     initCarousel($('#bannerCarousel'), {
-      loop: true, animateOut: 'fadeOut', animateIn: 'fadeIn',
+      loop: false, rewind: true, animateOut: 'fadeOut', animateIn: 'fadeIn',
       items: 1, margin: 0, nav: true, dots: false,
       autoplay: true, autoplayTimeout: 5000, smartSpeed: 1000,
       navText: ['<span class="icon-6"></span>', '<span class="icon-7"></span>']
@@ -435,6 +435,27 @@ useHead({
 </script>
 
 <style scoped>
+/* Feature kartalarni teng balandlikda ushlab turish */
+.feature-section .inner-container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature-section .feature-block {
+  display: flex;
+}
+
+.feature-section .feature-block-one {
+  width: 100%;
+  display: flex;
+}
+
+.feature-section .feature-block-one .inner-box.feature-clean {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .banner-slide-image {
   width: 100%;
   overflow: hidden;

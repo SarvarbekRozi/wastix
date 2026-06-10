@@ -154,6 +154,7 @@
                                             <li><nuxt-link to="/about/staff">{{ $t('nav.staff') }}</nuxt-link></li>
                                             <li><nuxt-link to="/about/supervisor">{{ $t('nav.supervisor') }}</nuxt-link></li>
                                             <li><nuxt-link to="/about/driver">{{ $t('nav.driver') }}</nuxt-link></li>
+                                            <li><nuxt-link to="/about/loader">{{ $t('nav.loader') }}</nuxt-link></li>
                                         </ul>
                                     </li>
                                     <li><nuxt-link to="/regions">{{ $t('nav.regions') }}</nuxt-link></li>
@@ -198,6 +199,7 @@
                                                 <li><nuxt-link to="/about/staff">{{ $t('nav.staff') }}</nuxt-link></li>
                                                 <li><nuxt-link to="/about/supervisor">{{ $t('nav.supervisor') }}</nuxt-link></li>
                                                 <li><nuxt-link to="/about/driver">{{ $t('nav.driver') }}</nuxt-link></li>
+                                                <li><nuxt-link to="/about/loader">{{ $t('nav.loader') }}</nuxt-link></li>
                                             </ul>
                                         </li>
                                         <li><nuxt-link to="/regions">{{ $t('nav.regions') }}</nuxt-link></li>

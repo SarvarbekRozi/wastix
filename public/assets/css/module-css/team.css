@@ -138,6 +138,51 @@
 }
 
 
+/* === Team kartalarni teng balandlikda ushlash === */
+.team-section .row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-section .team-block{
+  display: flex;
+}
+
+.team-section .team-block-one{
+  width: 100%;
+  display: flex;
+}
+
+.team-section .team-block-one .inner-box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Rasmlarni bir xil o'lchamda kesib ko'rsatish */
+.team-section .team-block-one .inner-box .image-box{
+  flex-shrink: 0;
+}
+
+.team-section .team-block-one .inner-box .image-box img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Matn qismi qolgan bo'sh joyni egallaydi → kartalar teng balandlikda */
+.team-section .team-block-one .inner-box .lower-content{
+  flex-grow: 1;
+}
+
+@media (max-width: 767px){
+  .team-section .team-block-one .inner-box .image-box img{
+    height: 260px;
+  }
+}
+
+
 
 
 

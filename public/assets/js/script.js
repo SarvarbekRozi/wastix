@@ -187,34 +187,9 @@
 	}
 
 
-	// banner-carousel
-	if ($('.banner-carousel').length) {
-        $('.banner-carousel').owlCarousel({
-            loop:true,
-			margin:0,
-			nav:true,
-			animateOut: 'fadeOut',
-    		animateIn: 'fadeIn',
-    		active: true,
-			smartSpeed: 1000,
-			autoplay: 6000,
-            navText: [ '<span class="icon-6"></span>', '<span class="icon-7"></span>' ],
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:1
-                },
-                800:{
-                    items:1
-                },
-                1024:{
-                    items:1
-                }
-            }
-        });
-    }
+	// banner-carousel — index.vue (Nuxt) sahifasi tomonidan hydrationdan keyin
+	// onMounted ichida init qilinadi. Bu yerda init qilish SSR hydration bilan
+	// to'qnashib, slaydlarni buzadi. Shuning uchun bu blok o'chirildi.
 
 
     // single-item-carousel
@@ -279,66 +254,9 @@
 	}
 
 
-    // three-item-carousel
-	if ($('.three-item-carousel').length) {
-		$('.three-item-carousel').owlCarousel({
-			loop:true,
-			margin:30,
-			nav:true,
-			smartSpeed: 500,
-			autoplay: 1000,
-			navText: [ '<span class="icon-6"></span>', '<span class="icon-7"></span>' ],
-			responsive:{
-				0:{
-					items:1
-				},
-				480:{
-					items:1
-				},
-				600:{
-					items:2
-				},
-				800:{
-					items:2
-				},			
-				1200:{
-					items:3
-				}
-
-			}
-		});    		
-	}
-
-
-	// four-item-carousel
-	if ($('.four-item-carousel').length) {
-		$('.four-item-carousel').owlCarousel({
-			loop:true,
-			margin:30,
-			nav:true,
-			smartSpeed: 500,
-			autoplay: 1000,
-			navText: [ '<span class="fal fa-angle-left"></span>', '<span class="fal fa-angle-right"></span>' ],
-			responsive:{
-				0:{
-					items:1
-				},
-				480:{
-					items:1
-				},
-				600:{
-					items:2
-				},
-				800:{
-					items:3
-				},			
-				1200:{
-					items:4
-				}
-
-			}
-		});    		
-	}
+    // three-item-carousel / four-item-carousel — index.vue (Nuxt) sahifasi
+	// tomonidan hydrationdan keyin onMounted ichida init qilinadi. Bu yerda
+	// init qilish SSR hydration bilan to'qnashadi, shuning uchun o'chirildi.
 
 
 	// five-item-carousel
