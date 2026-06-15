@@ -13,7 +13,7 @@
 .image_block_two .image-box .image{
   position: absolute;
   left: 0px;
-  bottom: 0px;
+  bottom: -25px;
 }
 
 .image_block_two .image-box .support-box{

@@ -435,6 +435,23 @@ useHead({
 </script>
 
 <style scoped>
+/* About-section (Biz haqimizda) o'ng tomondagi rasmlar — o'lchami rasm hajmidan qat'i nazar belgilangan (fixed) qoladi */
+.image_block_one .image-box .image-1 img {
+  height: 520px;
+  object-fit: cover;
+}
+
+.image_block_one .image-box .image-2,
+.image_block_one .image-box .image-3 {
+  width: 300px;
+}
+
+.image_block_one .image-box .image-2 img,
+.image_block_one .image-box .image-3 img {
+  height: 190px;
+  object-fit: cover;
+}
+
 /* Feature kartalarni teng balandlikda ushlab turish */
 .feature-section .inner-container .row {
   display: flex;
