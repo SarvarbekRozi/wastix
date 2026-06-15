@@ -31,9 +31,15 @@
               <div class="inner-box">
                 <div class="image-box">
                   <figure class="image">
-                    <img :src="item.image_url || '/assets/images/news/news-15.jpg'" :alt="item.title_uz">
+                    <img :src="activeImage" :alt="item.title_uz">
                   </figure>
                   <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
+                </div>
+                <div v-if="images.length > 1" class="news-gallery-thumbs">
+                  <button v-for="(img, i) in images" :key="i" type="button" class="thumb"
+                          :class="{ active: img === activeImage }" @click="activeImage = img">
+                    <img :src="img" :alt="`${item.title_uz} - ${i + 1}`">
+                  </button>
                 </div>
                 <div class="lower-content">
                   <h3>{{ item[`title_${$i18n.locale}`] }}</h3>
@@ -63,6 +69,16 @@ const { data } = await useAsyncData(`news-${route.params.id}`, () =>
 
 const item = computed(() => data.value?.data || null)
 
+const images = computed(() => {
+  const urls = item.value?.image_urls
+  if (Array.isArray(urls) && urls.length) return urls
+  if (item.value?.image_url) return [item.value.image_url]
+  return ['/assets/images/news/news-15.jpg']
+})
+
+const activeImage = ref(images.value[0])
+watch(images, (v) => { activeImage.value = v[0] })
+
 function formatDate(dateStr) {
   if (!dateStr) return ''
   const d = new Date(dateStr)
@@ -78,18 +94,61 @@ useHead({ title: computed(() => item.value ? item.value[`title_${locale.value}`]
 </script>
 <style scoped>
 .blog-details-content .news-block-one .inner-box .image-box .image {
-  height: 360px;
+  height: auto;
+  text-align: center;
+  background: #f4f5f7;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .blog-details-content .news-block-one .inner-box .image-box .image img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.news-gallery-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.news-gallery-thumbs .thumb {
+  width: 96px;
+  height: 72px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  transition: border-color 0.2s ease;
+}
+
+.news-gallery-thumbs .thumb:hover,
+.news-gallery-thumbs .thumb.active {
+  border-color: var(--theme-color, #44bf63);
+}
+
+.news-gallery-thumbs .thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 767px) {
-  .blog-details-content .news-block-one .inner-box .image-box .image {
-    height: 220px;
+  .blog-details-content .news-block-one .inner-box .image-box .image img {
+    max-height: 320px;
+  }
+
+  .news-gallery-thumbs .thumb {
+    width: 72px;
+    height: 56px;
   }
 }
 </style>
