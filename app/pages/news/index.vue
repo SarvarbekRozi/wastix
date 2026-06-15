@@ -36,7 +36,7 @@
                       <img :src="item.image_url || `/assets/images/news/news-${(index % 9) + 4}.jpg`" alt="">
                     </a>
                   </figure>
-                  <span class="post-date">{{ formatDate(item.published_at) }}</span>
+                  <span class="post-date post-views"><i class="far fa-eye"></i><span>{{ item.views ?? 0 }}</span></span>
                 </div>
                 <div class="lower-content">
                   <span class="category">{{ $t('nav.news') }}</span>
@@ -107,6 +107,12 @@ useHead({ title: computed(() => `${t('nav.news')} - Trust Standart`) })
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.post-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .compact-news-card .lower-content {

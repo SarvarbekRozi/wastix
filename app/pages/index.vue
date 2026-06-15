@@ -88,7 +88,7 @@
                           <img :src="item.image_url || `/assets/images/news/news-${i + 1}.jpg`" alt="Yangilik">
                         </a>
                       </figure>
-                      <div class="post-date"><h3>{{ formatDate(item.published_at) }}</h3></div>
+                      <div class="post-date post-views"><h3><i class="far fa-eye"></i><span>{{ item.views ?? 0 }}</span></h3></div>
                     </div>
                     <div class="lower-content">
                       <h3><a :href="`/news/${item.slug}`">{{ item[`title_${$i18n.locale}`] }}</a></h3>
@@ -554,9 +554,18 @@ useHead({
   object-fit: cover;
 }
 
+.compact-news-card .image-box .post-date {
+  width: auto;
+  padding: 8px 14px;
+}
+
 .compact-news-card .image-box .post-date h3 {
   font-size: 16px;
   line-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
 }
 
 .compact-news-card .lower-content {
